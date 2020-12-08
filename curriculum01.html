@@ -67,6 +67,15 @@
                     onclick="auswerten()">
                 Auswerten
             </button>
+
+            <h2>
+                Measurement history
+            </h2>
+            <div id="measurement-history">
+
+            </div>
+
+            <!-- Curriculum navigation -->
             <footer class="curriculum-footer">
                 <button class="Q-button" 
                     type="button" 
@@ -91,15 +100,34 @@
         `
         document.getElementById("exercise01").appendChild( exercise1.toDom() )
         
+        function pad(width, str, padding) { 
+           return (width <= str.length) ? str : pad(width, padding + str, padding)
+        }
+
+        let evaluationHistory = []
+
+
         function auswerten(){
             // try evaluates the circuit onces and returns the index of the result
-            let result = exercise1.try$().toString(2).padStart(exercise1.bandwith, "0")
-            console.log(result)
-            for (let idx = 0; idx < result.length; idx++){
+            let result = exercise1.try$().toString(2).padStart(exercise1.bandwidth, "0")
+            
+            // add result to evaluation history
+            evaluationHistory.push(result)
+            let historyEl = document.createElement('div')
+            historyEl.innerText = result
+            document.getElementById('measurement-history').appendChild(historyEl)
+
+            for (let idx = 0; idx < '0' + result.length; idx++){
+                // if there is already a measurement taken, remove it
+                if (document.getElementById('measurement-' + idx)){
+                    let oldMeasureEl = document.getElementById('measurement-' + idx)
+                    oldMeasureEl.parentNode.removeChild(oldMeasureEl)
+                }
+
                 let measureEl = document.createElement('div')
                 document.getElementsByClassName("Q-circuit-board-foreground")[0].appendChild(measureEl)
                 measureEl.classList.add('circuit-measurement')
-                measureEl.classList.add('Q-circuit-operation-pauli-x')
+                measureEl.id = "measurement-" + idx
                 measureEl.style.setProperty('grid-column-start', 6)
                 measureEl.style.setProperty('grid-row-start', idx+2)
                 measureEl.innerHTML = 

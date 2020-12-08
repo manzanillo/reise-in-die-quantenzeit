@@ -6,8 +6,9 @@
 
 .circuit-measurement{
   position: relative;
-    --Q-operation-color-hue: var( --Q-color-blue-hue );
-    --Q-operation-color-main: hsl( var( --Q-operation-color-hue ), 10%, 35% );
+    --Q-operation-color-hue: 240;
+    --Q-operation-color-main: var( --Q-color-blue ) 
+    linear-gradient( 0.4turn, rgba( 255, 255, 255, 0.2 ), rgba( 0, 0, 0, 0.08 ) );
     --Q-operation-color-light: hsl( var( --Q-operation-color-hue ), 10%, 50% );
     --Q-operation-color-dark: hsl( var( --Q-operation-color-hue ), 10%, 25% );
     color: white;
@@ -16,4 +17,8 @@
     line-height: 2.9rem;
     font-weight: 900;
     cursor: grab;
+}
+
+.circuit-measurement:hover {
+  color: white;
 }
