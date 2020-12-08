@@ -22,3 +22,53 @@
 .circuit-measurement:hover {
   color: white;
 }
+
+.measurement-history-container {
+  height: 250px;
+  overflow: scroll;
+  font-size: 1.5rem;
+  font-weight: 900;
+  font-family: var( --Q-font-family-mono );
+  background-color: #d3d3d373;
+  border-radius: 0.2rem;
+  padding: 0.5em;
+  margin-top: 0.5em;
+  position: relative;
+}
+
+.measurement-history-action-button {
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
+  border-radius: 3rem;
+  font-weight: 500;
+  font-size: 1rem;
+  font-family: var( --Q-font-family-sans );
+  padding: 0.8rem 1.8rem;
+  background-color: #ffffffd6;
+  color: hsl(
+		var( --Q-color-background-hue ),
+		var( --Q-color-background-saturation ),
+		75%
+	)
+}
+
+.measurement-history-action-button:hover {
+  cursor: pointer;
+}
+
+.measurement-history-container-element {
+  animation: slide-up 0.4s ease;
+}
+
+
+@keyframes slide-up {
+  0% {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
