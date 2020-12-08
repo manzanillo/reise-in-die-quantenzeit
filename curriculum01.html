@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-        <title>Q ⟩ Curriculum</title>
+        <title>Q ⟩ Curriculum 01</title>
         <meta charset="utf-8">
         <meta name="viewport"             content="width=device-width,initial-scale=1.0">
         <meta name="description"          content="Quantum computing in your browser.">
@@ -26,12 +26,12 @@
         <meta name="twitter:card"         content="summary_large_image">
         <meta name="twitter:site"         content="@stew_rtsmith">
         <meta name="twitter:creator"      content="@stew_rtsmith">
-        <meta name="twitter:title"        content="Q ⟩ Circuit">
+        <meta name="twitter:title"        content="Q ⟩ Curriculum 01">
         <meta name="twitter:description"  content="Quantum computing in your browser.">
         <meta name="twitter:image"        content="https://quantumjavascript.app/assets/Q-website-preview.jpg">
         
         <meta property="og:type"          content="website">
-        <meta property="og:title"         content="Q ⟩ Circuit">
+        <meta property="og:title"         content="Q ⟩ Curriculum 01">
         <meta property="og:description"   content="Quantum computing in your browser.">
         <meta property="og:image"         content="https://quantumjavascript.app/assets/Q-website-preview.jpg">
         <meta property="og:url"           content="https://quantumjavascript.app/Circuit.html">
@@ -60,7 +60,7 @@
     <body>
 		<main class="home">
             <h1>Exercise 01</h1>
-            <div id=exercise1></div>
+            <div id=exercise01></div>
             <button class="Q-button" 
                     id="evaluate-button" 
                     type="button" 
@@ -81,18 +81,30 @@
             </footer>
         </main>
     </body>
-    
+
     <script>
 
-        var exercise1 = Q`
+        let exercise1 = Q`
         
         H-X#0-X
         I-X#1-X
         `
-        document.getElementById("exercise1").appendChild( exercise1.toDom() )
+        document.getElementById("exercise01").appendChild( exercise1.toDom() )
         
         function auswerten(){
-            console.log(exercise1.try$())
+            // try evaluates the circuit onces and returns the index of the result
+            let result = exercise1.try$().toString(2).padStart(exercise1.bandwith, "0")
+            console.log(result)
+            for (let idx = 0; idx < result.length; idx++){
+                let measureEl = document.createElement('div')
+                document.getElementsByClassName("Q-circuit-board-foreground")[0].appendChild(measureEl)
+                measureEl.classList.add('circuit-measurement')
+                measureEl.classList.add('Q-circuit-operation-pauli-x')
+                measureEl.style.setProperty('grid-column-start', 6)
+                measureEl.style.setProperty('grid-row-start', idx+2)
+                measureEl.innerHTML = 
+                    `<div class="Q-circuit-operation-tile">${result[idx]}</div>`
+            }
         }
     </script>
 </html>

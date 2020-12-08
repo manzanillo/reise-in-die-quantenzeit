@@ -2,3 +2,18 @@
   text-align: center;
   margin-top: 5em;
 }
+
+
+.circuit-measurement{
+  position: relative;
+    --Q-operation-color-hue: var( --Q-color-blue-hue );
+    --Q-operation-color-main: hsl( var( --Q-operation-color-hue ), 10%, 35% );
+    --Q-operation-color-light: hsl( var( --Q-operation-color-hue ), 10%, 50% );
+    --Q-operation-color-dark: hsl( var( --Q-operation-color-hue ), 10%, 25% );
+    color: white;
+    text-shadow: -0.05rem -0.05rem 0 rgba( 0, 0, 0, 0.1 );
+    font-size: 1.5rem;
+    line-height: 2.9rem;
+    font-weight: 900;
+    cursor: grab;
+}
