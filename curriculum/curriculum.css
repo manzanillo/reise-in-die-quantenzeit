@@ -61,6 +61,20 @@
   animation: slide-up 0.4s ease;
 }
 
+.circuit-measurement-tile {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  border-radius: 0.2rem;
+  background: var( --Q-operation-color-main );
+}
+
+/* Hide console reference for circuit in the curriculum */
+.Q-circuit > p {
+  display: none;
+}
 
 @keyframes slide-up {
   0% {

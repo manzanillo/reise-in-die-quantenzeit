@@ -55,11 +55,17 @@
         <script src="Q/Q-Circuit.js"></script>
         <script src="Q/Q-Circuit-Editor.js"></script>
         <script src="assets/navigation.js"></script>
+
+        <script src="curriculum/Q-Curriculum-helper.js"></script>
         
     </head>
     <body>
 		<main class="home">
             <h1>Exercise 01</h1>
+            <p>
+                Verändere die Eingabewerte, indem Du auf die Zahlen am Anfang einer Zeile klickst
+                und miss die Ergebnisse, indem Du auf "Auswerten" klickst
+            </p>
             <div id=exercise01></div>
             <button class="Q-button" 
                     id="evaluate-button" 
@@ -74,6 +80,10 @@
             <div id="measurement-history" class="measurement-history-container">
                 <button class="measurement-history-action-button" onclick="resetHistory()">Reset</button>
             </div>
+
+            <p>
+
+            </p>
 
             <!-- Curriculum navigation -->
             <footer class="curriculum-footer">
@@ -95,14 +105,10 @@
 
         let exercise1 = Q`
         
-        H-X#0-X
-        I-X#1-X
+        H-I-X
+        I-I-X
         `
         document.getElementById("exercise01").appendChild( exercise1.toDom() )
-        
-        function pad(width, str, padding) { 
-           return (width <= str.length) ? str : pad(width, padding + str, padding)
-        }
 
         let evaluationHistory = []
 
@@ -137,8 +143,22 @@
                 measureEl.style.setProperty('grid-column-start', 6)
                 measureEl.style.setProperty('grid-row-start', idx+2)
                 measureEl.innerHTML = 
-                    `<div class="Q-circuit-operation-tile">${result[idx]}</div>`
+                    `<div class="circuit-measurement-tile">${result[idx]}</div>`
             }
         }
+
+
+//  Update evaluation result, when circuit is altered via GUI
+window.addEventListener( 'Q gui altered circuit', function( event ){
+    for (let idx = 0; idx < '0' + event.detail.circuit.bandwidth; idx++){
+        // if there is already a measurement taken, remove it
+        if (document.getElementById('measurement-' + idx)){
+            let oldMeasureEl = document.getElementById('measurement-' + idx)
+            oldMeasureEl.parentNode.removeChild(oldMeasureEl)
+        }
+    }
+    event.detail.circuit.evaluate$()
+})
+
     </script>
 </html>

@@ -59,8 +59,10 @@
     </head>
     <body>
 		<main class="home">
-            <h1>Exercise 02</h1>
-            <div id=exercise1></div>
+            <h1>Exercise 02 – Quantum Computers with multiple Qbits</h1>
+
+            <div class="Q-circuit-palette"></div>
+            <div id=exercise2></div>
             <button class="Q-button" 
                     id="evaluate-button" 
                     type="button" 
@@ -85,15 +87,26 @@
     
     <script>
 
-        var exercise1 = Q`
+        var exercise2 = Q`
         
-        H-X#0-X
-        I-X#1-X
+        H-X#0-X-I
+        I-X#1-X-I
+        I-I-I-I
         `
-        document.getElementById("exercise1").appendChild( exercise1.toDom() )
+        document.getElementById("exercise2").appendChild( exercise2.toDom() )
         
         function auswerten(){
-            console.log(exercise1.try$())
+            console.log(exercise2.try$())
         }
+
+        //  Let’s place circuit palettes
+        //  inside anything with the class 'Q-circuit-palette'.
+        Array
+        .from( document.querySelectorAll( '.Q-circuit-palette' ))
+        .forEach( function( el ){
+
+            Q.Circuit.Editor.createPalette( el )
+        })
+
     </script>
 </html>
