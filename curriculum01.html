@@ -66,6 +66,7 @@
                 Verändere die Eingabewerte, indem Du auf die Zahlen am Anfang einer Zeile klickst
                 und miss die Ergebnisse, indem Du auf "Auswerten" klickst
             </p>
+            <div class='Q-circuit-palette' ></div>
             <div id=exercise01></div>
             <button class="Q-button" 
                     id="evaluate-button" 
@@ -148,17 +149,28 @@
         }
 
 
-//  Update evaluation result, when circuit is altered via GUI
-window.addEventListener( 'Q gui altered circuit', function( event ){
-    for (let idx = 0; idx < '0' + event.detail.circuit.bandwidth; idx++){
-        // if there is already a measurement taken, remove it
-        if (document.getElementById('measurement-' + idx)){
-            let oldMeasureEl = document.getElementById('measurement-' + idx)
-            oldMeasureEl.parentNode.removeChild(oldMeasureEl)
-        }
-    }
-    event.detail.circuit.evaluate$()
-})
+        //  Let’s place circuit palettes
+        //  inside anything with the class 'Q-circuit-palette'.
+        Array
+        .from( document.querySelectorAll( '.Q-circuit-palette' ))
+        .forEach( function( el ){
+
+            Q.Circuit.Editor.createPalette( el, gates='HX' )
+        })
+
+
+
+        //  Update evaluation result, when circuit is altered via GUI
+        window.addEventListener( 'Q gui altered circuit', function( event ){
+            for (let idx = 0; idx < '0' + event.detail.circuit.bandwidth; idx++){
+                // if there is already a measurement taken, remove it
+                if (document.getElementById('measurement-' + idx)){
+                    let oldMeasureEl = document.getElementById('measurement-' + idx)
+                    oldMeasureEl.parentNode.removeChild(oldMeasureEl)
+                }
+            }
+            event.detail.circuit.evaluate$()
+        })
 
     </script>
 </html>

@@ -434,7 +434,7 @@ Object.assign( Q.Circuit.Editor, {
 			y: event[ pageOrClient +'Y' ]
 		}
 	},
-	createPalette: function( targetEl ){
+	createPalette: function( targetEl, gates = 'HXYZPT*' ){
 
 		if( typeof targetEl === 'string' ) targetEl = document.getElementById( targetEl )	
 
@@ -448,7 +448,7 @@ Object.assign( Q.Circuit.Editor, {
 
 		paletteEl.classList.add( 'Q-circuit-palette' )
 
-		'HXYZPT*'
+		gates
 		.split( '' )
 		.forEach( function( symbol ){
 
