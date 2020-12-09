@@ -76,6 +76,55 @@
   display: none;
 }
 
+/* exercise, note, ...*/
+.curriculum-exercise {
+  border-style: dashed;
+  border-width: 1px 1px 1px 1px;
+  border-radius: 0.4rem;
+  border-color:var( --Q-color-blue );
+  transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+  padding: 0.4rem;
+  margin: 0.2rem 1rem 0.4rem 1rem;
+  line-height: 1.5rem;
+  display:flex;
+}
+
+.curriculum-exercise-icon {
+  width: 4rem;
+  font-size: 1.5rem;
+  top: 5px;
+  padding-left: 0.8rem;
+  padding-top: 0.5re;
+  color:var( --Q-color-blue );;
+  line-height: 100%;
+  transform: translateY(25%);
+
+}
+
+.curriculum-gate-description {
+  display: inline-block;
+  width: 1.7rem;
+  text-align: center;
+  background: #505a62 linear-gradient( 0.45turn, rgba( 255, 255, 255, 0.1 ), rgba( 0, 0, 0, 0.05 ) );
+  color: white;
+  padding: 0.1rem;
+  font-weight: 600;
+  border-radius: 0.2rem;
+}
+/* General css */
+
+.curriculum-spacer {
+  height:2rem;
+}
+
+main > ul {
+  padding-left: 2rem;  
+}
+
+
+
+
+
 @keyframes slide-up {
   0% {
       opacity: 0;

@@ -59,16 +59,46 @@
     </head>
     <body>
 		<main class="home">
-            <h1>Exercise 02 – Quantum Computers with multiple Qbits</h1>
+            <h1>Quantencomputer – Mehrere Qbits</h1>
 
-            <div class="Q-circuit-palette"></div>
-            <div id=exercise2></div>
-            <button class="Q-button" 
-                    id="evaluate-button" 
-                    type="button" 
-                    onclick="auswerten()">
-                Auswerten
-            </button>
+            <p>
+                WIP: Superposition, ... jetzt mehrere Qbits. Beim klassischen Rechner hatten wir vorhin wir AND/NAND(?)
+            </p>
+            <div class=curriculum-exercise>
+                <div class="curriculum-exercise-icon">!</div>
+                <div>1. Untersuche, welche Auswirkungen das Gatter <span class="curriculum-gate-description">X</span> auf ein Qbit hat, 
+                indem Du verschiedene Eingabewerte ausprobierst und mehrere Messungen durchführst.
+                </div>
+            </div>
+            <h6>Hinweise</h6>
+            <ul>
+                <li>
+                    Verändere die Eingabewerte, indem Du auf die Zahlen am Anfang einer Zeile klickst.
+                </li>
+                <li>
+                    Führe eine Messung durch, indem Du auf <i>Auswerten</i> klickst.
+                </li>
+            </ul>
+            <div class="curriculum-spacer"></div>
+
+            <div class="">
+                <div class='Q-circuit-palette' ></div>
+                <div id=circuit></div>
+                <button class="Q-button" 
+                        id="evaluate-button" 
+                        type="button" 
+                        onclick="auswerten()">
+                    Auswerten
+                </button>
+            </div>
+            <div class="curriculum-spacer"></div>
+            <h2>
+                Measurement history
+            </h2>
+            <div id="measurement-history" class="measurement-history-container">
+                <button class="measurement-history-action-button" onclick="resetHistory()">Reset</button>
+            </div>
+
             <!-- curriculum navigation -->
             <footer class="curriculum-footer">
                 <a class="Q-button" 
@@ -86,18 +116,49 @@
     </body>
     
     <script>
+        let circuit = Q`
+        I-H-X#0-I
+        I-I-X#1-I
+         `
+        document.getElementById("circuit").appendChild( circuit.toDom() )
 
-        var exercise2 = Q`
-        
-        H-X#0-X-I
-        I-X#1-X-I
-        I-I-I-I
-        `
-        document.getElementById("exercise2").appendChild( exercise2.toDom() )
-        
-        function auswerten(){
-            console.log(exercise2.try$())
+        let evaluationHistory = []
+
+        function resetHistory(){
+            evaluationHistory = []
+            let historyEls = document.getElementsByClassName('measurement-history-container-element')
+            Array.from(historyEls).map(el => el.parentNode.removeChild(el))
         }
+
+        function auswerten(){
+            // try evaluates the circuit onces and returns the index of the result
+            let result = circuit.try$().toString(2).padStart(circuit.bandwidth, "0")
+            
+            // add result to evaluation history
+            evaluationHistory.push(result)
+            let historyEl = document.createElement('div')
+            historyEl.classList.add('measurement-history-container-element')
+            historyEl.innerText = result
+            document.getElementById('measurement-history').prepend(historyEl)
+
+            for (let idx = 0; idx < '0' + result.length; idx++){
+                // if there is already a measurement taken, remove it
+                if (document.getElementById('measurement-' + idx)){
+                    let oldMeasureEl = document.getElementById('measurement-' + idx)
+                    oldMeasureEl.parentNode.removeChild(oldMeasureEl)
+                }
+
+                let measureEl = document.createElement('div')
+                document.getElementsByClassName("Q-circuit-board-foreground")[0].appendChild(measureEl)
+                measureEl.classList.add('circuit-measurement')
+                measureEl.id = "measurement-" + idx
+                measureEl.style.setProperty('grid-column-start', circuit.timewidth + 3)
+                measureEl.style.setProperty('grid-row-start', idx+2)
+                measureEl.innerHTML = 
+                    `<div class="circuit-measurement-tile">${result[idx]}</div>`
+            }
+        }
+
 
         //  Let’s place circuit palettes
         //  inside anything with the class 'Q-circuit-palette'.
@@ -105,7 +166,21 @@
         .from( document.querySelectorAll( '.Q-circuit-palette' ))
         .forEach( function( el ){
 
-            Q.Circuit.Editor.createPalette( el )
+            Q.Circuit.Editor.createPalette( el, gates='HX*' )
+        })
+
+
+
+        //  Update evaluation result, when circuit is altered via GUI
+        window.addEventListener( 'Q gui altered circuit', function( event ){
+            for (let idx = 0; idx < '0' + event.detail.circuit.bandwidth; idx++){
+                // if there is already a measurement taken, remove it
+                if (document.getElementById('measurement-' + idx)){
+                    let oldMeasureEl = document.getElementById('measurement-' + idx)
+                    oldMeasureEl.parentNode.removeChild(oldMeasureEl)
+                }
+            }
+            event.detail.circuit.evaluate$()
         })
 
     </script>
