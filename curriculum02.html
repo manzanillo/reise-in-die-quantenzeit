@@ -62,12 +62,28 @@
             <h1>Quantencomputer – Mehrere Qbits</h1>
 
             <p>
+                Während sich das <span class="curriculum-gate-description">X</span>-Gatter so verhält, 
+                wie du es auch vom klassichen Computer und dem NICHT-Gatter kennst, wirst Du wirst festgestellt haben,
+                 dass das sogenannte Hadamard-Gatter <span class="curriculum-gate-description">H</span> dafür sorgt,
+                 dass wir in ungefähr 50% der Fällen 0 messen und in den anderen 50% 1.
+            </p>
+
+            <p>
                 WIP: Superposition, ... jetzt mehrere Qbits. Beim klassischen Rechner hatten wir vorhin wir AND/NAND(?)
             </p>
             <div class=curriculum-exercise>
                 <div class="curriculum-exercise-icon">!</div>
-                <div>1. Untersuche, welche Auswirkungen das Gatter <span class="curriculum-gate-description">X</span> auf ein Qbit hat, 
+                <div>Unten findest Du ein Gatter, das mit zwei Qbits arbeitet. 
+                    Beschreibe den Effekt dieses Gatters in eigenen Worten, 
                 indem Du verschiedene Eingabewerte ausprobierst und mehrere Messungen durchführst.
+                </div>
+            </div>
+            <p> So ein Gatter nennen wir CNOT...</p>
+            <div class=curriculum-exercise>
+                <div class="curriculum-exercise-icon">!</div>
+                <div>Füge nun ein Hadamard-Gatter <span class="curriculum-gate-description">H</span> vor dem CNOT-Gatter ein
+                    und führe erneut einige Messungen mit verschiedenen Eingabewerten durch. 
+                    Welchen Effekt hat das Gatter auf das Gesamtergebnis?
                 </div>
             </div>
             <h6>Hinweise</h6>
@@ -117,7 +133,7 @@
     
     <script>
         let circuit = Q`
-        I-H-X#0-I
+        I-I-X#0-I
         I-I-X#1-I
          `
         document.getElementById("circuit").appendChild( circuit.toDom() )

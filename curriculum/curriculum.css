@@ -71,6 +71,40 @@
   background: var( --Q-operation-color-main );
 }
 
+
+/* Choose a different color scheme for "classical" computer circuits*/
+.curriculum-classic-color {
+  background: var( --Q-color-red ) 
+      linear-gradient( 0.4turn, rgba( 255, 255, 255, 0.2 ), rgba( 0, 0, 0, 0.08 ) );
+}
+
+.Q-button.curriculum-classic-color:hover {
+
+	background: 
+		hsl(
+			var( --Q-color-red-hue ),
+			var( --Q-color-red-saturation ),
+			calc( var( --Q-color-red-lightness ) * 1.2 )
+		)
+		linear-gradient(
+
+			0.4turn,
+			rgba( 255, 255, 255, 0.2 ),
+			rgba( 0, 0, 0, 0.08 )
+		);
+}
+.Q-button.curriculum-classic-color:focus {
+
+	background: 
+		var( --Q-color-red )
+		linear-gradient(
+
+			0.4turn,
+			rgba( 0, 0, 0, 0.08 ),
+			rgba( 255, 255, 255, 0.2 )
+		);
+}
+
 /* Hide console reference for circuit in the curriculum */
 .Q-circuit > p {
   display: none;

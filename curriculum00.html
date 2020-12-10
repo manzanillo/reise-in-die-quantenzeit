@@ -61,23 +61,57 @@
     </head>
     <body>
 		<main class="home">
-            <h1>Quantencomputer – Teil 1</h1>
+            <h1>Klassischer Computer</h1>
             <p>
-                WIP: Im Falle von Quantencomputern arbeiten an Stelle von <b>Bits</b> mit sogenannten <b>Qbits</b>.
-                Was das für einen Unterschied macht, wollen wir uns im Folgenden ansehen.
-                Jede Zeile stellt ein Qbit dar. Im Gegensatz zu klassischen Computern verfügen Quantencomputer
-                über andere Gatter, mit denen wir berechnen auf diesen Qbits durchführen können.
+                Wie du vielleicht bereits gehört hast, arbeiten klassische Computer mit nur zwei Zuständen: 
+                0 und 1. Wir sprechen auch von <b>Bits</b>.
+                Dazu nutzen sie elektronische Stromsignale: Ist der Strom aus, wird das als 0 interpretiert,
+                ist der Strom an als 1. Um damit nun Rechnungen durchführen zu können, brauchen Computer nur wenige Funktionen
+                – wir nennen sie Gatter.
+                Solch ein Gatter hat einen oder mehrere Eingänge, an denen es Signale entgegen nimmt und Ausgänge an denen 
+                es Signale weitergibt.
+            </p>
+            <p>
+                Mehrere Gatter bilden zusammen einen Schaltkreis und sind so die Basis für Computer wie wir sie kennen.
+                Um zu verstehen, wie ein klassischer Computer im Innersten funktioniert,
+                ist es daher hilfreich zu verstehen wie diese Gatter funktionieren.
+                Dazu nutzt man häufig sogenannte Wahrheitstabellen, 
+                die beschrebein wie sich Gatter für bestimmte Eingaben verhalten.
+                Dazu schreibt man typischerweise für jede mögliche Eingabe eine Zeile und fügt dann die Ausgabe hinzu.
+
+                Ein bekanntes Gatter ist das NICHT-Gatter. Da es nur ein Bit als Eingabe entgegennimmt, besteht seine
+                Wahrheitstabelle nur aus zwei Zeilen:
+            </p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <td>
+                            Eingabe
+                        </td>
+                        <td>
+                            Ausgabe
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>0</td><td>1</td>
+                    </tr>
+                    <tr>
+                        <td>1</td><td>0</td>
+                    </tr>
+                </tbody>   
+            </table>
+            
+            <p>
+                Liegt am Eingang 0 an, geht der Ausgang an (wird also 1) und andersrum.
             </p>
             <div class=curriculum-exercise>
                 <div class="curriculum-exercise-icon">!</div>
-                <div>1. Untersuche, welche Auswirkungen das Gatter <span class="curriculum-gate-description">X</span> auf ein Qbit hat, 
-                indem Du verschiedene Eingabewerte ausprobierst und mehrere Messungen durchführst.
-                </div>
-            </div>
-            <div class=curriculum-exercise>
-                <div class="curriculum-exercise-icon">!</div>
-                <div>2. Untersuche, welche Auswirkungen das Gatter <span class="curriculum-gate-description">H</span> auf ein Qbit hat, 
-                indem Du verschiedene Eingabewerte ausprobierst und mehrere Messungen durchführst.
+                <div>Unten findet sich ein bereits fertiger Schaltkreis aus mehreren Gattern. 
+                    Kannst Du herausfinden, welche Funktion die beiden Gatter haben, 
+                    indem Du verschiedene Eingabewerte ausprobierst und mehrere Messungen durchführst?
                 </div>
             </div>
             <h6>Hinweise</h6>
@@ -93,11 +127,13 @@
                 </li>
             </ul>
             <div class="curriculum-spacer"></div>
-
+            <p>
+                TODO: Zunächst ODER, dann UND Gatter klassisch bauen.
+            </p>
             <div class="">
                 <div class='Q-circuit-palette' ></div>
                 <div id=circuit></div>
-                <button class="Q-button" 
+                <button class="Q-button curriculum-classic-color" 
                         id="evaluate-button" 
                         type="button" 
                         onclick="auswerten()">
@@ -113,7 +149,7 @@
             </div>
 
             <p>
-
+                Tatsächlich kann man nur mit diesen drei Gattern bereits einen Computer, so wie Du ihn gerade nutzt, bauen.
             </p>
 
             <!-- Curriculum navigation -->
@@ -136,6 +172,7 @@
 
         let circuit = Q`
         I-I-X-I
+        I-I-I-I
         `
         document.getElementById("circuit").appendChild( circuit.toDom() )
 
@@ -172,7 +209,7 @@
                 measureEl.style.setProperty('grid-column-start', circuit.timewidth + 3)
                 measureEl.style.setProperty('grid-row-start', idx+2)
                 measureEl.innerHTML = 
-                    `<div class="circuit-measurement-tile">${result[idx]}</div>`
+                    `<div class="circuit-measurement-tile curriculum-classic-color">${result[idx]}</div>`
             }
         }
 
