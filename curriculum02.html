@@ -44,7 +44,7 @@
         <link rel="stylesheet" href="Q/Q-Circuit-Editor.css">
         <link rel="stylesheet" href="assets/documentation.css">
         <link rel="stylesheet" href="curriculum/curriculum.css">
-
+        <link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 
         <script src="Q/Q.js"></script>
         <script src="Q/Q-ComplexNumber.js"></script>
@@ -59,21 +59,38 @@
     </head>
     <body>
 		<main class="home">
-            <h1>Quantencomputer – Mehrere Qbits</h1>
+            <h1>Quantencomputer – Mehrere Qubits</h1>
 
             <p>
-                Während sich das <span class="curriculum-gate-description">X</span>-Gatter so verhält, 
-                wie du es auch vom klassichen Computer und dem NICHT-Gatter kennst, wirst Du wirst festgestellt haben,
+                Während sich das <span class="curriculum-gate-description">X</span>-Gatter ein bisschen so verhält, 
+                wie du es auch vom NOT-Gatter eines klassischen Computers kennst, wirst Du wirst festgestellt haben,
                  dass das sogenannte Hadamard-Gatter <span class="curriculum-gate-description">H</span> dafür sorgt,
                  dass wir in ungefähr 50% der Fällen 0 messen und in den anderen 50% 1.
             </p>
 
             <p>
-                WIP: Superposition, ... jetzt mehrere Qbits. Beim klassischen Rechner hatten wir vorhin wir AND/NAND(?)
+                Damit hast du eine der Besonderheiten aus der Welt der Quantencomputer kennengelernt. 
+                Ein Qubit kann den Wert 0 und den Wert 1 annehmen oder in einer <b>Superposition</b> aus 0 und 1 sein. 
+                Dann hat es eine bestimmte Chance als 0 bzw. 1 gemessen zu werden. 
+                Eine Messung zerstört allerdings die Superposition.
             </p>
+            <p>
+                Natürlich kann ein Quantencomputer mit nur einem Qubit keine Wunder vollbringen.
+                Wir brauchen also noch ein Gatter, das mit zwei Qubits arbeitet.
+                Tatsächlich reicht uns hierfür aber ein Gatter.
+            </p>
+            <div class="info">
+                <i class="icon-info-sign"></i>
+          
+                <span class="extra-info">
+                    Zunächst mag es seltsam anmuten, dass wir nur ein Gatter benötigen bei dem auch zwei Qubits beteiligt sind,
+                    um einen universellen Quantencomputer zu bauen, aber tatsächlich reicht auch beim klassischen Computer 
+                    ein Gatter mit zwei beteiligten Bits (das NAND-Gatter – eine Kombination aus NOT und AND-Gatter).
+                </span>
+              </div>
             <div class=curriculum-exercise>
                 <div class="curriculum-exercise-icon">!</div>
-                <div>Unten findest Du ein Gatter, das mit zwei Qbits arbeitet. 
+                <div>Unten findest Du ein Gatter, das mit zwei Qubits arbeitet. 
                     Beschreibe den Effekt dieses Gatters in eigenen Worten, 
                 indem Du verschiedene Eingabewerte ausprobierst und mehrere Messungen durchführst.
                 </div>

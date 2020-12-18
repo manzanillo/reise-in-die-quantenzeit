@@ -59,36 +59,36 @@
     </head>
     <body>
 		<main class="home">
-            <h1>Quantencomputer – Teil 3</h1>
-            <p> Wie du mit deinen Messungen vermutlich bereits festgestellt hast, steht das Ergebnis einer
-                Rechnung nicht von Anfang an fest. Stattdessen erhalten wir bei einer Messung mit einer bestimmten Wahrscheinlichkeit
-                ein bestimmtes Ergebnis. 
-                Mit jeder Messung extrahieren wir nur ein Bit an Information über den Zustand des Qubits. 
-                Um also ein verlässliches Ergebnis über den Zustand zu erhalten und zwischen den verschiedenen 
-                Superpositionszuständen unterscheiden zu können, müssen wir mehrere Messungen durchführen.
+            <h1>Quantencomputer – Teil 4</h1>
+            <p>
+                Bei realen Quantencomputern stehen uns darüber hinaus noch weitere 
+                Gatter zur Verfügung, die wir für unsere Programme verwenden können.
+            </p>
+            <p>
+                Außerdem stehen uns statt 2 auch ein paar mehr Qubits zur Verfügung. Moderne Quantencomputer 
+                verfügen aktuell sogar über gut 50 bis 70 solche Qubits... In der Theorie, denn in der Praxis 
+                ist die Anzahl mindestens genauso wichtig wie die Möglichkeit,
+                 den Zustand der Qubits über einen möglichst langen Zeitraum zu halten.
+            </p>
+            <p>
+                Mit den zusätzlichen Qbits steigt natürlich auch die Anzahl der möglichen Zustände. 
+                Hatten wir bei 2 Qubits noch 4 mögliche Zustände, wären es bei 3 Qubits schon 8 
+                und bei 4 Qubits sind es sogar 16.
             </p>
             <div class=curriculum-exercise>
                 <div class="curriculum-exercise-icon">!</div>
-                <div> Kannst du einen Schaltkreis so konstruieren, 
-                    dass eine 50% Wahrscheinlichkeit besteht als Ausgabe |10⟩ und eine 
-                    50% Wahrscheinlihckeit als Ausgabe |01⟩ zu erhalten?
+                <div> Für die Schnellen: Kannst du einen Schaltkreis konstruieren, 
+                    sodass mindestens 2 Qbits je einen Wert ungleich 0 haben und diese Werte 
+                    unterschiedlich sind?
+                    <!--z.B. HPH auf einem Qbit-->
                 </div>
             </div>
-            <h6>Hinweise</h6>
-            <ul>
-                <li>
-                    Verändere die Eingabewerte, indem Du auf die Zahlen am Anfang einer Zeile klickst.
-                </li>
-            </ul>
             <div class="curriculum-spacer"></div>
 
             
             <div class='Q-circuit-palette' ></div>
             <div id=circuit></div>
 
-            <p>
-
-            </p>
             <h2>Auswertung</h2>
 			<pre><samp id="circuit-report" for="circuit"></samp></pre>
 
@@ -96,12 +96,12 @@
             <footer class="curriculum-footer">
                 <a class="Q-button" 
                     type="button" 
-                    href="curriculum02.html">
+                    href="curriculum03.html">
                     Zurück
                 </a>
                 <a class="Q-button" 
                     type="button" 
-                    href="curriculum04.html">
+                    disabled>
                     Weiter
             </a>
             </footer>
@@ -115,7 +115,7 @@
         .from( document.querySelectorAll( '.Q-circuit-palette' ))
         .forEach( function( el ){
 
-            Q.Circuit.Editor.createPalette( el, gates='HX*' )
+            Q.Circuit.Editor.createPalette( el )
         })
 
         window.addEventListener( 'Q.Circuit.evaluate completed', function( event ){
@@ -138,8 +138,10 @@
 
         var circuit01 = Q`
         
-        I-H-X#0-I
-        I-I-X#1-I
+        I-I-I-I-I
+        I-H-X#0-I-I
+        I-I-X#1-I-I
+        I-I-I-I-I
         `
 
         circuit01.setName$( 'circuit' )

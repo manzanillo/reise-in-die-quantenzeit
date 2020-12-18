@@ -145,6 +145,34 @@
   font-weight: 600;
   border-radius: 0.2rem;
 }
+
+
+.extra-info {
+  display: none;
+  font-size: 12px;
+}
+
+.info:hover .extra-info {
+  display: block;
+  padding: 0.4rem;
+}
+
+.info {
+  font-size: 20px;
+  padding-left: 1rem;
+  width: 20px;
+  border-radius: 15px;
+}
+
+.info:hover {
+  background-color: #d3d3d373;
+  padding: 0 0 0 1rem;
+  width: 100%;
+  text-align: left !important;
+}
+
+
+
 /* General css */
 
 .curriculum-spacer {

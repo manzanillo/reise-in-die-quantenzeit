@@ -63,10 +63,21 @@
 		<main class="home">
             <h1>Quantencomputer – Teil 1</h1>
             <p>
-                WIP: Im Falle von Quantencomputern arbeiten an Stelle von <b>Bits</b> mit sogenannten <b>Qbits</b>.
-                Was das für einen Unterschied macht, wollen wir uns im Folgenden ansehen.
-                Jede Zeile stellt ein Qbit dar. Im Gegensatz zu klassischen Computern verfügen Quantencomputer
-                über andere Gatter, mit denen wir berechnen auf diesen Qbits durchführen können.
+                Jeder Computer ist also im Kern aus solchen Gattern aufgebaut. DAS NOT-Gatter gibt als Ausgang
+                das Gegenteil von seinem Eingang aus. Gatter wie AND oder OR verwandeln zwei Eingangsbits in ein Ausgangsbit.
+            </p>
+            <p>
+                Quantencomputern arbeiten an Stelle von <b>Bits</b> mit sogenannten <b>Quantenbits</b>.
+                Ein Quantenbit oder <b>Qubit</b> stellt die kleinste Informationseinheit in der Welt der Quantencomputer dar.
+                Was zuerst nach einem kleinen Unterschied klingt, macht in der Praxis einen großen Unterschied.
+                Aber genau wie der klassische Computer braucht auch der Quantencomputer Möglichkeiten 
+                diese Qubits zu beeinflussen: Quantengatter. 
+                Diese Gatter geben einen ersten Vorgeschmack auf das, was Quantencomputer so einzigartig macht. 
+            </p>
+            <p>
+                Was das bedeutet, wollen wir uns im Folgenden ansehen.
+                Jede Zeile stellt ein Qbit dar. Durch Drag-n-Drop kannst Du 
+                Quantengatter zu deinem Quantenalgorithmus hinzufügen.
             </p>
             <div class=curriculum-exercise>
                 <div class="curriculum-exercise-icon">!</div>
@@ -80,6 +91,16 @@
                 indem Du verschiedene Eingabewerte ausprobierst und mehrere Messungen durchführst.
                 </div>
             </div>
+            <div class=curriculum-exercise>
+                <div class="curriculum-exercise-icon">!</div>
+                <div>3. Was passiert, wenn du das <span class="curriculum-gate-description">H</span> 
+                    Gatter zweimal hintereinander anwendest?
+                </div>
+            </div>
+            <p>Zweimaliges Anwenden bringt das Qubit wieder in den Ausgangszustand zurück. Daraus können wir schließen, 
+                dass die im Qubit gespeichert Informatik nicht verloren gegangen ist. Auch nach Anwenden des Hadamard-Gatters 
+                ist das Qubit in einem genau definierten Zustand.
+            </p>
             <h6>Hinweise</h6>
             <ul>
                 <li>
@@ -118,11 +139,11 @@
 
             <!-- Curriculum navigation -->
             <footer class="curriculum-footer">
-                <button class="Q-button" 
+                <a class="Q-button" 
                     type="button" 
-                    disabled>
+                    href="curriculum00.html">
                     Zurück
-                </button>
+                </a>
                 <a class="Q-button" 
                     type="button" 
                     href="curriculum02.html">
