@@ -70,11 +70,6 @@
                 diese Qubits zu beeinflussen: Quantengatter. 
                 Diese Gatter geben einen ersten Vorgeschmack auf das, was Quantencomputer so einzigartig macht. 
             </p>
-            <p>
-                Was das bedeutet, wollen wir uns im Folgenden ansehen.
-                Jede Zeile stellt ein Qbit dar. Durch Drag-n-Drop kannst Du 
-                Quantengatter zu deinem Quantenalgorithmus hinzufügen.
-            </p>
             <div class=curriculum-exercise>
                 <div class="curriculum-exercise-icon">!</div>
                 <div>1. Untersuche, welche Auswirkungen das Gatter <span class="curriculum-gate-description">X</span> auf ein Qbit hat, 
@@ -90,13 +85,14 @@
             <h6>Hinweise</h6>
             <ul>
                 <li>
+                    Jede Zeile stellt ein Qubit dar. 
                     Verändere die Eingabewerte, indem Du auf die Zahlen am Anfang einer Zeile klickst.
                 </li>
                 <li>
                     Führe eine Messung durch, indem Du auf <i>Auswerten</i> klickst.
                 </li>
                 <li>
-                    Du kannst Gatter mittels Drag&Drop hinzufügen oder entfernen.
+                    Du kannst Quantengatter mittels Drag&Drop hinzufügen oder entfernen.
                 </li>
             </ul>
             <div class="curriculum-spacer"></div>
@@ -142,7 +138,7 @@
     <script>
 
         let circuit = Q`
-        I-I-X-I
+        I-I-X-I-I
         `
         document.getElementById("circuit").appendChild( circuit.toDom() )
 
