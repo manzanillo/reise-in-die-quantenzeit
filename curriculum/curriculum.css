@@ -146,6 +146,11 @@
   border-radius: 0.2rem;
 }
 
+.curriculum-input-description{
+  font-weight: 900;
+  font-family: var( --Q-font-family-mono );
+}
+
 
 /* Accordeon */
 
