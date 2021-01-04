@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-        <title>Q ⟩ Curriculum 03</title>
+        <title>Q ⟩ Curriculum 02</title>
         <meta charset="utf-8">
         <meta name="viewport"             content="width=device-width,initial-scale=1.0">
         <meta name="description"          content="Quantum computing in your browser.">
@@ -26,12 +26,12 @@
         <meta name="twitter:card"         content="summary_large_image">
         <meta name="twitter:site"         content="@stew_rtsmith">
         <meta name="twitter:creator"      content="@stew_rtsmith">
-        <meta name="twitter:title"        content="Q ⟩ Curriculum 03">
+        <meta name="twitter:title"        content="Q ⟩ Curriculum 02">
         <meta name="twitter:description"  content="Quantum computing in your browser.">
         <meta name="twitter:image"        content="https://quantumjavascript.app/assets/Q-website-preview.jpg">
         
         <meta property="og:type"          content="website">
-        <meta property="og:title"         content="Q ⟩ Curriculum 03">
+        <meta property="og:title"         content="Q ⟩ Curriculum 02">
         <meta property="og:description"   content="Quantum computing in your browser.">
         <meta property="og:image"         content="https://quantumjavascript.app/assets/Q-website-preview.jpg">
         <meta property="og:url"           content="https://quantumjavascript.app/Circuit.html">
@@ -44,7 +44,7 @@
         <link rel="stylesheet" href="Q/Q-Circuit-Editor.css">
         <link rel="stylesheet" href="assets/documentation.css">
         <link rel="stylesheet" href="curriculum/curriculum.css">
-
+        <link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 
         <script src="Q/Q.js"></script>
         <script src="Q/Q-ComplexNumber.js"></script>
@@ -59,19 +59,34 @@
     </head>
     <body>
 		<main class="home">
-            <h1>Quantencomputer – Teil 3</h1>
-            <p> Wie du mit deinen Messungen vermutlich bereits festgestellt hast, steht das Ergebnis einer
-                Rechnung nicht von Anfang an fest. Stattdessen erhalten wir bei einer Messung mit einer bestimmten Wahrscheinlichkeit
-                ein bestimmtes Ergebnis. 
-                Mit jeder Messung extrahieren wir nur ein Bit an Information über den Zustand des Qubits. 
-                Um also ein verlässliches Ergebnis über den Zustand zu erhalten und zwischen den verschiedenen 
-                Superpositionszuständen unterscheiden zu können, müssen wir mehrere Messungen durchführen.
+            <h1>Quantencomputer – Mehrere Qubits</h1>
+            <p>
+                Natürlich kann ein Quantencomputer mit nur einem Qubit keine Wunder vollbringen.
+                Wir brauchen also noch ein Gatter, das mit zwei Qubits arbeitet.
+                Tatsächlich reicht uns hierfür aber ein Gatter.
             </p>
+            <div class="info">
+                <i class="icon-info-sign"></i>
+          
+                <span class="extra-info">
+                    Zunächst mag es seltsam anmuten, dass wir nur ein Gatter benötigen bei dem auch zwei Qubits beteiligt sind,
+                    um einen universellen Quantencomputer zu bauen, aber tatsächlich reicht auch beim klassischen Computer 
+                    ein Gatter mit zwei beteiligten Bits (das NAND-Gatter – eine Kombination aus NOT und AND-Gatter).
+                </span>
+              </div>
             <div class=curriculum-exercise>
                 <div class="curriculum-exercise-icon">!</div>
-                <div> Kannst du einen Schaltkreis so konstruieren, 
-                    dass eine 50% Wahrscheinlichkeit besteht als Ausgabe |10⟩ und eine 
-                    50% Wahrscheinlihckeit als Ausgabe |01⟩ zu erhalten?
+                <div>Unten findest Du ein Gatter, das mit zwei Qubits arbeitet. 
+                    Beschreibe den Effekt dieses Gatters in eigenen Worten, 
+                indem Du verschiedene Eingabewerte ausprobierst und mehrere Messungen durchführst.
+                </div>
+            </div>
+            <p> So ein Gatter nennen wir CNOT...</p>
+            <div class=curriculum-exercise>
+                <div class="curriculum-exercise-icon">!</div>
+                <div>Füge nun ein Hadamard-Gatter <span class="curriculum-gate-description">H</span> vor dem CNOT-Gatter ein
+                    und führe erneut einige Messungen mit verschiedenen Eingabewerten durch. 
+                    Welchen Effekt hat das Gatter auf das Gesamtergebnis?
                 </div>
             </div>
             <h6>Hinweise</h6>
@@ -79,18 +94,29 @@
                 <li>
                     Verändere die Eingabewerte, indem Du auf die Zahlen am Anfang einer Zeile klickst.
                 </li>
+                <li>
+                    Führe eine Messung durch, indem Du auf <i>Auswerten</i> klickst.
+                </li>
             </ul>
             <div class="curriculum-spacer"></div>
 
-            
-            <div class='Q-circuit-palette' ></div>
-            <div id=circuit></div>
-
-            <p>
-
-            </p>
-            <h2>Auswertung</h2>
-			<pre><samp id="circuit-report" for="circuit"></samp></pre>
+            <div class="">
+                <div class='Q-circuit-palette' ></div>
+                <div id=circuit></div>
+                <button class="Q-button" 
+                        id="evaluate-button" 
+                        type="button" 
+                        onclick="auswerten()">
+                    Auswerten
+                </button>
+            </div>
+            <div class="curriculum-spacer"></div>
+            <h2>
+                Measurement history
+            </h2>
+            <div id="measurement-history" class="measurement-history-container">
+                <button class="measurement-history-action-button" onclick="resetHistory()">Reset</button>
+            </div>
 
             <!-- curriculum navigation -->
             <footer class="curriculum-footer">
@@ -109,6 +135,50 @@
     </body>
     
     <script>
+        let circuit = Q`
+        I-I-X#0-I
+        I-I-X#1-I
+         `
+        document.getElementById("circuit").appendChild( circuit.toDom() )
+
+        let evaluationHistory = []
+
+        function resetHistory(){
+            evaluationHistory = []
+            let historyEls = document.getElementsByClassName('measurement-history-container-element')
+            Array.from(historyEls).map(el => el.parentNode.removeChild(el))
+        }
+
+        function auswerten(){
+            // try evaluates the circuit onces and returns the index of the result
+            let result = circuit.try$().toString(2).padStart(circuit.bandwidth, "0")
+            
+            // add result to evaluation history
+            evaluationHistory.push(result)
+            let historyEl = document.createElement('div')
+            historyEl.classList.add('measurement-history-container-element')
+            historyEl.innerText = result
+            document.getElementById('measurement-history').prepend(historyEl)
+
+            for (let idx = 0; idx < '0' + result.length; idx++){
+                // if there is already a measurement taken, remove it
+                if (document.getElementById('measurement-' + idx)){
+                    let oldMeasureEl = document.getElementById('measurement-' + idx)
+                    oldMeasureEl.parentNode.removeChild(oldMeasureEl)
+                }
+
+                let measureEl = document.createElement('div')
+                document.getElementsByClassName("Q-circuit-board-foreground")[0].appendChild(measureEl)
+                measureEl.classList.add('circuit-measurement')
+                measureEl.id = "measurement-" + idx
+                measureEl.style.setProperty('grid-column-start', circuit.timewidth + 3)
+                measureEl.style.setProperty('grid-row-start', idx+2)
+                measureEl.innerHTML = 
+                    `<div class="circuit-measurement-tile">${result[idx]}</div>`
+            }
+        }
+
+
         //  Let’s place circuit palettes
         //  inside anything with the class 'Q-circuit-palette'.
         Array
@@ -118,32 +188,19 @@
             Q.Circuit.Editor.createPalette( el, gates='HX*' )
         })
 
-        window.addEventListener( 'Q.Circuit.evaluate completed', function( event ){
 
-            const circuit = event.detail.circuit
-            console.log( 
 
-                '\nEvaluation completed for “'+ circuit.name +'”'+
-                '\nwith these results:\n'+ circuit.report$() +'\n\n\n'
-            )
-            if( circuit.name !== undefined ){
-
-                const el = document.getElementById( circuit.name +'-report' )
-                if( el ) el.innerText = circuit.report$()
-            }
-        })
+        //  Update evaluation result, when circuit is altered via GUI
         window.addEventListener( 'Q gui altered circuit', function( event ){
+            for (let idx = 0; idx < '0' + event.detail.circuit.bandwidth; idx++){
+                // if there is already a measurement taken, remove it
+                if (document.getElementById('measurement-' + idx)){
+                    let oldMeasureEl = document.getElementById('measurement-' + idx)
+                    oldMeasureEl.parentNode.removeChild(oldMeasureEl)
+                }
+            }
             event.detail.circuit.evaluate$()
         })
 
-        var circuit01 = Q`
-        
-        I-H-X#0-I
-        I-I-X#1-I
-        `
-
-        circuit01.setName$( 'circuit' )
-        document.getElementById("circuit").appendChild( circuit01.toDom() )
-        circuit01.evaluate$()
     </script>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-        <title>Q ⟩ Curriculum 02</title>
+        <title>Q ⟩ Curriculum 03</title>
         <meta charset="utf-8">
         <meta name="viewport"             content="width=device-width,initial-scale=1.0">
         <meta name="description"          content="Quantum computing in your browser.">
@@ -26,12 +26,12 @@
         <meta name="twitter:card"         content="summary_large_image">
         <meta name="twitter:site"         content="@stew_rtsmith">
         <meta name="twitter:creator"      content="@stew_rtsmith">
-        <meta name="twitter:title"        content="Q ⟩ Curriculum 02">
+        <meta name="twitter:title"        content="Q ⟩ Curriculum 03">
         <meta name="twitter:description"  content="Quantum computing in your browser.">
         <meta name="twitter:image"        content="https://quantumjavascript.app/assets/Q-website-preview.jpg">
         
         <meta property="og:type"          content="website">
-        <meta property="og:title"         content="Q ⟩ Curriculum 02">
+        <meta property="og:title"         content="Q ⟩ Curriculum 03">
         <meta property="og:description"   content="Quantum computing in your browser.">
         <meta property="og:image"         content="https://quantumjavascript.app/assets/Q-website-preview.jpg">
         <meta property="og:url"           content="https://quantumjavascript.app/Circuit.html">
@@ -44,7 +44,7 @@
         <link rel="stylesheet" href="Q/Q-Circuit-Editor.css">
         <link rel="stylesheet" href="assets/documentation.css">
         <link rel="stylesheet" href="curriculum/curriculum.css">
-        <link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
 
         <script src="Q/Q.js"></script>
         <script src="Q/Q-ComplexNumber.js"></script>
@@ -59,91 +59,49 @@
     </head>
     <body>
 		<main class="home">
-            <h1>Quantencomputer – Hadamard-Gatter</h1>
-
+            <h1>Quantencomputer – Teil 5</h1>
             <p>
-                Während sich das <span class="curriculum-gate-description">X</span>-Gatter ein bisschen so verhält, 
-                wie du es auch vom NOT-Gatter eines klassischen Computers kennst, wirst Du wirst festgestellt haben,
-                 dass das sogenannte Hadamard-Gatter <span class="curriculum-gate-description">H</span> dafür sorgt,
-                 dass wir in ungefähr 50% der Fällen 0 messen und in den anderen 50% 1.
-            </p>
-
-            <p>
-                Damit hast du eine der Besonderheiten aus der Welt der Quantencomputer kennengelernt. 
-                Ein Qubit kann den Wert 0 und den Wert 1 annehmen oder in einer <b>Superposition</b> aus 0 und 1 sein. 
-                Dann hat es eine bestimmte Chance als 0 bzw. 1 gemessen zu werden. 
-                Eine Messung zerstört allerdings die Superposition.
+                Bei realen Quantencomputern stehen uns darüber hinaus noch weitere 
+                Gatter zur Verfügung, die wir für unsere Programme verwenden können.
             </p>
             <p>
-                Es wirkt zunächst so, als würde das Hadamard-Gatter jede im Qubit gespeicherte Information löschen.
-                Aber ist das wirklich so?
+                Außerdem stehen uns statt 2 auch ein paar mehr Qubits zur Verfügung. Moderne Quantencomputer 
+                verfügen aktuell sogar über gut 50 bis 70 solche Qubits... In der Theorie, denn in der Praxis 
+                ist die Anzahl mindestens genauso wichtig wie die Möglichkeit,
+                 den Zustand der Qubits über einen möglichst langen Zeitraum zu halten.
             </p>
-
+            <p>
+                Mit den zusätzlichen Qubits steigt natürlich auch die Anzahl der möglichen Zustände. 
+                Hatten wir bei 2 Qubits noch 4 mögliche Zustände, wären es bei 3 Qubits schon 8 
+                und bei 4 Qubits sind es sogar 16.
+            </p>
             <div class=curriculum-exercise>
                 <div class="curriculum-exercise-icon">!</div>
-                <div>1. Wende das Hadamard-Gatter <span class="curriculum-gate-description">H</span> zweimal hintereinander an.
-                     Probiere es sowohl mit 0 als auch mit 1 als Eingabewert und beschreibe deine Beobachtung! 
-                     Was bedeutet das für die im Qubit gespeicherte Information?
+                <div> Für die Schnellen: Kannst du einen Schaltkreis konstruieren, 
+                    sodass mindestens 2 Qubits je einen Wert ungleich 0 haben und diese Werte 
+                    unterschiedlich sind?
+                    <!--z.B. HPH auf einem Qbit-->
                 </div>
             </div>
-
-            <h6>Hinweise</h6>
-            <ul>
-                <li>
-                    Verändere die Eingabewerte, indem Du auf die Zahlen am Anfang einer Zeile klickst.
-                </li>
-                <li>
-                    Diesmal musste Du Messungen nicht mehr selbst durchführen. Sobald du etwas am 
-                    Schaltkreis änderst, wird dieser ausgewertet und die Statistik entsprechend aktualisiert.
-                </li>
-            </ul>
             <div class="curriculum-spacer"></div>
 
-            <div class="">
-                <div class='Q-circuit-palette' ></div>
-                <div id=circuit></div>
-            </div>
-            <div class="curriculum-spacer"></div>
             
+            <div class='Q-circuit-palette' ></div>
+            <div id=circuit></div>
 
             <h2>Auswertung</h2>
 			<pre><samp id="circuit-report" for="circuit"></samp></pre>
-
-            <details>
-                <summary>
-                  Lösungshinweise    
-                  <svg viewBox="0 0 24 24" id="close" class="control-icon control-icon-expand" width="24" height="24" role="presentation">
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" />
-                      <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path><path d="M0 0h24v24H0z" fill="none"></path>
-                    </svg>
-                  <svg viewBox="0 0 24 24" id="expand-more" class="control-icon control-icon-close" width="24" height="24" role="presentation">
-                      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path><path d="M0 0h24v24H0z" fill="none"></path>
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close" />
-                  </svg>
-                </summary>
-                <p>
-                    Zweimaliges Anwenden bringt das Qubit wieder in den Ausgangszustand zurück. 
-                    Daraus können wir schließen, 
-                    dass die im Qubit gespeichert Information nicht verloren gegangen ist. 
-                    Das heißt, auch wenn die Messergebnisse rein zufällig wirken, 
-                    ist das Qubit dennoch in einem genau definierten Zustand.
-                    <br/>
-                    Gleichzeitig bedeutet das auch, dass jede noch so kleine Änderung des Zustands 
-                    zwischen den beiden Hadamard-Gattern (bspw. durch ein anderes Gate), durch 
-                    die Auswertung des Schaltkreises aufgedeckt werden kann.
-                </p>
-            </details>
 
             <!-- curriculum navigation -->
             <footer class="curriculum-footer">
                 <a class="Q-button" 
                     type="button" 
-                    href="curriculum01.html">
+                    href="curriculum04.html">
                     Zurück
                 </a>
                 <a class="Q-button" 
                     type="button" 
-                    href="curriculum03.html">
+                    disabled>
                     Weiter
             </a>
             </footer>
@@ -157,7 +115,7 @@
         .from( document.querySelectorAll( '.Q-circuit-palette' ))
         .forEach( function( el ){
 
-            Q.Circuit.Editor.createPalette( el, "HXP" )
+            Q.Circuit.Editor.createPalette( el )
         })
 
         window.addEventListener( 'Q.Circuit.evaluate completed', function( event ){
@@ -179,7 +137,11 @@
         })
 
         var circuit01 = Q`
-        I-H-I-I-I
+        
+        I-I-I-I-I
+        I-H-X#0-I-I
+        I-I-X#1-I-I
+        I-I-I-I-I
         `
 
         circuit01.setName$( 'circuit' )

@@ -118,7 +118,7 @@
   border-color:var( --Q-color-blue );
   transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
   padding: 0.4rem;
-  margin: 0.2rem 1rem 0.4rem 1rem;
+  margin: 1rem 1rem 1rem 1rem;
   line-height: 1.5rem;
   display:flex;
 }
@@ -169,6 +169,76 @@
   padding: 0 0 0 1rem;
   width: 100%;
   text-align: left !important;
+}
+
+/* Accordeon */
+
+
+details {
+  min-height: 5px;
+  padding: 1rem 1.8rem 1rem 1rem;
+  margin: 1rem 0rem 1rem 0rem;
+  position: relative;
+  border: 1px solid rgba(0,0,0,.1);
+  border-radius: 0.4rem;
+  box-sizing: border-box;
+  transition: all .3s;
+  background-color: rgba(0,0,0,.1);
+}
+
+details + details {
+  margin-top: 20px;
+}
+
+details[open] {
+  min-height: 50px;
+  background-color: #f6f7f8;
+  box-shadow: 2px 2px 20px rgba(0,0,0,.2);
+}
+
+
+summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+summary:focus {
+  outline: none;
+}
+
+summary:focus::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+summary::-webkit-details-marker {
+  display: none
+}
+
+.control-icon {
+  transition: .3s ease;
+  pointer-events: none;
+}
+
+.control-icon-close {
+  display: none;
+}
+
+details[open] .control-icon-close {
+  display: initial;
+  transition: .3s ease;
+}
+
+details[open] .control-icon-expand {
+  display: none;
 }
 
 
