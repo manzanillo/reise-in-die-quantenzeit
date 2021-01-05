@@ -59,13 +59,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   nav.innerHTML = `
 		<h1>
-			<a href="${home}"><img src="/assets/Q-mark.png" title="Curriculum mit (Q.js)" alt="Q.js brand mark"></a>
+			Reise in die Quantenzeit
 		</h1>
 		<ul>
-			<li><h2><a href="${home}">Introducing Q.js</a></h2></li>
-			<li><h2><a href="resources.html">Quantum concepts</a></h2></li>
-			<li><h2><a href="playground.html">Circuit playground</a></h2></li>
-			<li><h2><a href="tutorials.html">Circuit tutorials</a></h2></li>
 			<li><h2><a href="curriculum00.html">Curriculum 00</a></h2></li>
 			<li><h2><a href="curriculum01.html">Curriculum 01</a></h2></li>
 			<li><h2><a href="curriculum02.html">Curriculum 02</a></h2></li>
@@ -74,7 +70,8 @@ document.addEventListener("DOMContentLoaded", function () {
 			<li><h2><a href="curriculum05.html">Curriculum 05</a></h2></li>
 		</ul>
 		<p>API documentation</p>
-		<ul>
+    <ul>
+      <li><h2><a href="${home}">Q.js Framework</a></h2></li>
 			<li><h2><a href="Q.html"><code>Q</code></a></h2></li>
 			<li><h2><a href="Q-ComplexNumber.html"><code class="q-prefix">ComplexNumber</code></a></h2></li>
 			<li><h2><a href="Q-Matrix.html"><code class="q-prefix">Matrix</code></a></h2></li>

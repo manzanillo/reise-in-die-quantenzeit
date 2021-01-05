@@ -64,15 +64,14 @@
                 Schaltkreises nicht von Anfang an fest. 
                 Stattdessen erhalten wir – genau wie im Falle eines Qubits – bei einer Messung mit einer 
                 bestimmten Wahrscheinlichkeit ein bestimmtes Ergebnis. 
-                Mit jeder Messung extrahieren wir nur ein Bit an Information über den Zustand des Qubits. 
                 Um also ein verlässliches Ergebnis über den Zustand zu erhalten und zwischen den verschiedenen 
-                Superpositionszuständen unterscheiden zu können, müssen wir mehrere Messungen durchführen.
+                Superpositionszuständen unterscheiden zu können, müssen wir mehrere Messungen durchführen. 
             </p>
             <div class=curriculum-exercise>
                 <div class="curriculum-exercise-icon">!</div>
-                <div> Kannst du einen Schaltkreis so konstruieren, 
-                    dass eine 50% Wahrscheinlichkeit besteht als Ausgabe |10⟩ und eine 
-                    50% Wahrscheinlihckeit als Ausgabe |01⟩ zu erhalten?
+                <div> Passe den Schaltkreis so an, 
+                    dass eine 50% Wahrscheinlichkeit besteht als Ausgabe <span class="curriculum-input-description">|10⟩</span>
+                    und eine 50% Wahrscheinlichkeit als Ausgabe <span class="curriculum-input-description">|01⟩</span> zu erhalten!
                 </div>
             </div>
             <div class="curriculum-spacer"></div>
@@ -86,6 +85,27 @@
             </p>
             <h2>Auswertung</h2>
 			<pre><samp id="circuit-report" for="circuit"></samp></pre>
+
+            <details>
+                <summary>
+                  Lösungshinweise    
+                  <svg viewBox="0 0 24 24" id="close" class="control-icon control-icon-expand" width="24" height="24" role="presentation">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" />
+                      <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path><path d="M0 0h24v24H0z" fill="none"></path>
+                    </svg>
+                  <svg viewBox="0 0 24 24" id="expand-more" class="control-icon control-icon-close" width="24" height="24" role="presentation">
+                      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path><path d="M0 0h24v24H0z" fill="none"></path>
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close" />
+                  </svg>
+                </summary>
+                <p>
+                    Dazu benötigst Du lediglich ein <span class="curriculum-gate-description">X</span>-Gatter, 
+                    das Du entweder auf das zweite Qubit (vor oder nach Anwendung des CNOT-Gatters) 
+                    oder auf das erste Qubit nach Anwendung des CNOT-Gatters anwendest.
+
+                </p>
+            </details>
+
 
             <!-- curriculum navigation -->
             <footer class="curriculum-footer">
@@ -133,8 +153,8 @@
 
         var circuit01 = Q`
         
-        I-H-X#0-I
-        I-I-X#1-I
+        I-H-X#0-I-I
+        I-I-X#1-I-I
         `
 
         circuit01.setName$( 'circuit' )

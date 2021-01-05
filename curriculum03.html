@@ -78,7 +78,7 @@
                   </svg>
                 </summary>
                 <p>
-                    Zunächst mag es seltsam anmuten, dass wir nur ein Gatter benötigen bei dem auch zwei Qubits beteiligt sind,
+                    Zunächst mag es seltsam anmuten, dass wir nur ein Gatter benötigen bei dem zwei Qubits beteiligt sind,
                     um einen universellen Quantencomputer zu bauen, aber tatsächlich reicht auch beim klassischen Computer 
                     ein Gatter mit zwei beteiligten Bits (das NAND-Gatter – eine Kombination aus NOT und AND-Gatter).
                 </p>
@@ -91,14 +91,52 @@
                 indem Du verschiedene Eingabewerte ausprobierst und mehrere Messungen durchführst.
                 </div>
             </div>
-            <p> So ein Gatter nennen wir CNOT...</p>
+            <details>
+                <summary>
+                  Lösungshinweise    
+                  <svg viewBox="0 0 24 24" id="close" class="control-icon control-icon-expand" width="24" height="24" role="presentation">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" />
+                      <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path><path d="M0 0h24v24H0z" fill="none"></path>
+                    </svg>
+                  <svg viewBox="0 0 24 24" id="expand-more" class="control-icon control-icon-close" width="24" height="24" role="presentation">
+                      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path><path d="M0 0h24v24H0z" fill="none"></path>
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close" />
+                  </svg>
+                </summary>
+                <p>
+                    Das Gatter negiert das zweite Qubit (Ziel-Qubit), sofern das erste Qubit (Kontroll-Qubit) 
+                    <span class="curriculum-input-description">1</span> ist. 
+                    Dieses Gatter nennen wir CNOT (Abkürzung für "Controlled NOT gate (kontrolliertes NICHT-Gatter)).
+                    Wenn die Qubits nicht in Superposition sind, können wir auch hierfür ein Wahrheitstabelle aufstellen.
+                </p>
+            </details>
             <div class=curriculum-exercise>
                 <div class="curriculum-exercise-icon">!</div>
-                <div>Füge nun ein Hadamard-Gatter <span class="curriculum-gate-description">H</span> vor dem CNOT-Gatter ein
-                    und führe erneut einige Messungen mit verschiedenen Eingabewerten durch. 
+                <div>Wende nun ein Hadamard-Gatter <span class="curriculum-gate-description">H</span> auf das erste Qubit
+                    vor der Anwendung des CNOT-Gatters an und führe erneut einige Messungen mit verschiedenen Eingabewerten durch. 
                     Welchen Effekt hat das Gatter auf das Gesamtergebnis?
                 </div>
             </div>
+            <details>
+                <summary>
+                  Lösungshinweise    
+                  <svg viewBox="0 0 24 24" id="close" class="control-icon control-icon-expand" width="24" height="24" role="presentation">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" />
+                      <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path><path d="M0 0h24v24H0z" fill="none"></path>
+                    </svg>
+                  <svg viewBox="0 0 24 24" id="expand-more" class="control-icon control-icon-close" width="24" height="24" role="presentation">
+                      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path><path d="M0 0h24v24H0z" fill="none"></path>
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close" />
+                  </svg>
+                </summary>
+                <p>
+                    Ist das kontrollierende Qubit in einer Superposition, hängt das Messergebnis des kontrollierten Qubits
+                    davon ab, welchen Wert das kontrollierende Qubit nun annimmt. 
+                    Die Zustände der beiden Qubits werden so <b>verschränkt</b>. 
+                    Wir können den Zustand eines einzelnen Qubits dann nicht mehr beschreiben ohne nicht die anderen Qubits auch 
+                    zu berücksichtigen.
+                </p>
+            </details>
             <h6>Hinweise</h6>
             <ul>
                 <li>
@@ -146,8 +184,8 @@
     
     <script>
         let circuit = Q`
-        I-I-X#0-I
-        I-I-X#1-I
+        I-I-X#0-I-I
+        I-I-X#1-I-I
          `
         document.getElementById("circuit").appendChild( circuit.toDom() )
 
