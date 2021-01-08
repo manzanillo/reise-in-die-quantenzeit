@@ -121,6 +121,11 @@
   display: none;
 }
 
+@media (max-width: 600px) {
+  nav ul {
+      top: 5rem;
+  }
+}
 /* exercise, note, ...*/
 .curriculum-exercise {
   border-style: dashed;

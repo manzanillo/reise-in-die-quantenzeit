@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
     home = window.location.protocol === "file:" ? "index.html" : "/"
 
   nav.innerHTML = `
-		<h1>
+		<h1 style="padding:0.6rem;">
 			Reise in die Quantenzeit
 		</h1>
 		<ul>
@@ -68,16 +68,6 @@ document.addEventListener("DOMContentLoaded", function () {
 			<li><h2><a href="curriculum03.html">Curriculum 03</a></h2></li>
 			<li><h2><a href="curriculum04.html">Curriculum 04</a></h2></li>
 			<li><h2><a href="curriculum05.html">Curriculum 05</a></h2></li>
-		</ul>
-		<p>API documentation</p>
-    <ul>
-      <li><h2><a href="${home}">Q.js Framework</a></h2></li>
-			<li><h2><a href="Q.html"><code>Q</code></a></h2></li>
-			<li><h2><a href="Q-ComplexNumber.html"><code class="q-prefix">ComplexNumber</code></a></h2></li>
-			<li><h2><a href="Q-Matrix.html"><code class="q-prefix">Matrix</code></a></h2></li>
-			<li><h2><a href="Q-Qubit.html"><code class="q-prefix">Qubit</code></a></h2></li>
-			<li><h2><a href="Q-Gate.html"><code class="q-prefix">Gate</code></a></h2></li>
-			<li><h2><a href="Q-Circuit.html"><code class="q-prefix">Circuit</code></a></h2></li>
 		</ul>
 		<div id="veggie-burger">
 			<div id="vb-top-dexter"></div>
