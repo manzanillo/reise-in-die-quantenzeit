@@ -65,29 +65,32 @@
             <p>
                 Wie du vielleicht bereits gehört hast, arbeiten klassische Computer mit nur zwei Zuständen: 
                 0 und 1. Wir sprechen auch von <b>Bits</b>.
-                Dazu nutzen sie elektronische Stromsignale: Ist der Strom aus, wird das als 0 interpretiert,
+                Dazu nutzen sie elektrische Signale: Ist der Strom aus, wird das als 0 interpretiert,
                 ist der Strom an als 1. Um damit nun Rechnungen durchführen zu können, brauchen Computer nur wenige Funktionen
                 – wir nennen sie Gatter.
-                Solch ein Gatter hat einen oder mehrere Eingänge, an denen es Signale entgegen nimmt und Ausgänge an denen 
-                es Signale weitergibt.
+                Solch ein Gatter hat einen oder mehrere Eingänge, an denen es Signale entgegen nimmt und Ausgänge an denen es Signale weitergibt.
             </p>
             <p>
-                Mehrere Gatter bilden zusammen einen Schaltkreis und sind so die Basis für Computer wie wir sie kennen.
-                Ein Algorithmus, der von einem Computer ausgeführt werden kann, ist dann nichts anderes als eine präzise
-                Beschreibung wann welches Gatter angewendet werden muss.
-            </p>
-            <p>
+                Mehrere Gatter bilden zusammen einen Schaltkreis und sind so die Basis für Computer wie wir sie kennen. 
+                Ein Algorithmus, der von einem Computer ausgeführt werden kann, ist dann nichts anderes als eine präzise Beschreibung wann welches Gatter angewendet werden muss.
                 Um zu verstehen, wie ein klassischer Computer im Innersten funktioniert,
                 ist es daher hilfreich zu verstehen wie diese Gatter funktionieren.
-                Dazu nutzt man häufig sogenannte Wahrheitstabellen, 
-                die beschreben wie sich Gatter für bestimmte Eingaben verhalten.
-                Dazu schreibt man typischerweise für jede mögliche Eingabe eine Zeile und fügt dann die Ausgabe hinzu.
+            </p>
+            <p>
+                Eine Möglichkeit sich die Funktionsweise von Gattern zu verdeutlichen, sind sogenannte Wahrheitstabellen. Eine Wahrheitstabelle beschreibt wie sich ein Gatter für alle Eingaben verhält. Dazu notiert man typischerweise für jede mögliche Eingabekombination die zugehörige Ausgabe.
+            </p>
 
+
+            <div class="curriculum-spacer"></div>
+
+            <!-- NICHT-Gatter-->
+            <h4>NICHT-Gatter</h4>
+            <p>
                 Ein bekanntes Gatter ist das NICHT-Gatter. Da es nur ein Bit als Eingabe entgegennimmt, besteht seine
                 Wahrheitstabelle nur aus zwei Zeilen:
             </p>
 
-            <table>
+            <table class="curriculum-classic-table" rules="all">
                 <thead>
                     <tr>
                         <td>
@@ -111,6 +114,13 @@
             <p>
                 Liegt am Eingang 0 an, geht der Ausgang an (wird also 1) und andersrum. 
             </p>
+
+
+            <div class="curriculum-spacer"></div>
+
+
+            <!-- AND Gatter-->
+            <h4><span class="curriculum-gate-description">&amp;</span>-Gatter</h4>
             <div class=curriculum-exercise>
                 <div class="curriculum-exercise-icon">!</div>
                 <div>Finde heraus, welche Funktion das Gatter 
@@ -216,6 +226,7 @@
 
 
             <!-- OR AUFGABE -->
+            <h4><span class="curriculum-gate-description">&ge;</span>-Gatter</h4>
             <div class=curriculum-exercise>
                 <div class="curriculum-exercise-icon">!</div>
                 <div>Finde heraus, welche Funktion das Gatter 
