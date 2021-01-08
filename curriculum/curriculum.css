@@ -105,6 +105,17 @@
 		);
 }
 
+.curriculum-classic-table {
+  border-collapse: collapse;
+  border-style: hidden;
+}
+
+.curriculum-classic-table td {
+  padding: 0.2rem 0.7rem 0.2rem 0.7rem;
+  text-align: center;
+  border: 1px solid rgb(182,190,201);
+}
+
 /* Hide console reference for circuit in the curriculum */
 .Q-circuit > p {
   display: none;
