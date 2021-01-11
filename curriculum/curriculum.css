@@ -167,6 +167,14 @@
   font-family: var( --Q-font-family-mono );
 }
 
+.curriculum-identity-description {
+  height: 12px;
+  width: 12px;
+  background: #505a62 linear-gradient( 0.45turn, rgba( 255, 255, 255, 0.1 ), rgba( 0, 0, 0, 0.05 ) );
+  border-radius: 50%;
+  display: inline-block;
+}
+
 
 /* Accordeon */
 
