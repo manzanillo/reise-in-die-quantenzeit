@@ -45,6 +45,9 @@
         <link rel="stylesheet" href="assets/documentation.css">
         <link rel="stylesheet" href="curriculum/curriculum.css">
         <link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+        
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
         <script src="Q/Q.js"></script>
         <script src="Q/Q-ComplexNumber.js"></script>
@@ -80,9 +83,45 @@
                 Die Anwendung des Hadamard-Gatters erzeugt eine gleichmäßige Superposition, sodass die 
                 Wahrscheinlichkeit  <span class="curriculum-input-description">0</span> bzw. 
                 <span class="curriculum-input-description">1</span> zu messen jeweils 50% beträgt.
-                Eine Messung zerstört allerdings die Superposition.
+                Eine Messung zerstört allerdings die Superposition. Die beiden Basiszustände 
+                <span class="curriculum-input-description">0</span> und 
+                <span class="curriculum-input-description">1</span> notieren wir dabei oft 
+                in der sogenannten ket-Notation als <span class="curriculum-input-description">|0⟩</span> und 
+                <span class="curriculum-input-description">|1⟩</span>.
             </p>
             <div style="margin-top: 2rem; padding: 1rem;"><img src="curriculum/curriculum03-superposition.svg" /></div>
+            <details>
+                <summary>
+                  Für Interessierte: Mehr zur ket-Notation    
+                  <svg viewBox="0 0 24 24" id="close" class="control-icon control-icon-expand" width="24" height="24" role="presentation">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" />
+                      <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path><path d="M0 0h24v24H0z" fill="none"></path>
+                    </svg>
+                  <svg viewBox="0 0 24 24" id="expand-more" class="control-icon control-icon-close" width="24" height="24" role="presentation">
+                      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path><path d="M0 0h24v24H0z" fill="none"></path>
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close" />
+                  </svg>
+                </summary>
+                <p>
+                    Diese Basiszustände können wir dann auch als Linearkombinationen miteinander verbinden und damit auch Superpositionszustände 
+                    beschreiben:
+                    $$a \cdot|0⟩ + b \cdot |1⟩ ~ \text{mit} ~ a^2 + b^2 = 1 $$
+
+                    Die Superpositionen, die aus der Anwendung des Hadamard-Gatters resultieren, ließen sich demnach schreiben als: 
+                    $$Hadamard(|0⟩) = \frac{1}{\sqrt{2}} |0⟩ + \frac{1}{\sqrt{2}} |1⟩$$
+
+                    $$Hadamard(|1⟩) = \frac{1}{\sqrt{2}} |0⟩ - \frac{1}{\sqrt{2}} |1⟩$$
+
+                    Quadriert man die Faktoren vor den Basiszuständen ergibt sich die Wahrscheinlichkeit, den jeweiligen Basiszustand zu messen:
+                    Für den ersten Zustand erhält man so bspw. \( (\frac{1}{\sqrt{2}})^2 = 0,5 = 50\% \) Wahrscheinlichkeit 
+                    bei einer Messung <span class="curriculum-input-description">|0⟩</span> als Ergebnis. 
+
+                    
+                </p>
+            </details>
+
+            <div class="curriculum-spacer"></div>
+
             <p>
                 Es wirkt zunächst so, als würde das Hadamard-Gatter jede im Qubit gespeicherte Information löschen.
                 Aber ist das wirklich so?
