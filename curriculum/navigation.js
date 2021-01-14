@@ -62,12 +62,13 @@ document.addEventListener("DOMContentLoaded", function () {
 			Reise in die Quantenzeit
 		</h1>
 		<ul>
-			<li><h2><a href="curriculum00.html">Curriculum 00</a></h2></li>
 			<li><h2><a href="curriculum01.html">Curriculum 01</a></h2></li>
 			<li><h2><a href="curriculum02.html">Curriculum 02</a></h2></li>
 			<li><h2><a href="curriculum03.html">Curriculum 03</a></h2></li>
 			<li><h2><a href="curriculum04.html">Curriculum 04</a></h2></li>
 			<li><h2><a href="curriculum05.html">Curriculum 05</a></h2></li>
+			<li><h2><a href="curriculum06.html">Curriculum 06</a></h2></li>
+			<li><h2><a href="curriculum07.html">Curriculum 07</a></h2></li>
 		</ul>
 		<div id="veggie-burger">
 			<div id="vb-top-dexter"></div>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <title>Reise in die Quantenzeit 07</title>
+        <meta charset="utf-8">
+        <meta name="viewport"             content="width=device-width,initial-scale=1.0">
+        <meta name="description"          content="Quantum computing in your browser.">
+        <meta name="copyright"            content="Stewart Smith 2019–2020">
+        <meta name="keywords"             content="
+            Q, Q.js, Q-js, Qjs, quantum JavaScript,
+            quantum, quantum physics, quantum mechanics, superposition,
+            quantum computer, quantum computer programming, quantum computing, QC, 
+            quantum simulator, quantum computer simulator, 
+            qubit, qbit, gate, Hadamard, Bloch, Bloch Sphere,
+            Web, Web site, website, Web browser, browser, HTML, HTML5, JavaScript, ES6, CSS,
+            Chrome, Firefox, Safari, Opera, Brave, Edge, WebKit, Blink, Gecko, Mozilla,
+            Stewart Smith, Stewart, Stew, Stuart, Steven, Steve, Stewdio, stewartsmith, stew_rtsmith, @stew_rtsmith,
+            Moar, Moar Technologies Corp, MTC,
+            Google, IBM, Microsoft, Amazon, NASA, DWave, D-Wave,
+            Quil, OpenQASM,
+                ProjectQ, Qiskit, 
+                Quantum Development Kit, Cirq, Strawberry Fields, t|ket>,
+                QCL, Quantum pseudocode, Q#, Q|SI>, Q language, qGCL, QFC, QML, LIQUi|>, Quipper,
+            Stanford CS 269 Q: Quantum Computer Programming">
+        
+        <meta name="twitter:card"         content="summary_large_image">
+        <meta name="twitter:site"         content="@stew_rtsmith">
+        <meta name="twitter:creator"      content="@stew_rtsmith">
+        <meta name="twitter:title"        content="Q ⟩ Curriculum 03">
+        <meta name="twitter:description"  content="Quantum computing in your browser.">
+        <meta name="twitter:image"        content="https://quantumjavascript.app/assets/Q-website-preview.jpg">
+        
+        <meta property="og:type"          content="website">
+        <meta property="og:title"         content="Q ⟩ Curriculum 03">
+        <meta property="og:description"   content="Quantum computing in your browser.">
+        <meta property="og:image"         content="https://quantumjavascript.app/assets/Q-website-preview.jpg">
+        <meta property="og:url"           content="https://quantumjavascript.app/Circuit.html">
+        
+        <link rel="canonical" href="https://quantumjavascript.app/Circuit.html">
+        <link href="assets/Q-favicon-064.png" rel="icon" type="image/png">
+        <link href="assets/Q-favicon-144.png" rel="apple-touch-icon">
+        
+        <link rel="stylesheet" href="Q/Q.css">
+        <link rel="stylesheet" href="Q/Q-Circuit-Editor.css">
+        <link rel="stylesheet" href="assets/documentation.css">
+        <link rel="stylesheet" href="curriculum/curriculum.css">
+
+
+        <script src="Q/Q.js"></script>
+        <script src="Q/Q-ComplexNumber.js"></script>
+        <script src="Q/Q-Matrix.js"></script>
+        <script src="Q/Q-Qubit.js"></script>
+        <script src="Q/Q-Gate.js"></script>
+        <script src="Q/Q-History.js"></script>
+        <script src="Q/Q-Circuit.js"></script>
+        <script src="Q/Q-Circuit-Editor.js"></script>
+        <script src="curriculum/navigation.js"></script>
+        
+    </head>
+    <body>
+		<main class="home">
+            <h3>Quantencomputer – Teil 7</h3>
+            <p>
+                Quantencomputer nutzen also Qubits und spezielle Quantengatter, um bestimmte Probleme 
+                effizienter zu lösen als klassische Computer. 
+                Quantencomputer könnten u.a. in der Erforschung neuer Medikamente und Impfstoffe, 
+                bei der Verkehrsoptimierung oder bei der Entwicklung von KI-Lösungen helfen. 
+                Aber: Nicht alle Probleme können durch Quantencomputer effizienter gelöst werden.
+            </p>
+            <p>
+                Reale Quantencomputern bieten oft noch einige weitere Gatter, die 
+                uns das Entwickeln eines Algorithmus erleichtern sollen.    
+            </p>
+            <p>
+                Viel wichtiger aber: Sie stellen auch ein paar mehr Qubits als unsere bisherigen 2 Qubits 
+                zur Verfügung.
+                 Moderne Quantencomputer verfügen aktuell über gut 50 bis 70 Qubits. 
+                 Mit den zusätzlichen Qubits steigt natürlich auch die Anzahl der möglichen Zustände. 
+                 Hatten wir bei 2 Qubits noch 4 mögliche Zustände, wären es bei 3 Qubits schon 8 
+                 und sind es bei 4 Qubits es sogar 16 (Schau dazu mal auf den Schaltkreis unten!).
+            </p>
+            <p>
+                In der Theorie klingt 50 bis 70 Qubits schonmal nicht schlecht.
+                Aber in der Praxis ist die Anzahl mindestens genauso wichtig wie die 
+                Möglichkeit, den Zustand der Qubits über einen möglichst langen Zeitraum zu halten. 
+                Und daran scheitern moderne Quantencomputer noch. 
+                Bisher sind sie daher noch kaum praxistauglich. Da mit Quantencomputern aber 
+                Rechnungen möglich sind, die ein klassischer Computer nicht kann, sind sie denen 
+                in einigen Anwendungen überlegen.   
+            </p>
+            <div class=curriculum-exercise>
+                <div class="curriculum-exercise-icon">!</div>
+                <div> Für die Schnellen: Kannst du einen Schaltkreis konstruieren, 
+                    sodass mindestens 2 Qubits je einen Wert ungleich 0 haben und diese Werte 
+                    unterschiedlich sind?
+                    <!--z.B. HPH auf einem Qbit-->
+                </div>
+            </div>
+            <div class="curriculum-spacer"></div>
+
+            
+            <div class='Q-circuit-palette' ></div>
+            <div id=circuit></div>
+
+            <h2>Auswertung</h2>
+			<pre><samp id="circuit-report" for="circuit"></samp></pre>
+
+            <!-- curriculum navigation -->
+            <footer class="curriculum-footer">
+                <a class="Q-button" 
+                    type="button" 
+                    href="curriculum06.html">
+                    Zurück
+                </a>
+                <a class="Q-button" 
+                    type="button" 
+                    disabled>
+                    Weiter
+            </a>
+            </footer>
+        </main>
+    </body>
+    
+    <script>
+        //  Let’s place circuit palettes
+        //  inside anything with the class 'Q-circuit-palette'.
+        Array
+        .from( document.querySelectorAll( '.Q-circuit-palette' ))
+        .forEach( function( el ){
+
+            Q.Circuit.Editor.createPalette( el )
+        })
+
+        window.addEventListener( 'Q.Circuit.evaluate completed', function( event ){
+
+            const circuit = event.detail.circuit
+            console.log( 
+
+                '\nEvaluation completed for “'+ circuit.name +'”'+
+                '\nwith these results:\n'+ circuit.report$() +'\n\n\n'
+            )
+            if( circuit.name !== undefined ){
+
+                const el = document.getElementById( circuit.name +'-report' )
+                if( el ) el.innerText = circuit.report$()
+            }
+        })
+        window.addEventListener( 'Q gui altered circuit', function( event ){
+            event.detail.circuit.evaluate$()
+        })
+
+        var circuit01 = Q`
+        
+        I-I-I-I-I
+        I-H-X#0-I-I
+        I-I-X#1-I-I
+        I-I-I-I-I
+        `
+
+        circuit01.setName$( 'circuit' )
+        document.getElementById("circuit").appendChild( circuit01.toDom() )
+        circuit01.evaluate$()
+    </script>
+</html>
