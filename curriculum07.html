@@ -55,38 +55,52 @@
         <script src="Q/Q-Circuit.js"></script>
         <script src="Q/Q-Circuit-Editor.js"></script>
         <script src="curriculum/navigation.js"></script>
-        
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
     </head>
     <body>
 		<main class="home">
             <h3>Quantencomputer – Teil 7</h3>
             <p>
-                Quantencomputer nutzen also Qubits und spezielle Quantengatter, um bestimmte Probleme 
-                effizienter zu lösen als klassische Computer. 
-                Quantencomputer könnten u.a. in der Erforschung neuer Medikamente und Impfstoffe, 
+                Auf den letzten Seiten haben wir gesehen: 
+                <ul>
+                    <li>Qubits können nicht nur in den beiden Zuständen 0 und 1 sein, sondern auch in einer Superposition aus 
+                        0 und 1. Dann hat es eine gewisse Wahrscheinlichkeit als 0 bzw. 1 gemessen zu werden. Eine Messung zerstört
+                         allerdings die Superposition.
+                    </li>
+                    <li>Auch wenn die Messergebnisse eines Qubits zufällig sind, ist das Qubit dennoch stets 
+                        in einem genau definierten Zustand.    
+                    </li>
+                    <li>Mehrere Qubits können miteinander verschränkt sein. Ihr Zustand lässt sich 
+                        dann nicht durch die Angabe eines individuellen Quantenzustand für jedes Qubit beschreiben.
+                    </li>
+                    <li>
+                        Quantencomputer nutzen spezielle Quantengatter, um den Zustand von Qubits zu manipulieren.
+                    </li>
+                </ul>
+            </p>
+            <p>
+                Während ein klassischer Computer mit \(n\) Bits nur eine Zahl darstellen kann, kann ein Quantencomputer 
+                mit \(n\) Qubits \(2^n\) Zustände gleichzeitig repräsentieren. Mit zwei Qubits lassen sich zunächst nur 
+                4 Zustände darstellen, bei 3 Qubits erhöht sich diese Zahl auf 8 und bei 4 Qubits sind es sogar 16 
+                (Schau dir dazu den Schaltkreis unten an!).
+                Schon mit 300 Qubits kann man mehr Zustände gleichzeitig darstellen als es Teilchen im Universium gibt.
+            </p>
+            <p>
+                Wahnsinn oder? Mit \(n\) Qubit lassen sich also theoretisch \(2^n\) Zustände auf einmal einnehmen, 
+                messen kann man aber trotzdem nur einen. Daher brauchen wir clevere Algorithmen, die die Besonderheiten 
+                von Qubits nutzen und dafür sorgen, dass das richtige Messergebnis aus diesen \(2^n\) Zuständen sehr wahrscheinlich wird. 
+                Mit den richtigen Algorithmen könnten Quantencomputer dann u.a. in der 
+                Erforschung neuer Medikamente und Impfstoffe, 
                 bei der Verkehrsoptimierung oder bei der Entwicklung von KI-Lösungen helfen. 
                 Aber: Nicht alle Probleme können durch Quantencomputer effizienter gelöst werden.
             </p>
             <p>
-                Reale Quantencomputern bieten oft noch einige weitere Gatter, die 
-                uns das Entwickeln eines Algorithmus erleichtern sollen.    
-            </p>
-            <p>
-                Viel wichtiger aber: Sie stellen auch ein paar mehr Qubits als unsere bisherigen 2 Qubits 
-                zur Verfügung.
-                 Moderne Quantencomputer verfügen aktuell über gut 50 bis 70 Qubits. 
-                 Mit den zusätzlichen Qubits steigt natürlich auch die Anzahl der möglichen Zustände. 
-                 Hatten wir bei 2 Qubits noch 4 mögliche Zustände, wären es bei 3 Qubits schon 8 
-                 und sind es bei 4 Qubits es sogar 16 (Schau dazu mal auf den Schaltkreis unten!).
-            </p>
-            <p>
+                Moderne Quantencomputer verfügen aktuell über gut 50 bis 70 Qubits. 
                 In der Theorie klingt 50 bis 70 Qubits schonmal nicht schlecht.
                 Aber in der Praxis ist die Anzahl mindestens genauso wichtig wie die 
                 Möglichkeit, den Zustand der Qubits über einen möglichst langen Zeitraum zu halten. 
-                Und daran scheitern moderne Quantencomputer noch. 
-                Bisher sind sie daher noch kaum praxistauglich. Da mit Quantencomputern aber 
-                Rechnungen möglich sind, die ein klassischer Computer nicht kann, sind sie denen 
-                in einigen Anwendungen überlegen.   
+                Daran scheitern moderne Quantencomputer (noch) und sind so bisher kaum praxistauglich.
             </p>
             <div class=curriculum-exercise>
                 <div class="curriculum-exercise-icon">!</div>
