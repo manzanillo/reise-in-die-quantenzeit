@@ -272,3 +272,12 @@ main > ul {
       transform: translateY(0);
   }
 }
+
+
+p + p {
+  text-indent: 0%;
+}
+
+p {
+  margin-top: 1rem;
+}
