@@ -61,17 +61,31 @@
 		<main class="home">
             <h3>Quantencomputer – Teil 6</h3>
             <p> Wie du mit deinen Messungen vermutlich bereits festgestellt hast, steht das Ergebnis eines
-                Schaltkreises nicht von Anfang an fest. 
-                Stattdessen erhalten wir – genau wie im Falle eines Qubits – bei einer Messung mit einer 
+                Schaltkreises bei Quantencomputern nicht von Anfang an fest. 
+                Auch im Falle von zwei Qubits erhalten wir – genau wie im Falle nur eines Qubits – bei einer Messung mit einer 
                 bestimmten Wahrscheinlichkeit ein bestimmtes Ergebnis. 
                 Um also ein verlässliches Ergebnis über den Zustand zu erhalten und zwischen den verschiedenen 
-                Superpositionszuständen unterscheiden zu können, müssen wir mehrere Messungen durchführen. 
+                Superpositionszuständen unterscheiden zu können, müssen wir eine Vielzahl an Messungen durchführen. 
+            </p>
+            <p>
+                Natürlich ist das so noch nicht besonders hilfreich, denn wir wollen mit Quantencomputern ja echte 
+                Herausforderungen lösen. Gut, dass sich die Wahrscheinlichkeit eines bestimmten Ergebnisses 
+                durch das Anwenden von Quantengattern beeinflussen lässt!
+                Unsere Aufgabe als Informatikerin bzw. Informatiker ist es, die Gatter so anzuordnen, dass 
+                wir am Ende mit einer hohen Wahrscheinlichkeit eine richtige Lösung messen!
+            </p>
+            <p>
+                Bevor wir selbst einen Algorithmus erstellen, wollen wir uns daher erst einmal noch einer 
+                kleineren Aufgabe zuwenden.
             </p>
             <div class=curriculum-exercise>
                 <div class="curriculum-exercise-icon">!</div>
-                <div> Passe den Schaltkreis so an, 
-                    dass eine 50% Wahrscheinlichkeit besteht als Ausgabe <span class="curriculum-input-description">|10⟩</span>
-                    und eine 50% Wahrscheinlichkeit als Ausgabe <span class="curriculum-input-description">|01⟩</span> zu erhalten!
+                <div> Überlege Dir, wo Du ein <span class="curriculum-gate-description">X</span>-Gatter 
+                    setzen solltest, sodass eine 50% Wahrscheinlichkeit besteht 
+                    als Ausgabe <span class="curriculum-input-description">|10⟩</span>
+                    und eine 50% Wahrscheinlichkeit als Ausgabe 
+                    <span class="curriculum-input-description">|01⟩</span> zu erhalten! 
+                    Passe den Schaltkreis entsprechend an!
                 </div>
             </div>
             <div class="curriculum-spacer"></div>
@@ -84,6 +98,7 @@
 
             </p>
             <h2>Auswertung</h2>
+            <p>Nach 1000 Messungen zeigt sich folgende Ergebnisverteilung:</p>
 			<pre><samp id="circuit-report" for="circuit"></samp></pre>
 
             <details>
