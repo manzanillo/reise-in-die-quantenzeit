@@ -60,11 +60,22 @@
     <body>
 		<main class="home">
             <h3>Quantencomputer – CNOT und Hadamard</h3>
-
+            <p>
+                Das CNOT-Gatter wendet ein X-Gatter auf das untere Qubit (Ziel-Qubit) an, sofern das obere Qubit 
+                (Kontroll-Qubit) im Zustand <span class="curriculum-input-description">1</span> ist. 
+                Ist das obere Qubit (Kontroll-Qubit) im Zustand <span class="curriculum-input-description">0</span>, 
+                ändert sich nichts am unteren Qubit.
+            </p>
+            <img src="curriculum/CNOT.svg" />
+            <p>
+                Was aber passiert, wenn das Kontroll-Qubit nicht im Zustand <span class="curriculum-input-description">0</span> 
+                oder im Zustand <span class="curriculum-input-description">1</span> ist sondern in einem 
+                Superpositionszustand?
+            </p>
             <div class=curriculum-exercise>
                 <div class="curriculum-exercise-icon">!</div>
                 <div>Wende nun ein Hadamard-Gatter <span class="curriculum-gate-description">H</span> auf das erste Qubit
-                    vor der Anwendung des CNOT-Gatters an und führe erneut einige Messungen mit verschiedenen Eingabewerten durch. 
+                    vor der Anwendung des CNOT-Gatters an, um es in eine gleichmäßige Superposition zu bringen, und führe erneut einige Messungen mit verschiedenen Eingabewerten durch. 
                     Welchen Effekt hat das Gatter auf das Gesamtergebnis?
                 </div>
             </div>

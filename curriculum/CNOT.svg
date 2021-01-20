@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="1700px" height="280px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g transform="matrix(1,0,0,1,-24.4598,-18)">
+        <g transform="matrix(1,0,0,1,-261.375,-21.6262)">
+            <g transform="matrix(4.57855,0,0,4.57855,-1342.76,-375.557)">
+                <path d="M377.517,105.483L425.788,105.483" style="fill:none;stroke:rgb(112,130,149);stroke-width:0.41px;"/>
+            </g>
+            <g transform="matrix(4.57855,0,0,4.57855,-1342.76,-246.105)">
+                <path d="M377.517,105.483L425.788,105.483" style="fill:none;stroke:rgb(112,130,149);stroke-width:0.41px;"/>
+            </g>
+            <g transform="matrix(1,0,0,1,-116.412,3.79587)">
+                <circle cx="612.639" cy="104.06" r="21.241" style="fill:rgb(81,89,98);"/>
+                <g transform="matrix(2.21464,0,0,2.21464,-744.133,3.1819)">
+                    <circle cx="612.639" cy="104.06" r="21.241" style="fill:rgb(81,89,98);"/>
+                </g>
+                <g transform="matrix(1,0,0,1,-1.61514,0)">
+                    <path d="M614.254,192.046L614.254,118.016" style="fill:none;stroke:rgb(81,89,98);stroke-width:8.67px;"/>
+                </g>
+            </g>
+            <g transform="matrix(1,0,0,1,-112.221,9.05955)">
+                <text x="590.604px" y="245.463px" style="font-family:'Roboto-Bold', 'Roboto';font-weight:700;font-size:53.333px;fill:white;">X</text>
+            </g>
+        </g>
+        <g transform="matrix(1,0,0,1,20.4476,5.29324)">
+            <text x="63.96px" y="96.5px" style="font-family:'RobotoMono-Bold', 'Roboto Mono', monospace;font-size:48px;fill:rgb(81,89,98);">0</text>
+        </g>
+        <g transform="matrix(1,0,0,1,20.4476,134.445)">
+            <text x="63.96px" y="96.5px" style="font-family:'RobotoMono-Bold', 'Roboto Mono', monospace;font-size:48px;fill:rgb(81,89,98);">0</text>
+        </g>
+        <g transform="matrix(1,0,0,1,290.363,134.445)">
+            <text x="63.96px" y="96.5px" style="font-family:'RobotoMono-Bold', 'Roboto Mono', monospace;font-size:48px;fill:rgb(81,89,98);">0</text>
+        </g>
+        <g transform="matrix(1,0,0,1,290.363,4.96776)">
+            <text x="63.96px" y="96.5px" style="font-family:'RobotoMono-Bold', 'Roboto Mono', monospace;font-size:48px;fill:rgb(81,89,98);">0</text>
+        </g>
+    </g>
+    <g transform="matrix(1,0,0,1,402.546,-18)">
+        <g transform="matrix(1,0,0,1,-261.375,-21.6262)">
+            <g transform="matrix(4.57855,0,0,4.57855,-1342.76,-375.557)">
+                <path d="M377.517,105.483L425.788,105.483" style="fill:none;stroke:rgb(112,130,149);stroke-width:0.41px;"/>
+            </g>
+            <g transform="matrix(4.57855,0,0,4.57855,-1342.76,-246.105)">
+                <path d="M377.517,105.483L425.788,105.483" style="fill:none;stroke:rgb(112,130,149);stroke-width:0.41px;"/>
+            </g>
+            <g transform="matrix(1,0,0,1,-116.412,3.79587)">
+                <circle cx="612.639" cy="104.06" r="21.241" style="fill:rgb(81,89,98);"/>
+                <g transform="matrix(2.21464,0,0,2.21464,-744.133,3.1819)">
+                    <circle cx="612.639" cy="104.06" r="21.241" style="fill:rgb(81,89,98);"/>
+                </g>
+                <g transform="matrix(1,0,0,1,-1.61514,0)">
+                    <path d="M614.254,192.046L614.254,118.016" style="fill:none;stroke:rgb(81,89,98);stroke-width:8.67px;"/>
+                </g>
+            </g>
+            <g transform="matrix(1,0,0,1,-112.221,9.05955)">
+                <text x="590.604px" y="245.463px" style="font-family:'Roboto-Bold', 'Roboto';font-weight:700;font-size:53.333px;fill:white;">X</text>
+            </g>
+        </g>
+        <g transform="matrix(1,0,0,1,20.4476,5.29324)">
+            <text x="63.96px" y="96.5px" style="font-family:'RobotoMono-Bold', 'Roboto Mono', monospace;font-size:48px;fill:rgb(81,89,98);">0</text>
+        </g>
+        <g transform="matrix(1,0,0,1,20.4476,134.445)">
+            <text x="63.96px" y="96.5px" style="font-family:'RobotoMono-Bold', 'Roboto Mono', monospace;font-size:48px;fill:rgb(81,89,98);">1</text>
+        </g>
+        <g transform="matrix(1,0,0,1,290.363,134.445)">
+            <text x="63.96px" y="96.5px" style="font-family:'RobotoMono-Bold', 'Roboto Mono', monospace;font-size:48px;fill:rgb(81,89,98);">1</text>
+        </g>
+        <g transform="matrix(1,0,0,1,290.363,4.96776)">
+            <text x="63.96px" y="96.5px" style="font-family:'RobotoMono-Bold', 'Roboto Mono', monospace;font-size:48px;fill:rgb(81,89,98);">0</text>
+        </g>
+    </g>
+    <g transform="matrix(1,0,0,1,829.552,-18)">
+        <g transform="matrix(1,0,0,1,-261.375,-21.6262)">
+            <g transform="matrix(4.57855,0,0,4.57855,-1342.76,-375.557)">
+                <path d="M377.517,105.483L425.788,105.483" style="fill:none;stroke:rgb(112,130,149);stroke-width:0.41px;"/>
+            </g>
+            <g transform="matrix(4.57855,0,0,4.57855,-1342.76,-246.105)">
+                <path d="M377.517,105.483L425.788,105.483" style="fill:none;stroke:rgb(112,130,149);stroke-width:0.41px;"/>
+            </g>
+            <g transform="matrix(1,0,0,1,-116.412,3.79587)">
+                <circle cx="612.639" cy="104.06" r="21.241" style="fill:rgb(81,89,98);"/>
+                <g transform="matrix(2.21464,0,0,2.21464,-744.133,3.1819)">
+                    <circle cx="612.639" cy="104.06" r="21.241" style="fill:rgb(81,89,98);"/>
+                </g>
+                <g transform="matrix(1,0,0,1,-1.61514,0)">
+                    <path d="M614.254,192.046L614.254,118.016" style="fill:none;stroke:rgb(81,89,98);stroke-width:8.67px;"/>
+                </g>
+            </g>
+            <g transform="matrix(1,0,0,1,-112.221,9.05955)">
+                <text x="590.604px" y="245.463px" style="font-family:'Roboto-Bold', 'Roboto';font-weight:700;font-size:53.333px;fill:white;">X</text>
+            </g>
+        </g>
+        <g transform="matrix(1,0,0,1,20.4476,5.29324)">
+            <text x="63.96px" y="96.5px" style="font-family:'RobotoMono-Bold', 'Roboto Mono', monospace;font-size:48px;fill:rgb(81,89,98);">1</text>
+        </g>
+        <g transform="matrix(1,0,0,1,20.4476,134.445)">
+            <text x="63.96px" y="96.5px" style="font-family:'RobotoMono-Bold', 'Roboto Mono', monospace;font-size:48px;fill:rgb(81,89,98);">0</text>
+        </g>
+        <g transform="matrix(1,0,0,1,290.363,134.445)">
+            <text x="63.96px" y="96.5px" style="font-family:'RobotoMono-Bold', 'Roboto Mono', monospace;font-size:48px;fill:rgb(81,89,98);">1</text>
+        </g>
+        <g transform="matrix(1,0,0,1,290.363,4.96776)">
+            <text x="63.96px" y="96.5px" style="font-family:'RobotoMono-Bold', 'Roboto Mono', monospace;font-size:48px;fill:rgb(81,89,98);">1</text>
+        </g>
+    </g>
+    <g transform="matrix(1,0,0,1,1256.56,-18)">
+        <g transform="matrix(1,0,0,1,-261.375,-21.6262)">
+            <g transform="matrix(4.57855,0,0,4.57855,-1342.76,-375.557)">
+                <path d="M377.517,105.483L425.788,105.483" style="fill:none;stroke:rgb(112,130,149);stroke-width:0.41px;"/>
+            </g>
+            <g transform="matrix(4.57855,0,0,4.57855,-1342.76,-246.105)">
+                <path d="M377.517,105.483L425.788,105.483" style="fill:none;stroke:rgb(112,130,149);stroke-width:0.41px;"/>
+            </g>
+            <g transform="matrix(1,0,0,1,-116.412,3.79587)">
+                <circle cx="612.639" cy="104.06" r="21.241" style="fill:rgb(81,89,98);"/>
+                <g transform="matrix(2.21464,0,0,2.21464,-744.133,3.1819)">
+                    <circle cx="612.639" cy="104.06" r="21.241" style="fill:rgb(81,89,98);"/>
+                </g>
+                <g transform="matrix(1,0,0,1,-1.61514,0)">
+                    <path d="M614.254,192.046L614.254,118.016" style="fill:none;stroke:rgb(81,89,98);stroke-width:8.67px;"/>
+                </g>
+            </g>
+            <g transform="matrix(1,0,0,1,-112.221,9.05955)">
+                <text x="590.604px" y="245.463px" style="font-family:'Roboto-Bold', 'Roboto';font-weight:700;font-size:53.333px;fill:white;">X</text>
+            </g>
+        </g>
+        <g transform="matrix(1,0,0,1,20.4476,5.29324)">
+            <text x="63.96px" y="96.5px" style="font-family:'RobotoMono-Bold', 'Roboto Mono', monospace;font-size:48px;fill:rgb(81,89,98);">1</text>
+        </g>
+        <g transform="matrix(1,0,0,1,20.4476,134.445)">
+            <text x="63.96px" y="96.5px" style="font-family:'RobotoMono-Bold', 'Roboto Mono', monospace;font-size:48px;fill:rgb(81,89,98);">1</text>
+        </g>
+        <g transform="matrix(1,0,0,1,290.363,134.445)">
+            <text x="63.96px" y="96.5px" style="font-family:'RobotoMono-Bold', 'Roboto Mono', monospace;font-size:48px;fill:rgb(81,89,98);">0</text>
+        </g>
+        <g transform="matrix(1,0,0,1,290.363,4.96776)">
+            <text x="63.96px" y="96.5px" style="font-family:'RobotoMono-Bold', 'Roboto Mono', monospace;font-size:48px;fill:rgb(81,89,98);">1</text>
+        </g>
+    </g>
+</svg>
