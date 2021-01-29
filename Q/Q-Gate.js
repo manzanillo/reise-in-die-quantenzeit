@@ -253,6 +253,19 @@ Q.Gate.createConstants(
 		}
 	}),
 
+	//CUSTOM
+	'ANDREAS', new Q.Gate({
+
+		symbol:    'A',
+		symbolAmazonBraket: 'a',
+		symbolSvg: '',
+		name:      'Andreas Spezial',
+		nameCss:   'andreas',
+		matrix: new Q.Matrix( // R_x(30°)
+			[ Math.sqrt(3) / 2,  -0.5 ],
+			[ 0.5, Math.sqrt(3)/2 ])
+	}),
+
 
 	//  Operate on 2 qubits.
 

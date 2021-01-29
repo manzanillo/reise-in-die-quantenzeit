@@ -143,8 +143,8 @@
 
             <p>
                 Neben dem <span class="curriculum-gate-description">H</span>-Gatter verfügen Quantencomputer noch über weitere Gatter.
-                Eines davon ist das <span class="curriculum-gate-description">P</span>-Gatter. In unserem Fall
-                kann man sich das <span class="curriculum-gate-description">P</span>-Gatter wie eine Drehung der Kugel um 90° entlang des Äquators vorstellen.
+                Eines davon ist das <span class="curriculum-gate-description">T</span>-Gatter. In unserem Fall
+                kann man sich das <span class="curriculum-gate-description">T</span>-Gatter wie eine Drehung um 22,5° vorstellen.
             </p>
             <img src="curriculum/P-gatter.svg"
                  style="display: block;
@@ -156,7 +156,7 @@
                 <div class="curriculum-exercise-icon">!</div>
                 <div>2. Füge zwischen die beiden Anwendungen des Hadamard-Gatters 
                     <span class="curriculum-gate-description">H</span> das bisher unbekannte 
-                    <span class="curriculum-gate-description">P</span>-Gatter ein und untersuche,
+                    <span class="curriculum-gate-description">T</span>-Gatter ein und untersuche,
                     welchen Effekt das neue Gatter auf das Gesamtergebnis hat!  
                 </div>
             </div>
@@ -240,7 +240,7 @@
         .from( document.querySelectorAll( '.Q-circuit-palette' ))
         .forEach( function( el ){
 
-            Q.Circuit.Editor.createPalette( el, "HXP" )
+            Q.Circuit.Editor.createPalette( el, "HXTA" )
         })
 
         window.addEventListener( 'Q.Circuit.evaluate completed', function( event ){
