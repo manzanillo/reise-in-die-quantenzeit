@@ -261,9 +261,9 @@ Q.Gate.createConstants(
 		symbolSvg: '',
 		name:      'Andreas Spezial',
 		nameCss:   'andreas',
-		matrix: new Q.Matrix( // R_x(30°)
-			[ Math.sqrt(3) / 2,  -0.5 ],
-			[ 0.5, Math.sqrt(3)/2 ])
+		matrix: new Q.Matrix( // R_x(22.5°)
+			[ Math.cos(22.5 * Math.PI / 180),  -Math.sin(22.5 * Math.PI / 180) ],
+			[ Math.sin(22.5 * Math.PI / 180), Math.cos(22.5 * Math.PI / 180) ])
 	}),
 
 
