@@ -89,10 +89,12 @@
                 <span class="curriculum-input-description">|1⟩</span>.
             </p>
             <p>
-                Denken wir noch einmal an unser Kugelmodell, das wir bei Bits bereits kennen gelernt haben. 
-                Pfeil runter haben wir dort als <span class="curriculum-input-description">0</span> und Pfeil 
-                hoch als <span class="curriculum-input-description">1</span> interpretiert. Nun kann diese Kugel 
-                allerdings auch anders gedreht sein, sodass der Pfeil in eine andere Richtung als die beiden zeigt. 
+                Denken wir noch einmal an das Kugelmodell, das wir bei Bits bereits kennen gelernt haben und bei dem wir 
+                Pfeil runter als <span class="curriculum-input-description">0</span> und Pfeil 
+                hoch als <span class="curriculum-input-description">1</span> interpretiert haben. Betrachten wir nun Qubits
+                kann diese Kugel auch anders gedreht sein, sodass der Pfeil in eine andere Richtung als oben oder unten zeigt. 
+                Messen wir, fällt die Kugel mit einer gewissen Wahrscheinlichkeit in den Basiszustand oben oder in den
+                Basiszustand unten zurück.
             </p>
             <div style="margin-top: 2rem; padding: 1rem;"><img src="curriculum/curriculum03-superposition.svg" /></div>
             <details>
@@ -126,7 +128,7 @@
             </details>
 
             <div class="curriculum-spacer"></div>
-
+            <h4>Hadamard-Gatter zweimal anwenden</h4>
             <p>
                 Es wirkt zunächst so, als würde das Hadamard-Gatter jede im Qubit gespeicherte Information löschen.
                 Aber ist das wirklich so?
@@ -141,12 +143,13 @@
                 </div>
             </div>
 
+            <h4>T-Gatter und Hadamard</h4>
             <p>
                 Neben dem <span class="curriculum-gate-description">H</span>-Gatter verfügen Quantencomputer noch über weitere Gatter.
                 Eines davon ist das <span class="curriculum-gate-description">T</span>-Gatter. In unserem Fall
                 kann man sich das <span class="curriculum-gate-description">T</span>-Gatter wie eine Drehung um 22,5° vorstellen.
             </p>
-            <img src="curriculum/P-gatter.svg"
+            <img src="curriculum/T-gatter.svg"
                  style="display: block;
                         margin-left: auto;
                         margin-right: auto;
@@ -240,7 +243,7 @@
         .from( document.querySelectorAll( '.Q-circuit-palette' ))
         .forEach( function( el ){
 
-            Q.Circuit.Editor.createPalette( el, "HXTA" )
+            Q.Circuit.Editor.createPalette( el, "HXT" )
         })
 
         window.addEventListener( 'Q.Circuit.evaluate completed', function( event ){
