@@ -654,7 +654,7 @@ Object.assign( Q.Circuit.prototype, {
 				+ outcome.state +'  '
 				+ ''.padStart( probabilityPositive, '█' )
 				+ ''.padStart( probabilityNegative, '░' )
-				+ Q.round( Math.round( 100 * outcome.probability ), 8 ).toString().padStart( 4, ' ' ) +'% chance'
+				+ Q.round( Math.round( 100 * outcome.probability ), 8 ).toString().padStart( 4, ' ' ) +'% Wahrscheinlichkeit'
 
 		}, '' ) + '\n'
 		return text
