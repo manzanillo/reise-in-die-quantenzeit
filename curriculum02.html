@@ -78,15 +78,55 @@
                 Genau wie gerade können wir Quantenschaltkreise durch Diagramme darstellen. Anders als gerade, stellt <b>jede 
                 Zeile nun ein Qubit</b> dar!
             </p>
+
+            <h4><span class="curriculum-gate-description">X</span>-Gatter</h4>
             <div class=curriculum-exercise>
                 <div class="curriculum-exercise-icon">!</div>
-                <div>1. Untersuche, welche Auswirkungen das Gatter <span class="curriculum-gate-description">X</span> auf ein Qubit hat, 
-                indem Du verschiedene Eingabewerte ausprobierst und <b>mindestens 10 Messungen</b> je Eingabewert durchführst.
+                <div>Untersuche, welche Auswirkungen das Gatter <span class="curriculum-gate-description">X</span> auf ein Qubit hat, 
+                indem Du die beiden Eingabewerte <span class="curriculum-input-description">0</span> und <span class="curriculum-input-description">1</span> ausprobierst.
                 </div>
             </div>
+            <h6>Hinweise</h6>
+            <ul>
+                <li>
+                    Jede Zeile stellt ein Qubit dar. 
+                    Verändere die Eingabewerte, indem Du auf die Zahlen am Anfang einer Zeile klickst.
+                </li>
+                <li>
+                    Führe eine Messung durch, indem Du auf <i>Auswerten</i> klickst.
+                </li>
+                <li>
+                    Du kannst Quantengatter mittels Drag&Drop hinzufügen oder entfernen.
+                </li>
+            </ul>
+            <div class="curriculum-spacer"></div>
+
+            <div class="">
+                <div class='Q-circuit-palette' data-gates='X' ></div>
+                <div id=circuit-X></div>
+                <button class="Q-button" 
+                        type="button" 
+                        onclick="auswerten('X')">
+                    Auswerten
+                </button>
+            </div>
+            <div class="curriculum-spacer"></div>
+            <h2>
+                Meine Messungen
+            </h2>
+            <div id="measurement-history-X" class="measurement-history-container">
+                <button class="measurement-history-action-button" onclick="resetHistory('X')">Reset</button>
+            </div>
+
+
+
+
+
+
+            <h4><span class="curriculum-gate-description">H</span>-Gatter</h4>
             <div class=curriculum-exercise>
                 <div class="curriculum-exercise-icon">!</div>
-                <div>2. Untersuche, welche Auswirkungen das Gatter <span class="curriculum-gate-description">H</span> auf ein Qubit hat, 
+                <div>Untersuche, welche Auswirkungen das Gatter <span class="curriculum-gate-description">H</span> auf ein Qubit hat, 
                 indem Du verschiedene Eingabewerte ausprobierst und <b>mindestens 10 Messungen</b> je Eingabewert durchführst.
                 </div>
             </div>
@@ -106,12 +146,11 @@
             <div class="curriculum-spacer"></div>
 
             <div class="">
-                <div class='Q-circuit-palette' ></div>
-                <div id=circuit></div>
+                <div class='Q-circuit-palette' data-gates='HX' ></div>
+                <div id=circuit-H></div>
                 <button class="Q-button" 
-                        id="evaluate-button" 
                         type="button" 
-                        onclick="auswerten()">
+                        onclick="auswerten('H')">
                     Auswerten
                 </button>
             </div>
@@ -119,8 +158,8 @@
             <h2>
                 Meine Messungen
             </h2>
-            <div id="measurement-history" class="measurement-history-container">
-                <button class="measurement-history-action-button" onclick="resetHistory()">Reset</button>
+            <div id="measurement-history-H" class="measurement-history-container">
+                <button class="measurement-history-action-button" onclick="resetHistory('H')">Reset</button>
             </div>
 
             <p>
@@ -145,20 +184,35 @@
 
     <script>
 
-        let circuit = Q`
+        let circuitX = Q`
         I-I-X-I-I
         `
-        document.getElementById("circuit").appendChild( circuit.toDom() )
+        document.getElementById("circuit-X").appendChild( circuitX.toDom() )
 
-        let evaluationHistory = []
+        let circuitH = Q`
+        I-I-H-I-I
+        `
+        document.getElementById("circuit-H").appendChild( circuitH.toDom() )
 
-        function resetHistory(){
-            evaluationHistory = []
-            let historyEls = document.getElementsByClassName('measurement-history-container-element')
+
+        let evaluationHistoryX = []
+        let evaluationHistoryH = []
+
+        function resetHistory(circuitPostfix){
+            if (circuitPostfix === "X"){
+                evaluationHistoryX = []
+            }
+            else {
+                evaluationHistoryH = []
+            }
+            let historyEls = document.getElementById('measurement-history-'+circuitPostfix)
+                                     .getElementsByClassName('measurement-history-container-element')
             Array.from(historyEls).map(el => el.parentNode.removeChild(el))
         }
 
-        function auswerten(){
+        function auswerten(circuitPostfix){
+            let circuit = circuitPostfix === "X" ? circuitX : circuitH
+            let evaluationHistory = circuitPostfix === "X" ? evaluationHistoryX : evaluationHistoryH
             // try evaluates the circuit onces and returns the index of the result
             let result = circuit.try$().toString(2).padStart(circuit.bandwidth, "0")
             
@@ -167,7 +221,7 @@
             let historyEl = document.createElement('div')
             historyEl.classList.add('measurement-history-container-element')
             historyEl.innerText = result
-            document.getElementById('measurement-history').prepend(historyEl)
+            document.getElementById('measurement-history-'+circuitPostfix).prepend(historyEl)
 
             for (let idx = 0; idx < '0' + result.length; idx++){
                 // if there is already a measurement taken, remove it
@@ -193,8 +247,7 @@
         Array
         .from( document.querySelectorAll( '.Q-circuit-palette' ))
         .forEach( function( el ){
-
-            Q.Circuit.Editor.createPalette( el, gates='HX' )
+            Q.Circuit.Editor.createPalette( el, gates=el.getAttribute('data-gates') )
         })
 
 
