@@ -1,0 +1,235 @@
+/*
+MIT LICENCED BY Alex Zaworski https://codepen.io/alexzaworski/pen/XJgmYv
+*/
+body,
+html {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+body {
+  transition: all 0.14s ease-in;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  padding: 2rem;
+}
+
+#on {
+  transform: translate(50%, 50%) scale(0);
+  opacity: 0;
+}
+.active #on {
+  opacity: 1;
+  transform: translate(0) scale(1);
+  transition: all 0.14s ease-in;
+}
+
+.fancy-bulb {
+  position: relative;
+  width: 20%;
+}
+
+.streaks,
+.streaks:after,
+.streaks:before {
+  position: absolute;
+  background: #ffdb55;
+  border-radius: 5.5px;
+  height: 9px;
+}
+
+.streaks:after,
+.streaks:before {
+  content: '';
+  display: block;
+}
+
+.streaks:before {
+  bottom: 40%;
+}
+
+.streaks:after {
+  top: 40%;
+}
+
+.left-streaks {
+  right: 30%;
+  top: 30%;
+}
+.active .left-streaks {
+  -webkit-animation: move-left 0.38s ease-out, width-to-zero 0.38s ease-out;
+  animation: move-left 0.38s ease-out, width-to-zero 0.38s ease-out;
+  -webkit-animation-delay: 0.14s;
+  animation-delay: 0.14s;
+}
+.left-streaks:before,
+.left-streaks:after {
+  left: 10%;
+}
+.active .left-streaks:before {
+  -webkit-animation: width-to-zero 0.38s ease-out, move-up 0.38s ease-out;
+  animation: width-to-zero 0.38s ease-out, move-up 0.38s ease-out;
+  -webkit-animation-delay: 0.14s;
+  animation-delay: 0.14s;
+}
+.active .left-streaks:after {
+  -webkit-animation: width-to-zero 0.38s ease-out, move-down 0.38s ease-out;
+  animation: width-to-zero 0.38s ease-out, move-down 0.38s ease-out;
+  -webkit-animation-delay: 0.14s;
+  animation-delay: 0.14s;
+}
+
+.right-streaks {
+  left: 40%;
+  top: 30%;
+}
+.active .right-streaks {
+  -webkit-animation: move-right 0.38s ease-out, width-to-zero 0.38s ease-out;
+  animation: move-right 0.38s ease-out, width-to-zero 0.38s ease-out;
+  -webkit-animation-delay: 0.14s;
+  animation-delay: 0.14s;
+}
+.right-streaks:before,
+.right-streaks:after {
+  right: 15px;
+}
+.active .right-streaks:before {
+  -webkit-animation: width-to-zero 0.38s ease-out, move-up 0.38s ease-out;
+  animation: width-to-zero 0.38s ease-out, move-up 0.38s ease-out;
+  -webkit-animation-delay: 0.14s;
+  animation-delay: 0.14s;
+}
+.active .right-streaks:after {
+  -webkit-animation: width-to-zero 0.38s ease-out, move-down 0.38s ease-out;
+  animation: width-to-zero 0.38s ease-out, move-down 0.38s ease-out;
+  -webkit-animation-delay: 0.14s;
+  animation-delay: 0.14s;
+}
+
+.left-streaks:before,
+.right-streaks:after {
+  transform: rotate(34deg);
+}
+
+.left-streaks:after,
+.right-streaks:before {
+  transform: rotate(-34deg);
+}
+
+#slider-up {
+  display: block;
+}
+#slider-down {
+  display: none;
+}
+
+.active #slider-up {
+  display: none;
+}
+.active #slider-down {
+  display: block;
+}
+
+#slider-up-not {
+  display: none;
+}
+#slider-down-not {
+  display: block;
+}
+
+.active #slider-up-not {
+  display: block;
+}
+.active #slider-down-not {
+  display: none;
+}
+
+@-webkit-keyframes move-left {
+  0% {
+    transform: none;
+  }
+  65% {
+    transform: translateX(-80px);
+  }
+  100% {
+    transform: translateX(-80px);
+  }
+}
+
+@keyframes move-left {
+  0% {
+    transform: none;
+  }
+  65% {
+    transform: translateX(-80px);
+  }
+  100% {
+    transform: translateX(-80px);
+  }
+}
+@-webkit-keyframes move-right {
+  0% {
+    transform: none;
+  }
+  65% {
+    transform: translateX(80px);
+  }
+  100% {
+    transform: translateX(80px);
+  }
+}
+@keyframes move-right {
+  0% {
+    transform: none;
+  }
+  65% {
+    transform: translateX(80px);
+  }
+  100% {
+    transform: translateX(80px);
+  }
+}
+@-webkit-keyframes width-to-zero {
+  0% {
+    width: 50px;
+  }
+  100% {
+    width: 11px;
+  }
+}
+@keyframes width-to-zero {
+  0% {
+    width: 50px;
+  }
+  100% {
+    width: 11px;
+  }
+}
+@-webkit-keyframes move-up {
+  100% {
+    bottom: 100.75px;
+  }
+}
+@keyframes move-up {
+  100% {
+    bottom: 100.75px;
+  }
+}
+@-webkit-keyframes move-down {
+  100% {
+    top: 100.75px;
+  }
+}
+@keyframes move-down {
+  100% {
+    top: 100.75px;
+  }
+}

@@ -1,0 +1,168 @@
+<html>
+  <link rel="stylesheet" href="lightbulb.css" />
+
+  <body>
+    <!-- MIT LICENCED BY Alex Zaworski https://codepen.io/alexzaworski/pen/XJgmYv-->
+    <div id="lightbulb" class="container">
+      <div
+        class="power"
+        onclick="toggleClass(document.getElementById('lightbulb'), 'active')"
+      >
+        <svg
+          width="80px"
+          height="100px"
+          viewBox="0 0 98 135"
+          style="
+            fill-rule: evenodd;
+            clip-rule: evenodd;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 1.5;
+          "
+        >
+          <g transform="matrix(1.58456,0,0,1,-1155.01,-947.963)">
+            <g transform="matrix(0.62561,0,0,1,726.316,935.526)">
+              <path
+                d="M100.167,33.471C100.167,23.242 91.789,14.936 81.47,14.936L25.378,14.936C15.058,14.936 6.68,23.242 6.68,33.471L6.68,125.495C6.68,135.724 15.058,144.03 25.378,144.03L81.47,144.03C91.789,144.03 100.167,135.724 100.167,125.495L100.167,33.471Z"
+                style="
+                  fill: rgb(235, 235, 235);
+                  stroke: black;
+                  stroke-width: 5.02px;
+                "
+              />
+            </g>
+            <g transform="matrix(0.63109,0,0,1,720.023,929.76)">
+              <circle cx="62.932" cy="40.404" r="3.838" />
+            </g>
+            <g transform="matrix(0.63109,0,0,1,720.023,1014.26)">
+              <circle cx="62.932" cy="40.404" r="3.838" />
+            </g>
+            <g transform="matrix(0.63109,0,0,1,719.746,929.76)">
+              <rect x="51.592" y="60.054" width="23.56" height="48.351" />
+            </g>
+            <g id="slider-up" transform="matrix(0.63109,0,0,1,758.997,956.055)">
+              <rect
+                x="-6.506"
+                y="37.286"
+                width="15.361"
+                height="25.583"
+                style="fill: rgb(235, 235, 235)"
+              />
+            </g>
+            <g
+              id="slider-down"
+              transform="matrix(0.63109,0,0,1,758.997,971.055)"
+            >
+              <rect
+                x="-6.506"
+                y="37.286"
+                width="15.361"
+                height="25.583"
+                style="fill: rgb(235, 235, 235)"
+              />
+            </g>
+          </g>
+        </svg>
+      </div>
+      <svg
+        width="100%"
+        height="100%"
+        viewBox="0 0 830 4"
+        style="
+          fill-rule: evenodd;
+          clip-rule: evenodd;
+          stroke-linejoin: round;
+          stroke-miterlimit: 1.5;
+        "
+      >
+        <g transform="matrix(1.61436,0,0,1,-1283.55,-1012.49)">
+          <path
+            d="M796.131,1014.18L1308.01,1014.18"
+            style="fill: none; stroke: rgb(107, 128, 147); stroke-width: 2.52px"
+          />
+        </g>
+      </svg>
+      <div class="fancy-bulb">
+        <div class="left-streaks streaks"></div>
+        <svg viewBox="0 0 275.3 413.3" height="100px">
+          <g id="off">
+            <path
+              fill="#E2ECF1"
+              d="M137.7,13.7C67.2,13.7,10,70.9,10,141.4c0,58.3,72.8,118.2,79.9,162.3h47.8h47.8
+                        c7.1-44,79.9-103.9,79.9-162.3C265.3,70.9,208.2,13.7,137.7,13.7z"
+            />
+          </g>
+          <g id="on">
+            <path
+              fill="#FFDB55"
+              d="M137.7,13.7C67.2,13.7,10,70.9,10,141.4c0,58.3,72.8,118.2,79.9,162.3h47.8h47.8
+                        c7.1-44,79.9-103.9,79.9-162.3C265.3,70.9,208.2,13.7,137.7,13.7z"
+            />
+          </g>
+
+          <g id="outline">
+            <path
+              fill="#F1F2F2"
+              stroke="#38434A"
+              stroke-width="19.1022"
+              stroke-miterlimit="10"
+              d="M168.5,375.5h-61.7c-8.9,0-16-7.2-16-16
+                        v-55.8h93.8v55.8C184.6,368.3,177.4,375.5,168.5,375.5z"
+            />
+            <path
+              fill="#F1F2F2"
+              stroke="#38434A"
+              stroke-width="19.1022"
+              stroke-miterlimit="10"
+              d="M151.2,401.5h-27.1c-3.9,0-7-3.2-7-7v-19
+                        h41.1v19C158.2,398.4,155.1,401.5,151.2,401.5z"
+            />
+            <line
+              fill="none"
+              stroke="#38434A"
+              stroke-width="19.1022"
+              stroke-miterlimit="10"
+              x1="184.6"
+              y1="339.6"
+              x2="90.8"
+              y2="339.6"
+            />
+            <path
+              fill="none"
+              stroke="#38434A"
+              stroke-width="19.1022"
+              stroke-miterlimit="10"
+              d="M137.7,13.7C67.2,13.7,10,70.9,10,141.4
+                        c0,58.3,72.8,118.2,79.9,162.3h47.8h47.8c7.1-44,79.9-103.9,79.9-162.3C265.3,70.9,208.2,13.7,137.7,13.7z"
+            />
+          </g>
+          <g id="highlight">
+            <path
+              fill="#FFDB55"
+              stroke="#FFFFFF"
+              stroke-width="21.0124"
+              stroke-linecap="round"
+              stroke-miterlimit="10"
+              d="M207.1,89.5
+                        c-12.3-16.1-28.4-29.1-46.9-37.8"
+            />
+            <path
+              fill="#FFDB55"
+              stroke="#FFFFFF"
+              stroke-width="21.0124"
+              stroke-linecap="round"
+              stroke-miterlimit="10"
+              d="M225,121.4
+                        c-0.8-2.2-1.8-4.4-2.7-6.5"
+            />
+          </g>
+        </svg>
+        <div class="right-streaks streaks"></div>
+      </div>
+    </div>
+
+    <script>
+      const toggleClass = (el, className) => el.classList.toggle(className)
+    </script>
+  </body>
+</html>
