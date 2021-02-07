@@ -75,15 +75,36 @@
                 Diese Gatter geben einen ersten Vorgeschmack auf das, was Quantencomputer so einzigartig macht. 
             </p>
             <p>
-                Genau wie gerade können wir Quantenschaltkreise durch Diagramme darstellen. Anders als gerade, stellt <b>jede 
+                Und genau wie gerade können wir Quantenschaltkreise durch Diagramme darstellen. Anders als gerade, stellt <b>jede 
                 Zeile nun ein Qubit</b> dar!
             </p>
 
             <h4><span class="curriculum-gate-description">X</span>-Gatter</h4>
+
             <div class=curriculum-exercise>
-                <div class="curriculum-exercise-icon">!</div>
+                <div class="curriculum-exercise-icon" style="width:2.4rem;">!</div>
                 <div>Untersuche, welche Auswirkungen das Gatter <span class="curriculum-gate-description">X</span> auf ein Qubit hat, 
-                indem Du die beiden Eingabewerte <span class="curriculum-input-description">0</span> und <span class="curriculum-input-description">1</span> ausprobierst.
+                indem Du <br/>
+                &bull; das <span class="curriculum-gate-description">X</span>-Gatter an verschiedene Positionen schiebst und jeweils eine Messung durchführst, <br/>
+                &bull; den Eingabewert von <span class="curriculum-input-description">0</span> auf <span class="curriculum-input-description">1</span> änderst und eine Messung durchführst
+                <br/>
+                &bull; und ein zweites <span class="curriculum-gate-description">X</span>-Gatter hinzufügst und eine Messung durchführst! 
+                Notiere deine Beobachtungen!
+            </div>
+            </div>
+            <div style="display: block;
+                        margin-left: auto;
+                        margin-right: auto;
+                        width: 75%;">
+                <img src="curriculum/operationen-an-schaltkreis.gif" 
+                     style="border-top: solid lightgray 1px;
+                            border-right: solid lightgray 1px;
+                            border-left: solid lightgray 1px;"
+                /> 
+                <div style="text-align: center;
+                            font-style: italic;
+                            font-size: 85%;">
+                            Die Animation zeigt Dir, wie Du Schaltkreise verändern und Messungen durchführen kannst.
                 </div>
             </div>
             <h6>Hinweise</h6>
@@ -96,7 +117,7 @@
                     Führe eine Messung durch, indem Du auf <i>Auswerten</i> klickst.
                 </li>
                 <li>
-                    Du kannst Quantengatter mittels Drag&Drop hinzufügen oder entfernen.
+                    Du kannst Quantengatter mittels Drag&Drop verschieben, hinzufügen oder entfernen.
                 </li>
             </ul>
             <div class="curriculum-spacer"></div>
@@ -140,7 +161,7 @@
                     Führe eine Messung durch, indem Du auf <i>Auswerten</i> klickst.
                 </li>
                 <li>
-                    Du kannst Quantengatter mittels Drag&Drop hinzufügen oder entfernen.
+                    Du kannst Quantengatter mittels Drag&Drop verschieben, hinzufügen oder entfernen.
                 </li>
             </ul>
             <div class="curriculum-spacer"></div>
@@ -247,6 +268,7 @@
         Array
         .from( document.querySelectorAll( '.Q-circuit-palette' ))
         .forEach( function( el ){
+            console.log(el.getAttribute('data-gates'))
             Q.Circuit.Editor.createPalette( el, gates=el.getAttribute('data-gates') )
         })
 
