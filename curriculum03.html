@@ -310,10 +310,6 @@
       <h6>Hinweise</h6>
       <ul>
         <li>
-          Verändere die Eingabewerte, indem Du auf die Zahlen am Anfang einer
-          Zeile klickst.
-        </li>
-        <li>
           Diesmal musste Du Messungen nicht mehr selbst durchführen. Sobald du
           etwas am Schaltkreis änderst, wird dieser ausgewertet und die
           Statistik entsprechend aktualisiert.
@@ -328,6 +324,51 @@
       <h2>Auswertung</h2>
       <p>Nach 1000 Messungen zeigt sich folgende Ergebnisverteilung:</p>
       <pre><samp id="circuit-1-report" for="circuit2"></samp></pre>
+
+      <details>
+        <summary>
+          Lösungshinweise
+          <svg
+            viewBox="0 0 24 24"
+            id="close"
+            class="control-icon control-icon-expand"
+            width="24"
+            height="24"
+            role="presentation"
+          >
+            <use
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xlink:href="#expand-more"
+            />
+            <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+            <path d="M0 0h24v24H0z" fill="none"></path>
+          </svg>
+          <svg
+            viewBox="0 0 24 24"
+            id="expand-more"
+            class="control-icon control-icon-close"
+            width="24"
+            height="24"
+            role="presentation"
+          >
+            <path
+              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+            ></path>
+            <path d="M0 0h24v24H0z" fill="none"></path>
+            <use
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xlink:href="#close"
+            />
+          </svg>
+        </summary>
+        <p>
+          Zweimaliges Anwenden bringt das Qubit wieder in den Ausgangszustand
+          zurück. Daraus können wir schließen, dass die im Qubit gespeichert
+          Information nicht verloren gegangen ist. Das heißt, auch wenn die
+          Messergebnisse rein zufällig wirken, ist das Qubit dennoch in einem
+          genau definierten Zustand.
+        </p>
+      </details>
 
       <h4>Kombination verschiedener Gatter</h4>
       <p>
@@ -351,7 +392,7 @@
         <div>
           Das bisher unbekannte
           <span class="curriculum-gate-description">T</span>-Gatter scheint
-          keinen Effekt zu haben. Füge <b>vor und nach</b> dem
+          zunächst keinen Effekt zu haben. Füge <b>vor und nach</b> dem
           <span class="curriculum-gate-description">T</span>-Gatter je ein
           Hadamard-Gatter
           <span class="curriculum-gate-description">H</span> ein. Wie wirkt sich
@@ -359,18 +400,6 @@
         </div>
       </div>
 
-      <h6>Hinweise</h6>
-      <ul>
-        <li>
-          Verändere die Eingabewerte, indem Du auf die Zahlen am Anfang einer
-          Zeile klickst.
-        </li>
-        <li>
-          Diesmal musste Du Messungen nicht mehr selbst durchführen. Sobald du
-          etwas am Schaltkreis änderst, wird dieser ausgewertet und die
-          Statistik entsprechend aktualisiert.
-        </li>
-      </ul>
       <div class="curriculum-spacer"></div>
 
       <div class="">
@@ -420,23 +449,20 @@
           </svg>
         </summary>
         <p>
-          Zweimaliges Anwenden bringt das Qubit wieder in den Ausgangszustand
-          zurück. Daraus können wir schließen, dass die im Qubit gespeichert
-          Information nicht verloren gegangen ist. Das heißt, auch wenn die
-          Messergebnisse rein zufällig wirken, ist das Qubit dennoch in einem
-          genau definierten Zustand.
+          Wenden wir vor und nach dem
+          <span class="curriculum-gate-description">T</span>-Gatter ein
+          <span class="curriculum-gate-description">H</span>-Gatter anwenden,
+          erhalten wir bei Startwert
+          <span class="curriculum-input-description">0</span> mit 85%
+          Wahrscheinlichkeit als Messergebnis
+          <span class="curriculum-input-description">0</span> und nur mit 15%
+          <span class="curriculum-input-description">1</span>.
           <br />
           <br />
-          Übertragen auf unser Kugelmodell bedeutet das, dass die Kugel sich
-          stets in einem genau definierten Zustand befindet, sich durch Messung
-          aber entweder nach oben oder nach unten dreht. Wir müssen also eine
-          Vielzahl an Messungen durchführen, um den Zustand exakt beschreiben zu
-          können.
-          <br />
-          <br />
-          Gleichzeitig bedeutet das auch, dass jede noch so kleine Änderung des
-          Zustands zwischen den beiden Hadamard-Gattern (bspw. durch ein anderes
-          Gate), durch die Auswertung des Schaltkreises aufgedeckt werden kann.
+          Das bedeutet, dass jede noch so kleine Änderung des Zustands zwischen
+          den beiden Hadamard-Gattern (bspw. durch ein anderes Gatter wie das
+          <span class="curriculum-gate-description">T</span>-Gatter), durch die
+          Auswertung des Schaltkreises aufgedeckt werden kann.
         </p>
       </details>
 
