@@ -434,7 +434,7 @@ Object.assign( Q.Circuit.Editor, {
 			y: event[ pageOrClient +'Y' ]
 		}
 	},
-	createPalette: function( targetEl, gates = 'HXYZPT*' ){
+	createPalette: function( targetEl ){
 
 		if( typeof targetEl === 'string' ) targetEl = document.getElementById( targetEl )	
 
@@ -448,7 +448,7 @@ Object.assign( Q.Circuit.Editor, {
 
 		paletteEl.classList.add( 'Q-circuit-palette' )
 
-		gates
+		'HXYZPT*'
 		.split( '' )
 		.forEach( function( symbol ){
 
@@ -1378,6 +1378,12 @@ Q.Circuit.Editor.onPointerPress = function( event ){
 			circuit.qubits[registerIndex - 1].isEqualTo(Q.Qubit.HORIZONTAL) ? 
 				qbitLabel.innerText = 0
 				: qbitLabel.innerText = 1
+
+			window.dispatchEvent( new CustomEvent( 
+
+				'Q gui altered circuit', 
+				{ detail: { circuit: circuit }}
+			))
 
 			return circuit.evaluate$()
 		  }
