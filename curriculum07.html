@@ -104,16 +104,15 @@
             </p>
             <div class=curriculum-exercise>
                 <div class="curriculum-exercise-icon">!</div>
-                <div> Für die Schnellen: Kannst du einen Schaltkreis konstruieren, 
-                    sodass mindestens 2 Qubits je einen Wert ungleich 0 haben und diese Werte 
-                    unterschiedlich sind?
-                    <!--z.B. HPH auf einem Qbit-->
+                <div> Für die Schnellen: Kannst Du eine gleichmäßige Superposition aller 16 Zustände erzeugen? 
+                    Wie viele Gatter benötigst Du dafür mindestens?
+                    <!--H auf jedes Qubit-->
                 </div>
             </div>
             <div class="curriculum-spacer"></div>
 
             
-            <div class='Q-circuit-palette' ></div>
+            <div class='Q-circuit-palette' data-gates="HXT*"></div>
             <div id=circuit></div>
 
             <h2>Auswertung</h2>
@@ -142,7 +141,7 @@
         .from( document.querySelectorAll( '.Q-circuit-palette' ))
         .forEach( function( el ){
 
-            Q.Circuit.Editor.createPalette( el )
+            Q.Circuit.Editor.createPalette( el, gates = el.getAttribute('data-gates') || 'HXYZPT*' )
         })
 
         window.addEventListener( 'Q.Circuit.evaluate completed', function( event ){
@@ -166,8 +165,8 @@
         var circuit01 = Q`
         
         I-I-I-I-I
-        I-H-X#0-I-I
-        I-I-X#1-I-I
+        I-I-I-I-I
+        I-I-I-I-I
         I-I-I-I-I
         `
 
