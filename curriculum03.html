@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
-	<head>
-        <title>Reise in die Quantenzeit 03</title>
-        <meta charset="utf-8">
-        <meta name="viewport"             content="width=device-width,initial-scale=1.0">
-        <meta name="description"          content="Quantum computing in your browser.">
-        <meta name="copyright"            content="Stewart Smith 2019–2020">
-        <meta name="keywords"             content="
+  <head>
+    <title>Reise in die Quantenzeit 03</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="description" content="Quantum computing in your browser." />
+    <meta name="copyright" content="Stewart Smith 2019–2020" />
+    <meta
+      name="keywords"
+      content="
             Q, Q.js, Q-js, Qjs, quantum JavaScript,
             quantum, quantum physics, quantum mechanics, superposition,
             quantum computer, quantum computer programming, quantum computing, QC, 
@@ -21,83 +23,167 @@
                 ProjectQ, Qiskit, 
                 Quantum Development Kit, Cirq, Strawberry Fields, t|ket>,
                 QCL, Quantum pseudocode, Q#, Q|SI>, Q language, qGCL, QFC, QML, LIQUi|>, Quipper,
-            Stanford CS 269 Q: Quantum Computer Programming">
-        
-        <meta name="twitter:card"         content="summary_large_image">
-        <meta name="twitter:site"         content="@stew_rtsmith">
-        <meta name="twitter:creator"      content="@stew_rtsmith">
-        <meta name="twitter:title"        content="Q ⟩ Curriculum 02">
-        <meta name="twitter:description"  content="Quantum computing in your browser.">
-        <meta name="twitter:image"        content="https://quantumjavascript.app/assets/Q-website-preview.jpg">
-        
-        <meta property="og:type"          content="website">
-        <meta property="og:title"         content="Q ⟩ Curriculum 02">
-        <meta property="og:description"   content="Quantum computing in your browser.">
-        <meta property="og:image"         content="https://quantumjavascript.app/assets/Q-website-preview.jpg">
-        <meta property="og:url"           content="https://quantumjavascript.app/Circuit.html">
-        
-        <link rel="canonical" href="https://quantumjavascript.app/Circuit.html">
-        <link href="assets/Q-favicon-064.png" rel="icon" type="image/png">
-        <link href="assets/Q-favicon-144.png" rel="apple-touch-icon">
-        
-        <link rel="stylesheet" href="Q/Q.css">
-        <link rel="stylesheet" href="Q/Q-Circuit-Editor.css">
-        <link rel="stylesheet" href="assets/documentation.css">
-        <link rel="stylesheet" href="curriculum/curriculum.css">
-        <link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-        
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+            Stanford CS 269 Q: Quantum Computer Programming"
+    />
 
-        <script src="Q/Q.js"></script>
-        <script src="Q/Q-ComplexNumber.js"></script>
-        <script src="Q/Q-Matrix.js"></script>
-        <script src="Q/Q-Qubit.js"></script>
-        <script src="Q/Q-Gate.js"></script>
-        <script src="Q/Q-History.js"></script>
-        <script src="Q/Q-Circuit.js"></script>
-        <script src="Q/Q-Circuit-Editor.js"></script>
-        <script src="curriculum/navigation.js"></script>
-        
-    </head>
-    <body>
-		<main class="home">
-            <h3>Quantencomputer – Superposition</h3>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@stew_rtsmith" />
+    <meta name="twitter:creator" content="@stew_rtsmith" />
+    <meta name="twitter:title" content="Q ⟩ Curriculum 02" />
+    <meta
+      name="twitter:description"
+      content="Quantum computing in your browser."
+    />
+    <meta
+      name="twitter:image"
+      content="https://quantumjavascript.app/assets/Q-website-preview.jpg"
+    />
 
-            <p>
-                Während sich das <span class="curriculum-gate-description">X</span>-Gatter ein bisschen so verhält, 
-                wie du es auch vom NICHT-Gatter eines klassischen Computers kennst, wirst Du wirst festgestellt haben,
-                 dass das sogenannte Hadamard-Gatter <span class="curriculum-gate-description">H</span> dafür sorgt,
-                 dass wir in ungefähr 50% der Fällen <span class="curriculum-input-description">0</span> messen und 
-                 in den anderen 50% <span class="curriculum-input-description">1</span>.
-            </p>
-            <p>
-                Damit hast du eine der Besonderheiten aus der Welt der Quantencomputer kennengelernt: 
-                Ein Qubit kann den Wert <span class="curriculum-input-description">0</span> und den Wert 
-                <span class="curriculum-input-description">1</span> annehmen oder in einer <b>Superposition</b> 
-                aus <span class="curriculum-input-description">0</span> und 
-                <span class="curriculum-input-description">1</span> sein. 
-                Dann hat es eine bestimmte Chance als <span class="curriculum-input-description">0</span> bzw. 
-                <span class="curriculum-input-description">1</span> gemessen zu werden. 
-                Die Anwendung des Hadamard-Gatters erzeugt eine gleichmäßige Superposition, sodass die 
-                Wahrscheinlichkeit  <span class="curriculum-input-description">0</span> bzw. 
-                <span class="curriculum-input-description">1</span> zu messen jeweils 50% beträgt.
-                Eine Messung zerstört allerdings die Superposition. <!--Die beiden Basiszustände 
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Q ⟩ Curriculum 02" />
+    <meta
+      property="og:description"
+      content="Quantum computing in your browser."
+    />
+    <meta
+      property="og:image"
+      content="https://quantumjavascript.app/assets/Q-website-preview.jpg"
+    />
+    <meta
+      property="og:url"
+      content="https://quantumjavascript.app/Circuit.html"
+    />
+
+    <link rel="canonical" href="https://quantumjavascript.app/Circuit.html" />
+    <link href="assets/Q-favicon-064.png" rel="icon" type="image/png" />
+    <link href="assets/Q-favicon-144.png" rel="apple-touch-icon" />
+
+    <link rel="stylesheet" href="Q/Q.css" />
+    <link rel="stylesheet" href="Q/Q-Circuit-Editor.css" />
+    <link rel="stylesheet" href="assets/documentation.css" />
+    <link rel="stylesheet" href="curriculum/curriculum.css" />
+    <link
+      href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css"
+      rel="stylesheet"
+    />
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <script src="Q/Q.js"></script>
+    <script src="Q/Q-ComplexNumber.js"></script>
+    <script src="Q/Q-Matrix.js"></script>
+    <script src="Q/Q-Qubit.js"></script>
+    <script src="Q/Q-Gate.js"></script>
+    <script src="Q/Q-History.js"></script>
+    <script src="Q/Q-Circuit.js"></script>
+    <script src="Q/Q-Circuit-Editor.js"></script>
+    <script src="curriculum/navigation.js"></script>
+  </head>
+  <body>
+    <main class="home">
+      <h3>Quantencomputer – Superposition</h3>
+
+      <p>
+        Während sich das
+        <span class="curriculum-gate-description">X</span>-Gatter ein bisschen
+        so verhält, wie du es auch vom NICHT-Gatter eines klassischen Computers
+        kennst, wirst Du wirst festgestellt haben, dass das sogenannte
+        Hadamard-Gatter <span class="curriculum-gate-description">H</span> dafür
+        sorgt, dass wir in ungefähr 50% der Fällen
+        <span class="curriculum-input-description">0</span> messen und in den
+        anderen 50% <span class="curriculum-input-description">1</span>.
+      </p>
+      <p>
+        Damit hast du eine der Besonderheiten aus der Welt der Quantencomputer
+        kennengelernt: Ein Qubit kann den Wert
+        <span class="curriculum-input-description">0</span> und den Wert
+        <span class="curriculum-input-description">1</span> annehmen oder in
+        einer <b>Superposition</b> aus
+        <span class="curriculum-input-description">0</span> und
+        <span class="curriculum-input-description">1</span> sein. Dann hat es
+        eine bestimmte Wahrscheinlichkeit als
+        <span class="curriculum-input-description">0</span> bzw.
+        <span class="curriculum-input-description">1</span> gemessen zu werden.
+        Die Anwendung des Hadamard-Gatters erzeugt eine gleichmäßige
+        Superposition, sodass die Wahrscheinlichkeit
+        <span class="curriculum-input-description">0</span> bzw.
+        <span class="curriculum-input-description">1</span> zu messen jeweils
+        50% beträgt. Eine Messung zerstört allerdings die Superposition.
+        <!--Die beiden Basiszustände 
                 <span class="curriculum-input-description">0</span> und 
                 <span class="curriculum-input-description">1</span> notieren wir dabei oft 
                 in der sogenannten ket-Notation als <span class="curriculum-input-description">|0⟩</span> und 
                 <span class="curriculum-input-description">|1⟩</span>.-->
-            </p>
-            <p>
-                Denken wir noch einmal an das Kugelmodell, das wir bei Bits bereits kennen gelernt haben und bei dem wir 
-                Pfeil runter als <span class="curriculum-input-description">0</span> und Pfeil 
-                hoch als <span class="curriculum-input-description">1</span> interpretiert haben. Betrachten wir nun Qubits
-                kann diese Kugel auch anders gedreht sein, sodass der Pfeil in eine andere Richtung als oben oder unten zeigt. 
-                Messen wir, fällt die Kugel mit einer gewissen Wahrscheinlichkeit in den Basiszustand oben oder in den
-                Basiszustand unten zurück.
-            </p>
-            <div style="margin-top: 2rem; padding: 1rem;"><img src="curriculum/curriculum03-superposition.svg" /></div>
-            <!--
+      </p>
+      <p>
+        Denken wir noch einmal an das Kugelmodell, das wir bei Bits bereits
+        kennen gelernt haben und bei dem wir Pfeil runter als
+        <span class="curriculum-input-description">0</span> und Pfeil hoch als
+        <span class="curriculum-input-description">1</span> interpretiert haben.
+        Betrachten wir nun Qubits kann diese Kugel auch anders gedreht sein,
+        sodass der Pfeil in eine andere Richtung als oben oder unten zeigt.
+        Messen wir, fällt die Kugel mit einer gewissen Wahrscheinlichkeit in den
+        Basiszustand oben oder in den Basiszustand unten zurück.
+      </p>
+      <div style="margin-top: 2rem; padding: 1rem">
+        <img src="curriculum/curriculum03-superposition.svg" />
+      </div>
+
+      <details>
+        <summary>
+          Ganz schön kompliziert...
+          <svg
+            viewBox="0 0 24 24"
+            id="close"
+            class="control-icon control-icon-expand"
+            width="24"
+            height="24"
+            role="presentation"
+          >
+            <use
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xlink:href="#expand-more"
+            />
+            <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+            <path d="M0 0h24v24H0z" fill="none"></path>
+          </svg>
+          <svg
+            viewBox="0 0 24 24"
+            id="expand-more"
+            class="control-icon control-icon-close"
+            width="24"
+            height="24"
+            role="presentation"
+          >
+            <path
+              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+            ></path>
+            <path d="M0 0h24v24H0z" fill="none"></path>
+            <use
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xlink:href="#close"
+            />
+          </svg>
+        </summary>
+        <p>
+          Superposition ist deshalb so schwer vorstellbar, weil es nur bei sehr
+          kleinen Objekten wie Elektronen oder Photonen (Lichtteilchen)
+          auftritt. Bei Objekten, die wir jeden Tag nutzen, lässt sie sich nicht
+          beobachten. Einen Aspekt können wir uns aber auch mithilfe von Münzen
+          demonstrieren: Eine Münze hat eine 50/50-Wahrscheinlichkeit, entweder
+          auf Kopf oder auf Zahl zu landen. Wir können sagen, dass sich die
+          Münze in einer Superposition aus Kopf und Zahl befindet. Wenn sie
+          landet, hat sie aber einen eindeutigen Zustand, entweder Kopf oder
+          Zahl – die Superposition wird also zerstört.
+        </p>
+      </details>
+
+      <!--
             <details>
                 <summary>
                   Für Interessierte: Mehr zur ket-Notation    
@@ -126,176 +212,215 @@
                 </p>
             </details>-->
 
-            <div class="curriculum-spacer"></div>
-            <h4>Hadamard-Gatter zweimal anwenden</h4>
-            <p>
-                Es wirkt zunächst so, als würde das Hadamard-Gatter jede im Qubit gespeicherte Information löschen.
-                Aber ist das wirklich so?
-            </p>
+      <div class="curriculum-spacer"></div>
+      <h4>Hadamard-Gatter zweimal anwenden</h4>
+      <p>
+        Es wirkt zunächst so, als würde das Hadamard-Gatter jede im Qubit
+        gespeicherte Information löschen. Aber ist das wirklich so?
+      </p>
 
-            <div class=curriculum-exercise>
-                <div class="curriculum-exercise-icon">!</div>
-                <div>Wende das Hadamard-Gatter <span class="curriculum-gate-description">H</span> zweimal hintereinander an.
-                     Wähle einmal <span class="curriculum-input-description">0</span> und einmal 
-                     <span class="curriculum-input-description">1</span> als Eingabewert und beschreibe deine Beobachtung! 
-                     Was bedeutet das für die im Qubit gespeicherte Information?
-                </div>
-            </div>
+      <div class="curriculum-exercise">
+        <div class="curriculum-exercise-icon">!</div>
+        <div>
+          Wende das Hadamard-Gatter
+          <span class="curriculum-gate-description">H</span> zweimal
+          hintereinander an. Wähle einmal
+          <span class="curriculum-input-description">0</span> und einmal
+          <span class="curriculum-input-description">1</span> als Eingabewert
+          und beschreibe deine Beobachtung! Was bedeutet das für die im Qubit
+          gespeicherte Information?
+        </div>
+      </div>
 
-            <h6>Hinweise</h6>
-            <ul>
-                <li>
-                    Verändere die Eingabewerte, indem Du auf die Zahlen am Anfang einer Zeile klickst.
-                </li>
-                <li>
-                    Diesmal musste Du Messungen nicht mehr selbst durchführen. Sobald du etwas am 
-                    Schaltkreis änderst, wird dieser ausgewertet und die Statistik entsprechend aktualisiert.
-                </li>
-            </ul>
+      <h6>Hinweise</h6>
+      <ul>
+        <li>
+          Verändere die Eingabewerte, indem Du auf die Zahlen am Anfang einer
+          Zeile klickst.
+        </li>
+        <li>
+          Diesmal musste Du Messungen nicht mehr selbst durchführen. Sobald du
+          etwas am Schaltkreis änderst, wird dieser ausgewertet und die
+          Statistik entsprechend aktualisiert.
+        </li>
+      </ul>
 
-            <div class="">
-                <div class='Q-circuit-palette' data-gates="HX"></div>
-                <div id=circuit-1></div>
-            </div>
+      <div class="">
+        <div class="Q-circuit-palette" data-gates="HX"></div>
+        <div id="circuit-1"></div>
+      </div>
 
-            <h5>Auswertung</h5>
-            <p>Nach 1000 Messungen zeigt sich folgende Ergebnisverteilung:</p>
-			<pre><samp id="circuit-1-report" for="circuit2"></samp></pre>
+      <h2>Auswertung</h2>
+      <p>Nach 1000 Messungen zeigt sich folgende Ergebnisverteilung:</p>
+      <pre><samp id="circuit-1-report" for="circuit2"></samp></pre>
 
-            <h4>T-Gatter und Hadamard</h4>
-            <p>
-                Neben dem <span class="curriculum-gate-description">H</span>-Gatter verfügen Quantencomputer noch über weitere Gatter.
-                Eines davon ist das <span class="curriculum-gate-description">T</span>-Gatter. In unserem Fall
-                kann man sich das <span class="curriculum-gate-description">T</span>-Gatter wie eine Drehung um 22,5° vorstellen.
-            </p>
-            <img src="curriculum/T-gatter.svg"
-                 style="display: block;
-                        margin-left: auto;
-                        margin-right: auto;
-                        width: 50%;" />
-            <!-- TODO: Die Erklärung in Lösungshinweise umlagern, damit das mit dem definierten Zustand nicht schon vorweggenommen wird?-->
-            <div class=curriculum-exercise>
-                <div class="curriculum-exercise-icon">!</div>
-                <div>Füge zwischen die beiden Anwendungen des Hadamard-Gatters 
-                    <span class="curriculum-gate-description">H</span> das bisher unbekannte 
-                    <span class="curriculum-gate-description">T</span>-Gatter ein und untersuche,
-                    welchen Effekt das neue Gatter auf das Gesamtergebnis hat!  
-                </div>
-            </div>
+      <h4>T-Gatter und Hadamard</h4>
+      <p>
+        Neben dem <span class="curriculum-gate-description">H</span>-Gatter
+        verfügen Quantencomputer noch über weitere Gatter. Eines davon ist das
+        <span class="curriculum-gate-description">T</span>-Gatter. In unserem
+        Fall kann man sich das
+        <span class="curriculum-gate-description">T</span>-Gatter wie eine
+        Drehung um 22,5° vorstellen.
+      </p>
+      <img
+        src="curriculum/T-gatter.svg"
+        style="
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          width: 50%;
+        "
+      />
+      <!-- TODO: Die Erklärung in Lösungshinweise umlagern, damit das mit dem definierten Zustand nicht schon vorweggenommen wird?-->
+      <div class="curriculum-exercise">
+        <div class="curriculum-exercise-icon">!</div>
+        <div>
+          Füge zwischen die beiden Anwendungen des Hadamard-Gatters
+          <span class="curriculum-gate-description">H</span> das bisher
+          unbekannte <span class="curriculum-gate-description">T</span>-Gatter
+          ein und untersuche, welchen Effekt das neue Gatter auf das
+          Gesamtergebnis hat!
+        </div>
+      </div>
 
-            <h6>Hinweise</h6>
-            <ul>
-                <li>
-                    Verändere die Eingabewerte, indem Du auf die Zahlen am Anfang einer Zeile klickst.
-                </li>
-                <li>
-                    Diesmal musste Du Messungen nicht mehr selbst durchführen. Sobald du etwas am 
-                    Schaltkreis änderst, wird dieser ausgewertet und die Statistik entsprechend aktualisiert.
-                </li>
-            </ul>
-            <div class="curriculum-spacer"></div>
+      <h6>Hinweise</h6>
+      <ul>
+        <li>
+          Verändere die Eingabewerte, indem Du auf die Zahlen am Anfang einer
+          Zeile klickst.
+        </li>
+        <li>
+          Diesmal musste Du Messungen nicht mehr selbst durchführen. Sobald du
+          etwas am Schaltkreis änderst, wird dieser ausgewertet und die
+          Statistik entsprechend aktualisiert.
+        </li>
+      </ul>
+      <div class="curriculum-spacer"></div>
 
-            <div class="">
-                <div class='Q-circuit-palette' data-gates="HXT" ></div>
-                <div id=circuit-2></div>
-            </div>
-            <div class="curriculum-spacer"></div>
-            
+      <div class="">
+        <div class="Q-circuit-palette" data-gates="HXT"></div>
+        <div id="circuit-2"></div>
+      </div>
+      <div class="curriculum-spacer"></div>
 
-            <h5>Auswertung</h5>
-            <p>Nach 1000 Messungen zeigt sich folgende Ergebnisverteilung:</p>
-			<pre><samp id="circuit-2-report" for="circuit-2"></samp></pre>
+      <h2>Auswertung</h2>
+      <p>Nach 1000 Messungen zeigt sich folgende Ergebnisverteilung:</p>
+      <pre><samp id="circuit-2-report" for="circuit-2"></samp></pre>
 
-            <details>
-                <summary>
-                  Lösungshinweise    
-                  <svg viewBox="0 0 24 24" id="close" class="control-icon control-icon-expand" width="24" height="24" role="presentation">
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" />
-                      <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path><path d="M0 0h24v24H0z" fill="none"></path>
-                    </svg>
-                  <svg viewBox="0 0 24 24" id="expand-more" class="control-icon control-icon-close" width="24" height="24" role="presentation">
-                      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path><path d="M0 0h24v24H0z" fill="none"></path>
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close" />
-                  </svg>
-                </summary>
-                <p>
-                    Zweimaliges Anwenden bringt das Qubit wieder in den Ausgangszustand zurück. 
-                    Daraus können wir schließen, 
-                    dass die im Qubit gespeichert Information nicht verloren gegangen ist. 
-                    Das heißt, auch wenn die Messergebnisse rein zufällig wirken, 
-                    ist das Qubit dennoch in einem genau definierten Zustand.
-                    <br/>
-                    <br/>
-                    Übertragen auf unser Kugelmodell bedeutet das, dass die Kugel sich stets 
-                    in einem genau definierten Zustand befindet, sich durch Messung aber entweder nach oben oder nach 
-                    unten dreht. Wir müssen also eine Vielzahl an Messungen durchführen, 
-                    um den Zustand exakt beschreiben zu können.
-                    <br/>
-                    <br/>
-                    Gleichzeitig bedeutet das auch, dass jede noch so kleine Änderung des Zustands 
-                    zwischen den beiden Hadamard-Gattern (bspw. durch ein anderes Gate), durch 
-                    die Auswertung des Schaltkreises aufgedeckt werden kann.
-                </p>
-            </details>
+      <details>
+        <summary>
+          Lösungshinweise
+          <svg
+            viewBox="0 0 24 24"
+            id="close"
+            class="control-icon control-icon-expand"
+            width="24"
+            height="24"
+            role="presentation"
+          >
+            <use
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xlink:href="#expand-more"
+            />
+            <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+            <path d="M0 0h24v24H0z" fill="none"></path>
+          </svg>
+          <svg
+            viewBox="0 0 24 24"
+            id="expand-more"
+            class="control-icon control-icon-close"
+            width="24"
+            height="24"
+            role="presentation"
+          >
+            <path
+              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+            ></path>
+            <path d="M0 0h24v24H0z" fill="none"></path>
+            <use
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xlink:href="#close"
+            />
+          </svg>
+        </summary>
+        <p>
+          Zweimaliges Anwenden bringt das Qubit wieder in den Ausgangszustand
+          zurück. Daraus können wir schließen, dass die im Qubit gespeichert
+          Information nicht verloren gegangen ist. Das heißt, auch wenn die
+          Messergebnisse rein zufällig wirken, ist das Qubit dennoch in einem
+          genau definierten Zustand.
+          <br />
+          <br />
+          Übertragen auf unser Kugelmodell bedeutet das, dass die Kugel sich
+          stets in einem genau definierten Zustand befindet, sich durch Messung
+          aber entweder nach oben oder nach unten dreht. Wir müssen also eine
+          Vielzahl an Messungen durchführen, um den Zustand exakt beschreiben zu
+          können.
+          <br />
+          <br />
+          Gleichzeitig bedeutet das auch, dass jede noch so kleine Änderung des
+          Zustands zwischen den beiden Hadamard-Gattern (bspw. durch ein anderes
+          Gate), durch die Auswertung des Schaltkreises aufgedeckt werden kann.
+        </p>
+      </details>
 
-            <!-- curriculum navigation -->
-            <footer class="curriculum-footer">
-                <a class="Q-button" 
-                    type="button" 
-                    href="curriculum02.html">
-                    Zurück
-                </a>
-                <a class="Q-button" 
-                    type="button" 
-                    href="curriculum04.html">
-                    Weiter
-            </a>
-            </footer>
-        </main>
-    </body>
-    
-    <script>
-        //  Let’s place circuit palettes
-        //  inside anything with the class 'Q-circuit-palette'.
-        Array
-        .from( document.querySelectorAll( '.Q-circuit-palette' ))
-        .forEach( function( el ){
+      <!-- curriculum navigation -->
+      <footer class="curriculum-footer">
+        <a class="Q-button" type="button" href="curriculum02.html"> Zurück </a>
+        <a class="Q-button" type="button" href="curriculum04.html"> Weiter </a>
+      </footer>
+    </main>
+  </body>
 
-            Q.Circuit.Editor.createPalette( el,  gates=el.getAttribute('data-gates') || "HXT" )
-        })
+  <script>
+    //  Let’s place circuit palettes
+    //  inside anything with the class 'Q-circuit-palette'.
+    Array.from(document.querySelectorAll('.Q-circuit-palette')).forEach(
+      function (el) {
+        Q.Circuit.Editor.createPalette(
+          el,
+          (gates = el.getAttribute('data-gates') || 'HXT')
+        )
+      }
+    )
 
-        window.addEventListener( 'Q.Circuit.evaluate completed', function( event ){
+    window.addEventListener('Q.Circuit.evaluate completed', function (event) {
+      const circuit = event.detail.circuit
+      console.log(
+        '\nEvaluation completed for “' +
+          circuit.name +
+          '”' +
+          '\nwith these results:\n' +
+          circuit.report$() +
+          '\n\n\n'
+      )
+      if (circuit.name !== undefined) {
+        const el = document.getElementById(circuit.name + '-report')
+        if (el) el.innerText = circuit.report$()
+      }
+    })
+    window.addEventListener('Q gui altered circuit', function (event) {
+      event.detail.circuit.evaluate$()
+    })
 
-            const circuit = event.detail.circuit
-            console.log( 
-
-                '\nEvaluation completed for “'+ circuit.name +'”'+
-                '\nwith these results:\n'+ circuit.report$() +'\n\n\n'
-            )
-            if( circuit.name !== undefined ){
-
-                const el = document.getElementById( circuit.name +'-report' )
-                if( el ) el.innerText = circuit.report$()
-            }
-        })
-        window.addEventListener( 'Q gui altered circuit', function( event ){
-            event.detail.circuit.evaluate$()
-        })
-
-        var circuit1 = Q`
+    var circuit1 = Q`
         I-H-I-I-I
         `
 
-        var circuit2 = Q`
+    var circuit2 = Q`
         H-I-I-I-H
         `
 
-        circuit1.setName$( 'circuit-1' )
-        circuit2.setName$( 'circuit-2' )
-        document.getElementById("circuit-1").appendChild( circuit1.toDom() )
-        document.getElementById("circuit-2").appendChild( circuit2.toDom() )
-        circuit1.evaluate$()
-        circuit2.evaluate$()
+    circuit1.setName$('circuit-1')
+    circuit2.setName$('circuit-2')
+    document.getElementById('circuit-1').appendChild(circuit1.toDom())
+    document.getElementById('circuit-2').appendChild(circuit2.toDom())
+    circuit1.evaluate$()
+    circuit2.evaluate$()
 
-</script>
+    const animateMeasurement = () => {
+      console.log('hi')
+    }
+  </script>
 </html>
