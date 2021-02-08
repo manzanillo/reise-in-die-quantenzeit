@@ -1,22 +1,28 @@
+.curriculum-merkkasten {
+  border-radius: 0.4rem;
+  border: 1px solid var(--Q-color-blue);
+  padding: 0.5rem;
+  background-color: #0000ff22;
+}
+
 .curriculum-footer {
   text-align: center;
   margin-top: 5em;
 }
 
-
-.circuit-measurement{
+.circuit-measurement {
   position: relative;
-    --Q-operation-color-hue: 240;
-    --Q-operation-color-main: var( --Q-color-blue ) 
-    linear-gradient( 0.4turn, rgba( 255, 255, 255, 0.2 ), rgba( 0, 0, 0, 0.08 ) );
-    --Q-operation-color-light: hsl( var( --Q-operation-color-hue ), 10%, 50% );
-    --Q-operation-color-dark: hsl( var( --Q-operation-color-hue ), 10%, 25% );
-    color: white;
-    text-shadow: -0.05rem -0.05rem 0 rgba( 0, 0, 0, 0.1 );
-    font-size: 1.5rem;
-    line-height: 2.9rem;
-    font-weight: 900;
-    cursor: grab;
+  --Q-operation-color-hue: 240;
+  --Q-operation-color-main: var(--Q-color-blue)
+    linear-gradient(0.4turn, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.08));
+  --Q-operation-color-light: hsl(var(--Q-operation-color-hue), 10%, 50%);
+  --Q-operation-color-dark: hsl(var(--Q-operation-color-hue), 10%, 25%);
+  color: white;
+  text-shadow: -0.05rem -0.05rem 0 rgba(0, 0, 0, 0.1);
+  font-size: 1.5rem;
+  line-height: 2.9rem;
+  font-weight: 900;
+  cursor: grab;
 }
 
 .circuit-measurement:hover {
@@ -28,7 +34,7 @@
   overflow: scroll;
   font-size: 1.5rem;
   font-weight: 900;
-  font-family: var( --Q-font-family-mono );
+  font-family: var(--Q-font-family-mono);
   background-color: #d3d3d373;
   border-radius: 0.2rem;
   padding: 0.5em;
@@ -43,14 +49,14 @@
   border-radius: 3rem;
   font-weight: 500;
   font-size: 1rem;
-  font-family: var( --Q-font-family-sans );
+  font-family: var(--Q-font-family-sans);
   padding: 0.8rem 1.8rem;
   background-color: #ffffffd6;
   color: hsl(
-		var( --Q-color-background-hue ),
-		var( --Q-color-background-saturation ),
-		75%
-	)
+    var(--Q-color-background-hue),
+    var(--Q-color-background-saturation),
+    75%
+  );
 }
 
 .measurement-history-action-button:hover {
@@ -68,41 +74,26 @@
   right: 0.5rem;
   bottom: 0.5rem;
   border-radius: 0.2rem;
-  background: var( --Q-operation-color-main );
+  background: var(--Q-operation-color-main);
 }
-
 
 /* Choose a different color scheme for "classical" computer circuits*/
 .curriculum-classic-color {
-  background: var( --Q-color-red ) 
-      linear-gradient( 0.4turn, rgba( 255, 255, 255, 0.2 ), rgba( 0, 0, 0, 0.08 ) );
+  background: var(--Q-color-red)
+    linear-gradient(0.4turn, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.08));
 }
 
 .Q-button.curriculum-classic-color:hover {
-
-	background: 
-		hsl(
-			var( --Q-color-red-hue ),
-			var( --Q-color-red-saturation ),
-			calc( var( --Q-color-red-lightness ) * 1.2 )
-		)
-		linear-gradient(
-
-			0.4turn,
-			rgba( 255, 255, 255, 0.2 ),
-			rgba( 0, 0, 0, 0.08 )
-		);
+  background: hsl(
+      var(--Q-color-red-hue),
+      var(--Q-color-red-saturation),
+      calc(var(--Q-color-red-lightness) * 1.2)
+    )
+    linear-gradient(0.4turn, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.08));
 }
 .Q-button.curriculum-classic-color:focus {
-
-	background: 
-		var( --Q-color-red )
-		linear-gradient(
-
-			0.4turn,
-			rgba( 0, 0, 0, 0.08 ),
-			rgba( 255, 255, 255, 0.2 )
-		);
+  background: var(--Q-color-red)
+    linear-gradient(0.4turn, rgba(0, 0, 0, 0.08), rgba(255, 255, 255, 0.2));
 }
 
 .curriculum-classic-table {
@@ -113,7 +104,7 @@
 .curriculum-classic-table td {
   padding: 0.2rem 0.7rem 0.2rem 0.7rem;
   text-align: center;
-  border: 1px solid rgb(182,190,201);
+  border: 1px solid rgb(182, 190, 201);
 }
 
 /* Hide console reference for circuit in the curriculum */
@@ -123,7 +114,7 @@
 
 @media (max-width: 600px) {
   nav ul {
-      top: 5rem;
+    top: 5rem;
   }
 }
 /* exercise, note, ...*/
@@ -131,12 +122,12 @@
   border-style: dashed;
   border-width: 1px 1px 1px 1px;
   border-radius: 0.4rem;
-  border-color:var( --Q-color-blue );
+  border-color: var(--Q-color-blue);
   transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
   padding: 0.4rem;
   margin: 1rem 1rem 1rem 1rem;
   line-height: 1.5rem;
-  display:flex;
+  display: flex;
 }
 
 .curriculum-exercise-icon {
@@ -144,51 +135,48 @@
   font-size: 1.5rem;
   top: 5px;
   padding-left: 0.8rem;
-  padding-top: 0.5re;
-  color:var( --Q-color-blue );;
+  color: var(--Q-color-blue);
   line-height: 100%;
-  transform: translateY(25%);
-
 }
 
 .curriculum-gate-description {
   display: inline-block;
   width: 1.7rem;
   text-align: center;
-  background: #505a62 linear-gradient( 0.45turn, rgba( 255, 255, 255, 0.1 ), rgba( 0, 0, 0, 0.05 ) );
+  background: #505a62
+    linear-gradient(0.45turn, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.05));
   color: white;
   padding: 0.1rem;
   font-weight: 600;
   border-radius: 0.2rem;
 }
 
-.curriculum-input-description{
+.curriculum-input-description {
   font-weight: 900;
-  font-family: var( --Q-font-family-mono );
+  font-family: var(--Q-font-family-mono);
 }
 
 .curriculum-identity-description {
   height: 12px;
   width: 12px;
-  background: #505a62 linear-gradient( 0.45turn, rgba( 255, 255, 255, 0.1 ), rgba( 0, 0, 0, 0.05 ) );
+  background: #505a62
+    linear-gradient(0.45turn, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.05));
   border-radius: 50%;
   display: inline-block;
 }
 
-
 /* Accordeon */
-
 
 details {
   min-height: 5px;
   padding: 1rem 1.8rem 1rem 1rem;
   margin: 1rem 0rem 1rem 0rem;
   position: relative;
-  border: 1px solid rgba(0,0,0,.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 0.4rem;
   box-sizing: border-box;
-  transition: all .3s;
-  background-color: rgba(0,0,0,.1);
+  transition: all 0.3s;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 details + details {
@@ -198,9 +186,8 @@ details + details {
 details[open] {
   min-height: 50px;
   background-color: #f6f7f8;
-  box-shadow: 2px 2px 20px rgba(0,0,0,.2);
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
 }
-
 
 summary {
   display: flex;
@@ -215,7 +202,7 @@ summary:focus {
 }
 
 summary:focus::after {
-  content: "";
+  content: '';
   height: 100%;
   width: 100%;
   display: block;
@@ -225,11 +212,11 @@ summary:focus::after {
 }
 
 summary::-webkit-details-marker {
-  display: none
+  display: none;
 }
 
 .control-icon {
-  transition: .3s ease;
+  transition: 0.3s ease;
   pointer-events: none;
 }
 
@@ -239,40 +226,33 @@ summary::-webkit-details-marker {
 
 details[open] .control-icon-close {
   display: initial;
-  transition: .3s ease;
+  transition: 0.3s ease;
 }
 
 details[open] .control-icon-expand {
   display: none;
 }
 
-
-
 /* General css */
 
 .curriculum-spacer {
-  height:2rem;
+  height: 2rem;
 }
 
 main > ul {
-  padding-left: 2rem;  
+  padding-left: 2rem;
 }
-
-
-
-
 
 @keyframes slide-up {
   0% {
-      opacity: 0;
-      transform: translateY(-20px);
+    opacity: 0;
+    transform: translateY(-20px);
   }
   100% {
-      opacity: 1;
-      transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
-
 
 p + p {
   text-indent: 0%;
