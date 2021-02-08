@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
-	<head>
-        <title>Reise in die Quantenzeit 06</title>
-        <meta charset="utf-8">
-        <meta name="viewport"             content="width=device-width,initial-scale=1.0">
-        <meta name="description"          content="Quantum computing in your browser.">
-        <meta name="copyright"            content="Stewart Smith 2019–2020">
-        <meta name="keywords"             content="
+  <head>
+    <title>Reise in die Quantenzeit 06</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="description" content="Quantum computing in your browser." />
+    <meta name="copyright" content="Stewart Smith 2019–2020" />
+    <meta
+      name="keywords"
+      content="
             Q, Q.js, Q-js, Qjs, quantum JavaScript,
             quantum, quantum physics, quantum mechanics, superposition,
             quantum computer, quantum computer programming, quantum computing, QC, 
@@ -21,159 +23,218 @@
                 ProjectQ, Qiskit, 
                 Quantum Development Kit, Cirq, Strawberry Fields, t|ket>,
                 QCL, Quantum pseudocode, Q#, Q|SI>, Q language, qGCL, QFC, QML, LIQUi|>, Quipper,
-            Stanford CS 269 Q: Quantum Computer Programming">
-        
-        <meta name="twitter:card"         content="summary_large_image">
-        <meta name="twitter:site"         content="@stew_rtsmith">
-        <meta name="twitter:creator"      content="@stew_rtsmith">
-        <meta name="twitter:title"        content="Q ⟩ Curriculum 03">
-        <meta name="twitter:description"  content="Quantum computing in your browser.">
-        <meta name="twitter:image"        content="https://quantumjavascript.app/assets/Q-website-preview.jpg">
-        
-        <meta property="og:type"          content="website">
-        <meta property="og:title"         content="Q ⟩ Curriculum 03">
-        <meta property="og:description"   content="Quantum computing in your browser.">
-        <meta property="og:image"         content="https://quantumjavascript.app/assets/Q-website-preview.jpg">
-        <meta property="og:url"           content="https://quantumjavascript.app/Circuit.html">
-        
-        <link rel="canonical" href="https://quantumjavascript.app/Circuit.html">
-        <link href="assets/Q-favicon-064.png" rel="icon" type="image/png">
-        <link href="assets/Q-favicon-144.png" rel="apple-touch-icon">
-        
-        <link rel="stylesheet" href="Q/Q.css">
-        <link rel="stylesheet" href="Q/Q-Circuit-Editor.css">
-        <link rel="stylesheet" href="assets/documentation.css">
-        <link rel="stylesheet" href="curriculum/curriculum.css">
+            Stanford CS 269 Q: Quantum Computer Programming"
+    />
 
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@stew_rtsmith" />
+    <meta name="twitter:creator" content="@stew_rtsmith" />
+    <meta name="twitter:title" content="Q ⟩ Curriculum 03" />
+    <meta
+      name="twitter:description"
+      content="Quantum computing in your browser."
+    />
+    <meta
+      name="twitter:image"
+      content="https://quantumjavascript.app/assets/Q-website-preview.jpg"
+    />
 
-        <script src="Q/Q.js"></script>
-        <script src="Q/Q-ComplexNumber.js"></script>
-        <script src="Q/Q-Matrix.js"></script>
-        <script src="Q/Q-Qubit.js"></script>
-        <script src="Q/Q-Gate.js"></script>
-        <script src="Q/Q-History.js"></script>
-        <script src="Q/Q-Circuit.js"></script>
-        <script src="Q/Q-Circuit-Editor.js"></script>
-        <script src="curriculum/navigation.js"></script>
-        
-    </head>
-    <body>
-		<main class="home">
-            <h3>Quantencomputer – Teil 6</h3>
-            <p> Wie du mit deinen Messungen vermutlich bereits festgestellt hast, steht das Ergebnis eines
-                Schaltkreises bei Quantencomputern nicht von Anfang an fest. 
-                Auch im Falle von zwei Qubits erhalten wir – genau wie im Falle nur eines Qubits – bei einer Messung mit einer 
-                bestimmten Wahrscheinlichkeit ein bestimmtes Ergebnis. 
-                Um also ein verlässliches Ergebnis über den Zustand zu erhalten und zwischen den verschiedenen 
-                Superpositionszuständen unterscheiden zu können, müssen wir eine Vielzahl an Messungen durchführen. 
-            </p>
-            <p>
-                Natürlich ist das so noch nicht besonders hilfreich, denn wir wollen mit Quantencomputern ja echte 
-                Herausforderungen lösen. Gut, dass sich die Wahrscheinlichkeit eines bestimmten Ergebnisses 
-                durch das Anwenden von Quantengattern beeinflussen lässt!
-                Unsere Aufgabe als Informatikerin bzw. Informatiker ist es, die Gatter so anzuordnen, dass 
-                wir am Ende mit einer hohen Wahrscheinlichkeit eine richtige Lösung messen!
-            </p>
-            <p>
-                Bevor wir selbst einen Algorithmus erstellen, wollen wir uns daher erst einmal noch einer 
-                kleineren Aufgabe zuwenden.
-            </p>
-            <div class=curriculum-exercise>
-                <div class="curriculum-exercise-icon">!</div>
-                <div> Überlege Dir, wo Du ein <span class="curriculum-gate-description">X</span>-Gatter 
-                    setzen solltest, sodass eine 50% Wahrscheinlichkeit besteht 
-                    als Ausgabe <span class="curriculum-input-description">|10⟩</span>
-                    und eine 50% Wahrscheinlichkeit als Ausgabe 
-                    <span class="curriculum-input-description">|01⟩</span> zu erhalten! 
-                    Passe den Schaltkreis entsprechend an!
-                </div>
-            </div>
-            <div class="curriculum-spacer"></div>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Q ⟩ Curriculum 03" />
+    <meta
+      property="og:description"
+      content="Quantum computing in your browser."
+    />
+    <meta
+      property="og:image"
+      content="https://quantumjavascript.app/assets/Q-website-preview.jpg"
+    />
+    <meta
+      property="og:url"
+      content="https://quantumjavascript.app/Circuit.html"
+    />
 
-            
-            <div class='Q-circuit-palette' ></div>
-            <div id=circuit></div>
+    <link rel="canonical" href="https://quantumjavascript.app/Circuit.html" />
+    <link href="assets/Q-favicon-064.png" rel="icon" type="image/png" />
+    <link href="assets/Q-favicon-144.png" rel="apple-touch-icon" />
 
-            <p>
+    <link rel="stylesheet" href="Q/Q.css" />
+    <link rel="stylesheet" href="Q/Q-Circuit-Editor.css" />
+    <link rel="stylesheet" href="assets/documentation.css" />
+    <link rel="stylesheet" href="curriculum/curriculum.css" />
 
-            </p>
-            <h2>Auswertung</h2>
-            <p>Nach 1000 Messungen zeigt sich folgende Ergebnisverteilung:</p>
-			<pre><samp id="circuit-report" for="circuit"></samp></pre>
+    <script src="Q/Q.js"></script>
+    <script src="Q/Q-ComplexNumber.js"></script>
+    <script src="Q/Q-Matrix.js"></script>
+    <script src="Q/Q-Qubit.js"></script>
+    <script src="Q/Q-Gate.js"></script>
+    <script src="Q/Q-History.js"></script>
+    <script src="Q/Q-Circuit.js"></script>
+    <script src="Q/Q-Circuit-Editor.js"></script>
+    <script src="curriculum/navigation.js"></script>
+  </head>
+  <body>
+    <main class="home">
+      <h3>Quantencomputer – Teil 6</h3>
+      <p>
+        Ist das kontrollierende Qubit in einer Superposition, hängt das
+        Messergebnis des kontrollierten Qubits davon ab, welchen Wert das
+        kontrollierende Qubit nun annimmt. Die Zustände der beiden Qubits werden
+        so <b>verschränkt</b>. Wir können den Zustand eines einzelnen Qubits
+        dann nicht mehr beschreiben ohne nicht die anderen Qubits auch zu
+        berücksichtigen. Wirlich erstaulich ist dabei: Dieser Zusammenhang
+        bleibt selbst dann erhalten, wenn man die Qubits Lichtjahre voneinander
+        entfernt.
+      </p>
+      <p>
+        Wie du mit deinen Messungen vermutlich bereits festgestellt hast, steht
+        das Ergebnis eines Schaltkreises bei Quantencomputern oft nicht von
+        Anfang an fest. Auch im Falle von zwei Qubits erhalten wir – genau wie
+        im Falle nur eines Qubits – bei einer Messung mit einer bestimmten
+        Wahrscheinlichkeit ein bestimmtes Ergebnis. Um also ein verlässliches
+        Ergebnis über den Zustand zu erhalten und zwischen den verschiedenen
+        Superpositionszuständen unterscheiden zu können, müssen wir wieder eine
+        Vielzahl an Messungen durchführen.
+      </p>
+      <p>
+        Mit verschränkten Qubits können wir jetzt auch Zustände schaffen, die
+        wir so nicht erreicht hätten – beispielsweise einen Zustand, bei dem wir
+        in 50% der Fälle
+        <span class="curriculum-input-description">00</span> messen und in 50%
+        der Fälle <span class="curriculum-input-description">11</span>.
+      </p>
 
-            <details>
-                <summary>
-                  Lösungshinweise    
-                  <svg viewBox="0 0 24 24" id="close" class="control-icon control-icon-expand" width="24" height="24" role="presentation">
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" />
-                      <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path><path d="M0 0h24v24H0z" fill="none"></path>
-                    </svg>
-                  <svg viewBox="0 0 24 24" id="expand-more" class="control-icon control-icon-close" width="24" height="24" role="presentation">
-                      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path><path d="M0 0h24v24H0z" fill="none"></path>
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close" />
-                  </svg>
-                </summary>
-                <p>
-                    Dazu benötigst Du lediglich ein <span class="curriculum-gate-description">X</span>-Gatter, 
-                    das Du entweder auf das zweite Qubit (vor oder nach Anwendung des CNOT-Gatters) 
-                    oder auf das erste Qubit nach Anwendung des CNOT-Gatters anwendest.
+      <div class="curriculum-exercise">
+        <div class="curriculum-exercise-icon">!</div>
+        <div>
+          Den Wert welchen Eingabe-Qubits müssen wir ändern, um einen Zustand zu
+          erhalten, sodass eine 50% Wahrscheinlichkeit besteht als Ausgabe
+          <span class="curriculum-input-description">10</span>
+          und eine 50% Wahrscheinlichkeit als Ausgabe
+          <span class="curriculum-input-description">01</span> zu erhalten?
+        </div>
+      </div>
+      <div class="curriculum-spacer"></div>
 
-                </p>
-            </details>
+      <div class="Q-circuit-palette"></div>
+      <div id="circuit"></div>
 
+      <p></p>
+      <h2>Auswertung</h2>
+      <p>Nach 1000 Messungen zeigt sich folgende Ergebnisverteilung:</p>
+      <pre><samp id="circuit-report" for="circuit"></samp></pre>
 
-            <!-- curriculum navigation -->
-            <footer class="curriculum-footer">
-                <a class="Q-button" 
-                    type="button" 
-                    href="curriculum05.html">
-                    Zurück
-                </a>
-                <a class="Q-button" 
-                    type="button" 
-                    href="curriculum07.html">
-                    Weiter
-            </a>
-            </footer>
-        </main>
-    </body>
-    
-    <script>
-        //  Let’s place circuit palettes
-        //  inside anything with the class 'Q-circuit-palette'.
-        Array
-        .from( document.querySelectorAll( '.Q-circuit-palette' ))
-        .forEach( function( el ){
+      <details>
+        <summary>
+          Lösungshinweise
+          <svg
+            viewBox="0 0 24 24"
+            id="close"
+            class="control-icon control-icon-expand"
+            width="24"
+            height="24"
+            role="presentation"
+          >
+            <use
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xlink:href="#expand-more"
+            />
+            <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+            <path d="M0 0h24v24H0z" fill="none"></path>
+          </svg>
+          <svg
+            viewBox="0 0 24 24"
+            id="expand-more"
+            class="control-icon control-icon-close"
+            width="24"
+            height="24"
+            role="presentation"
+          >
+            <path
+              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+            ></path>
+            <path d="M0 0h24v24H0z" fill="none"></path>
+            <use
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xlink:href="#close"
+            />
+          </svg>
+        </summary>
+        <p>
+          Das lässt sich erreichen, indem Du den Eingabewert des zweiten Qubits
+          auf <span class="curriculum-input-description">1</span> setzt.
+          <br />
+          <br />
+          Durch das <span class="curriculum-gate-description">H</span>-Gatter
+          wird das erste Qubit in eine gleichmäßige Superposition gebracht. Wird
+          das erste Qubit als
+          <span class="curriculum-input-description">1</span> gemessen, wird das
+          zweite Qubit folglich invertiert und es wird
+          <span class="curriculum-input-description">0</span> gemessen. Wird das
+          erste Qubit als
+          <span class="curriculum-input-description">0</span> gemessen, wird das
+          zweite Qubit nicht invertiert und bleibt auf seinem Anfangswert
+          <span class="curriculum-input-description">1</span>.
+        </p>
+      </details>
+      <!--
+      <h4>Quantenalgorithmen</h4>
+      <p>
+      </p>
+      <p>
+        Natürlich ist das so noch nicht besonders hilfreich, denn wir wollen mit
+        Quantencomputern ja echte Herausforderungen lösen. Gut, dass sich die
+        Wahrscheinlichkeit eines bestimmten Ergebnisses durch das Anwenden von
+        Quantengattern beeinflussen lässt! Unsere Aufgabe als Informatikerin
+        bzw. Informatiker ist es, die Gatter so anzuordnen, dass wir am Ende mit
+        einer hohen Wahrscheinlichkeit eine richtige Lösung messen! Wir müssen
+        also einen geeigneten Algorithmus entwickeln.
+      </p>-->
 
-            Q.Circuit.Editor.createPalette( el, gates='HX*' )
-        })
+      <!-- curriculum navigation -->
+      <footer class="curriculum-footer">
+        <a class="Q-button" type="button" href="curriculum05.html"> Zurück </a>
+        <a class="Q-button" type="button" href="curriculum07.html"> Weiter </a>
+      </footer>
+    </main>
+  </body>
 
-        window.addEventListener( 'Q.Circuit.evaluate completed', function( event ){
+  <script>
+    //  Let’s place circuit palettes
+    //  inside anything with the class 'Q-circuit-palette'.
+    Array.from(document.querySelectorAll('.Q-circuit-palette')).forEach(
+      function (el) {
+        Q.Circuit.Editor.createPalette(el, (gates = 'XHT*'))
+      }
+    )
 
-            const circuit = event.detail.circuit
-            console.log( 
+    window.addEventListener('Q.Circuit.evaluate completed', function (event) {
+      const circuit = event.detail.circuit
+      console.log(
+        '\nEvaluation completed for “' +
+          circuit.name +
+          '”' +
+          '\nwith these results:\n' +
+          circuit.report$() +
+          '\n\n\n'
+      )
+      if (circuit.name !== undefined) {
+        const el = document.getElementById(circuit.name + '-report')
+        if (el) el.innerText = circuit.report$()
+      }
+    })
+    window.addEventListener('Q gui altered circuit', function (event) {
+      event.detail.circuit.evaluate$()
+    })
 
-                '\nEvaluation completed for “'+ circuit.name +'”'+
-                '\nwith these results:\n'+ circuit.report$() +'\n\n\n'
-            )
-            if( circuit.name !== undefined ){
-
-                const el = document.getElementById( circuit.name +'-report' )
-                if( el ) el.innerText = circuit.report$()
-            }
-        })
-        window.addEventListener( 'Q gui altered circuit', function( event ){
-            event.detail.circuit.evaluate$()
-        })
-
-        var circuit01 = Q`
+    var circuit01 = Q`
         
         I-H-X#0-I-I
         I-I-X#1-I-I
         `
 
-        circuit01.setName$( 'circuit' )
-        document.getElementById("circuit").appendChild( circuit01.toDom() )
-        circuit01.evaluate$()
-    </script>
+    circuit01.setName$('circuit')
+    document.getElementById('circuit').appendChild(circuit01.toDom())
+    circuit01.evaluate$()
+  </script>
 </html>
