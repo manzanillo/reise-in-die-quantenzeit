@@ -62,13 +62,39 @@
             <h3>Quantencomputer – Mehrere Qubits</h3>
             <p>
                 Natürlich kann ein Quantencomputer mit nur einem Qubit keine Wunder vollbringen.
-                Wir brauchen also weitere Qubits ... und ein Gatter, das mit zwei Qubits arbeitet. Um zu verstehen, warum 
-                dieses Gatter einen echten Vorteil für Quantencomputer liefert, wollen wir uns erst einmal 
-                seine grundlegende Funktionsweise ansehen.
+                Wir brauchen also weitere Qubits.
             </p>
-            <!--<details>
+
+            <div class=curriculum-exercise>
+                <div class="curriculum-exercise-icon">!</div>
+                <div>Unten findest Du einen Schaltkreis mit zwei Qubits. 
+                    Wie viele verschiedene Messergebnisse kannst Du durch Anwendung von Gattern herstellen?
+                </div>
+            </div>
+
+            <div class="curriculum-spacer"></div>
+
+            <div class="">
+                <div class='Q-circuit-palette' data-gates="XHT"></div>
+                <div id=circuit-X></div>
+                <button class="Q-button" 
+                        id="evaluate-button" 
+                        type="button" 
+                        onclick="auswerten('X'); this.blur();">
+                    Auswerten
+                </button>
+            </div>
+            <div class="curriculum-spacer"></div>
+            <h2>
+                Meine Messungen
+            </h2>
+            <div id="measurement-history-X" class="measurement-history-container">
+                <button class="measurement-history-action-button" onclick="resetHistory()">Reset</button>
+            </div>
+
+            <details>
                 <summary>
-                  Tatsächlich reicht uns hierfür aber ein Gatter...   
+                  Lösungshinweise  
                   <svg viewBox="0 0 24 24" id="close" class="control-icon control-icon-expand" width="24" height="24" role="presentation">
                       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" />
                       <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path><path d="M0 0h24v24H0z" fill="none"></path>
@@ -79,13 +105,18 @@
                   </svg>
                 </summary>
                 <p>
-                    Zunächst mag es seltsam anmuten, dass wir nur ein Gatter benötigen bei dem zwei Qubits beteiligt sind,
-                    um einen universellen Quantencomputer zu bauen, aber tatsächlich reicht auch beim klassischen Computer 
-                    ein Gatter mit zwei beteiligten Bits (das NAND-Gatter – 
-                    eine Kombination aus NICHT(1-Bit-Gatter) und UND-Gatter (2-Bit-Gatter)).
+                    Es sind vier Stück: 00, 01, 10 und 11. 
+                    Eine Möglichkeit diese Messergebnisse zu erzielen, ist es, 
+                    ein <span class="curriculum-gate-description">H</span>-Gatter auf 
+                    das erste und zweite Qubit anzuwenden und mehrere Messungen durchzuführen.
                 </p>
-            </details>-->
+            </details>
 
+            <h4>Ein Gatter für 2 Qubits</h4>
+            <p> Außerdem brauchen wir ein Gatter, das mit zwei Qubits arbeitet. Um zu verstehen, warum 
+                dieses Gatter einen echten Vorteil für Quantencomputer liefert, wollen wir uns erst einmal 
+                seine grundlegende Funktionsweise ansehen.
+            </p>
             <div class=curriculum-exercise>
                 <div class="curriculum-exercise-icon">!</div>
                 <div>Unten findest Du ein Gatter, das mit zwei Qubits arbeitet. 
@@ -94,7 +125,7 @@
                 </div>
             </div>
 
-            <h6>Hinweise</h6>
+           <!-- <h6>Hinweise</h6>
             <ul>
                 <li>
                     Verändere die Eingabewerte, indem Du auf die Zahlen am Anfang einer Zeile klickst.
@@ -105,21 +136,21 @@
                 <li>
                     Das <span class="curriculum-gate-description">X</span>-Gatter stellt die Quantenversion des NICHT-Gatters von klassischen Computern dar.
                 </li>
-                <!--<li>
+                <li>
                     Du kannst ein solches Gatter auch selbst erstellen, indem Du ein <span class="curriculum-gate-description">X</span>-Gatter und 
                     ein <span class="curriculum-identity-description"></span>-Gatter in einer Spalte anordnest, beide markierst und 
                     auf <b>C</b> klickst.
-                </li>-->
-            </ul>
+                </li>
+            </ul>-->
             <div class="curriculum-spacer"></div>
 
             <div class="">
-                <!--<div class='Q-circuit-palette' ></div>-->
-                <div id=circuit></div>
+                <div class='Q-circuit-palette' data-gates="HXT*" ></div>
+                <div id=circuit-H></div>
                 <button class="Q-button" 
                         id="evaluate-button" 
                         type="button" 
-                        onclick="auswerten(); this.blur();">
+                        onclick="auswerten('H'); this.blur();">
                     Auswerten
                 </button>
             </div>
@@ -127,7 +158,7 @@
             <h2>
                 Meine Messungen
             </h2>
-            <div id="measurement-history" class="measurement-history-container">
+            <div id="measurement-history-H" class="measurement-history-container">
                 <button class="measurement-history-action-button" onclick="resetHistory()">Reset</button>
             </div>
 
@@ -196,72 +227,90 @@
     </body>
     
     <script>
-        let circuit = Q`
+        let circuitX = Q`
+        I-I-I-I-I
+        I-I-I-I-I
+         `
+        let circuitH = Q`
         I-I-X#0-I-I
         I-I-X#1-I-I
          `
-        document.getElementById("circuit").appendChild( circuit.toDom() )
+        document.getElementById("circuit-X").appendChild( circuitX.toDom() )
 
-        let evaluationHistory = []
+        document.getElementById('circuit-H').appendChild(circuitH.toDom())
 
-        function resetHistory(){
-            evaluationHistory = []
-            let historyEls = document.getElementsByClassName('measurement-history-container-element')
-            Array.from(historyEls).map(el => el.parentNode.removeChild(el))
-        }
+let evaluationHistoryX = []
+let evaluationHistoryH = []
 
-        function auswerten(){
-            // try evaluates the circuit onces and returns the index of the result
-            let result = circuit.try$().toString(2).padStart(circuit.bandwidth, "0")
-            
-            // add result to evaluation history
-            evaluationHistory.push(result)
-            let historyEl = document.createElement('div')
-            historyEl.classList.add('measurement-history-container-element')
-            historyEl.innerText = result
-            document.getElementById('measurement-history').prepend(historyEl)
+function resetHistory(circuitPostfix) {
+  if (circuitPostfix === 'X') {
+    evaluationHistoryX = []
+  } else {
+    evaluationHistoryH = []
+  }
+  let historyEls = document
+    .getElementById('measurement-history-' + circuitPostfix)
+    .getElementsByClassName('measurement-history-container-element')
+  Array.from(historyEls).map((el) => el.parentNode.removeChild(el))
+}
 
-            for (let idx = 0; idx < '0' + result.length; idx++){
-                // if there is already a measurement taken, remove it
-                if (document.getElementById('measurement-' + idx)){
-                    let oldMeasureEl = document.getElementById('measurement-' + idx)
-                    oldMeasureEl.parentNode.removeChild(oldMeasureEl)
-                }
+function auswerten(circuitPostfix) {
+  let circuit = circuitPostfix === 'X' ? circuitX : circuitH
+  let evaluationHistory =
+    circuitPostfix === 'X' ? evaluationHistoryX : evaluationHistoryH
+  // try evaluates the circuit onces and returns the index of the result
+  let result = circuit.try$().toString(2).padStart(circuit.bandwidth, '0')
 
-                let measureEl = document.createElement('div')
-                document.getElementsByClassName("Q-circuit-board-foreground")[0].appendChild(measureEl)
-                measureEl.classList.add('circuit-measurement')
-                measureEl.id = "measurement-" + idx
-                measureEl.style.setProperty('grid-column-start', circuit.timewidth + 3)
-                measureEl.style.setProperty('grid-row-start', idx+2)
-                measureEl.innerHTML = 
-                    `<div class="circuit-measurement-tile">${result[idx]}</div>`
-            }
-        }
+  // add result to evaluation history
+  evaluationHistory.push(result)
+  let historyEl = document.createElement('div')
+  historyEl.classList.add('measurement-history-container-element')
+  historyEl.innerText = result
+  document
+    .getElementById('measurement-history-' + circuitPostfix)
+    .prepend(historyEl)
 
+  for (let idx = 0; idx < '0' + result.length; idx++) {
+    // if there is already a measurement taken, remove it
+    if (document.getElementById('measurement-' + idx)) {
+      let oldMeasureEl = document.getElementById('measurement-' + idx)
+      oldMeasureEl.parentNode.removeChild(oldMeasureEl)
+    }
 
-        //  Let’s place circuit palettes
-        //  inside anything with the class 'Q-circuit-palette'.
-        Array
-        .from( document.querySelectorAll( '.Q-circuit-palette' ))
-        .forEach( function( el ){
+    let measureEl = document.createElement('div')
+    document
+      .getElementsByClassName('Q-circuit-board-foreground')
+      [circuitPostfix == 'X' ? 0 : 1].appendChild(measureEl)
+    measureEl.classList.add('circuit-measurement')
+    measureEl.id = 'measurement-' + idx
+    measureEl.style.setProperty('grid-column-start', circuit.timewidth + 3)
+    measureEl.style.setProperty('grid-row-start', idx + 2)
+    measureEl.innerHTML = `<div class="circuit-measurement-tile">${result[idx]}</div>`
+  }
+}
 
-            Q.Circuit.Editor.createPalette( el, gates='HX*' )
-        })
+//  Let’s place circuit palettes
+//  inside anything with the class 'Q-circuit-palette'.
+Array.from(document.querySelectorAll('.Q-circuit-palette')).forEach(
+  function (el) {
+    console.log(el.getAttribute('data-gates'))
+    Q.Circuit.Editor.createPalette(
+      el,
+      (gates = el.getAttribute('data-gates'))
+    )
+  }
+)
 
-
-
-        //  Update evaluation result, when circuit is altered via GUI
-        window.addEventListener( 'Q gui altered circuit', function( event ){
-            for (let idx = 0; idx < '0' + event.detail.circuit.bandwidth; idx++){
-                // if there is already a measurement taken, remove it
-                if (document.getElementById('measurement-' + idx)){
-                    let oldMeasureEl = document.getElementById('measurement-' + idx)
-                    oldMeasureEl.parentNode.removeChild(oldMeasureEl)
-                }
-            }
-            event.detail.circuit.evaluate$()
-        })
-
+//  Update evaluation result, when circuit is altered via GUI
+window.addEventListener('Q gui altered circuit', function (event) {
+  for (let idx = 0; idx < '0' + event.detail.circuit.bandwidth; idx++) {
+    // if there is already a measurement taken, remove it
+    if (document.getElementById('measurement-' + idx)) {
+      let oldMeasureEl = document.getElementById('measurement-' + idx)
+      oldMeasureEl.parentNode.removeChild(oldMeasureEl)
+    }
+  }
+  event.detail.circuit.evaluate$()
+})
     </script>
 </html>
