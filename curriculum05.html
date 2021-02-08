@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
-	<head>
-        <title>Reise in die Quantenzeit 05</title>
-        <meta charset="utf-8">
-        <meta name="viewport"             content="width=device-width,initial-scale=1.0">
-        <meta name="description"          content="Quantum computing in your browser.">
-        <meta name="copyright"            content="Stewart Smith 2019–2020">
-        <meta name="keywords"             content="
+  <head>
+    <title>Reise in die Quantenzeit 05</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="description" content="Quantum computing in your browser." />
+    <meta name="copyright" content="Stewart Smith 2019–2020" />
+    <meta
+      name="keywords"
+      content="
             Q, Q.js, Q-js, Qjs, quantum JavaScript,
             quantum, quantum physics, quantum mechanics, superposition,
             quantum computer, quantum computer programming, quantum computing, QC, 
@@ -21,210 +23,252 @@
                 ProjectQ, Qiskit, 
                 Quantum Development Kit, Cirq, Strawberry Fields, t|ket>,
                 QCL, Quantum pseudocode, Q#, Q|SI>, Q language, qGCL, QFC, QML, LIQUi|>, Quipper,
-            Stanford CS 269 Q: Quantum Computer Programming">
-        
-        <meta name="twitter:card"         content="summary_large_image">
-        <meta name="twitter:site"         content="@stew_rtsmith">
-        <meta name="twitter:creator"      content="@stew_rtsmith">
-        <meta name="twitter:title"        content="Q ⟩ Curriculum 02">
-        <meta name="twitter:description"  content="Quantum computing in your browser.">
-        <meta name="twitter:image"        content="https://quantumjavascript.app/assets/Q-website-preview.jpg">
-        
-        <meta property="og:type"          content="website">
-        <meta property="og:title"         content="Q ⟩ Curriculum 02">
-        <meta property="og:description"   content="Quantum computing in your browser.">
-        <meta property="og:image"         content="https://quantumjavascript.app/assets/Q-website-preview.jpg">
-        <meta property="og:url"           content="https://quantumjavascript.app/Circuit.html">
-        
-        <link rel="canonical" href="https://quantumjavascript.app/Circuit.html">
-        <link href="assets/Q-favicon-064.png" rel="icon" type="image/png">
-        <link href="assets/Q-favicon-144.png" rel="apple-touch-icon">
-        
-        <link rel="stylesheet" href="Q/Q.css">
-        <link rel="stylesheet" href="Q/Q-Circuit-Editor.css">
-        <link rel="stylesheet" href="assets/documentation.css">
-        <link rel="stylesheet" href="curriculum/curriculum.css">
-        <link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+            Stanford CS 269 Q: Quantum Computer Programming"
+    />
 
-        <script src="Q/Q.js"></script>
-        <script src="Q/Q-ComplexNumber.js"></script>
-        <script src="Q/Q-Matrix.js"></script>
-        <script src="Q/Q-Qubit.js"></script>
-        <script src="Q/Q-Gate.js"></script>
-        <script src="Q/Q-History.js"></script>
-        <script src="Q/Q-Circuit.js"></script>
-        <script src="Q/Q-Circuit-Editor.js"></script>
-        <script src="curriculum/navigation.js"></script>
-        
-    </head>
-    <body>
-		<main class="home">
-            <h3>Quantencomputer – CNOT und Hadamard</h3>
-            <p>
-                Das CNOT-Gatter wendet ein <span class="curriculum-gate-description">X</span>-Gatter auf das untere Qubit (Ziel-Qubit) an, sofern das obere Qubit 
-                (Kontroll-Qubit) im Zustand <span class="curriculum-input-description">1</span> ist. 
-                Ist das obere Qubit (Kontroll-Qubit) im Zustand <span class="curriculum-input-description">0</span>, 
-                ändert sich nichts am unteren Qubit.
-            </p>
-            <img src="curriculum/CNOT.svg" />
-            <p>
-                Was aber passiert, wenn das Kontroll-Qubit nicht im Zustand <span class="curriculum-input-description">0</span> 
-                oder im Zustand <span class="curriculum-input-description">1</span> ist sondern in einem 
-                Superpositionszustand?
-            </p>
-            <div class=curriculum-exercise>
-                <div class="curriculum-exercise-icon">!</div>
-                <div>Wende nun ein Hadamard-Gatter <span class="curriculum-gate-description">H</span> auf das erste Qubit
-                    vor der Anwendung des CNOT-Gatters an, um es in eine gleichmäßige Superposition zu bringen, und führe erneut einige Messungen mit verschiedenen Eingabewerten durch. 
-                    Welchen Effekt hat das Gatter auf das Gesamtergebnis?
-                </div>
-            </div>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@stew_rtsmith" />
+    <meta name="twitter:creator" content="@stew_rtsmith" />
+    <meta name="twitter:title" content="Q ⟩ Curriculum 02" />
+    <meta
+      name="twitter:description"
+      content="Quantum computing in your browser."
+    />
+    <meta
+      name="twitter:image"
+      content="https://quantumjavascript.app/assets/Q-website-preview.jpg"
+    />
 
-            <h6>Hinweise</h6>
-            <ul>
-                <li>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Q ⟩ Curriculum 02" />
+    <meta
+      property="og:description"
+      content="Quantum computing in your browser."
+    />
+    <meta
+      property="og:image"
+      content="https://quantumjavascript.app/assets/Q-website-preview.jpg"
+    />
+    <meta
+      property="og:url"
+      content="https://quantumjavascript.app/Circuit.html"
+    />
+
+    <link rel="canonical" href="https://quantumjavascript.app/Circuit.html" />
+    <link href="assets/Q-favicon-064.png" rel="icon" type="image/png" />
+    <link href="assets/Q-favicon-144.png" rel="apple-touch-icon" />
+
+    <link rel="stylesheet" href="Q/Q.css" />
+    <link rel="stylesheet" href="Q/Q-Circuit-Editor.css" />
+    <link rel="stylesheet" href="assets/documentation.css" />
+    <link rel="stylesheet" href="curriculum/curriculum.css" />
+    <link
+      href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css"
+      rel="stylesheet"
+    />
+
+    <script src="Q/Q.js"></script>
+    <script src="Q/Q-ComplexNumber.js"></script>
+    <script src="Q/Q-Matrix.js"></script>
+    <script src="Q/Q-Qubit.js"></script>
+    <script src="Q/Q-Gate.js"></script>
+    <script src="Q/Q-History.js"></script>
+    <script src="Q/Q-Circuit.js"></script>
+    <script src="Q/Q-Circuit-Editor.js"></script>
+    <script src="curriculum/navigation.js"></script>
+  </head>
+  <body>
+    <main class="home">
+      <h3>Quantencomputer – CNOT und Hadamard</h3>
+      <p>
+        Das CNOT-Gatter wendet ein
+        <span class="curriculum-gate-description">X</span>-Gatter auf das untere
+        Qubit (Ziel-Qubit) an, sofern das obere Qubit (Kontroll-Qubit) im
+        Zustand <span class="curriculum-input-description">1</span> ist. Ist das
+        obere Qubit (Kontroll-Qubit) im Zustand
+        <span class="curriculum-input-description">0</span>, ändert sich nichts
+        am unteren Qubit.
+      </p>
+      <img src="curriculum/CNOT.svg" />
+      <p>
+        Was aber passiert, wenn das Kontroll-Qubit nicht im Zustand
+        <span class="curriculum-input-description">0</span> oder im Zustand
+        <span class="curriculum-input-description">1</span> ist sondern in einem
+        Superpositionszustand?
+      </p>
+      <div class="curriculum-exercise">
+        <div class="curriculum-exercise-icon">!</div>
+        <div>
+          Wende nun ein Hadamard-Gatter
+          <span class="curriculum-gate-description">H</span> auf das erste Qubit
+          vor der Anwendung des CNOT-Gatters an, um es in eine gleichmäßige
+          Superposition zu bringen, und führe erneut einige Messungen mit
+          verschiedenen Eingabewerten durch. Welchen Effekt hat das Gatter auf
+          das Gesamtergebnis?
+        </div>
+      </div>
+
+      <h6>Hinweise</h6>
+      <ul>
+        <!-- <li>
                     Verändere die Eingabewerte, indem Du auf die Zahlen am Anfang einer Zeile klickst.
                 </li>
                 <li>
                     Führe eine Messung durch, indem Du auf <i>Auswerten</i> klickst.
-                </li>
-                <li>
-                    Das <span class="curriculum-gate-description">X</span>-Gatter stellt die Quantenversion des NICHT-Gatters von klassischen Computern dar.
-                </li>
-                <li>
-                    Das Hadamard-Gatter <span class="curriculum-gate-description">H</span> überführt die Basiszustände 0 und 1 in eine gleichmäßige Superposition.
-                </li>
-                <li>
-                    Du kannst ein CNOT-Gatter erstellen, indem Du ein <span class="curriculum-gate-description">X</span>-Gatter und 
-                    ein <span class="curriculum-identity-description"></span>-Gatter in einer Spalte anordnest, beide markierst und 
-                    auf <b>C</b> klickst.
-                </li>
-            </ul>
-            <div class="curriculum-spacer"></div>
+                </li>-->
+        <li>
+          Du kannst ein CNOT-Gatter erstellen, indem Du ein
+          <span class="curriculum-gate-description">X</span>-Gatter und ein
+          <span class="curriculum-identity-description"></span>-Gatter in einer
+          Spalte anordnest, beide markierst und auf <b>C</b> klickst.
+        </li>
+      </ul>
+      <div class="curriculum-spacer"></div>
 
-            <div class="">
-                <div class='Q-circuit-palette' ></div>
-                <div id=circuit></div>
-                <button class="Q-button" 
-                        id="evaluate-button" 
-                        type="button" 
-                        onclick="auswerten(); this.blur();">
-                    Auswerten
-                </button>
-            </div>
-            <div class="curriculum-spacer"></div>
-            <h2>
-                Meine Messungen
-            </h2>
-            <div id="measurement-history" class="measurement-history-container">
-                <button class="measurement-history-action-button" onclick="resetHistory()">Reset</button>
-            </div>
+      <div class="">
+        <div class="Q-circuit-palette"></div>
+        <div id="circuit"></div>
+        <button
+          class="Q-button"
+          id="evaluate-button"
+          type="button"
+          onclick="auswerten(); this.blur();"
+        >
+          Auswerten
+        </button>
+      </div>
+      <div class="curriculum-spacer"></div>
+      <h2>Meine Messungen</h2>
+      <div id="measurement-history" class="measurement-history-container">
+        <button
+          class="measurement-history-action-button"
+          onclick="resetHistory()"
+        >
+          Reset
+        </button>
+      </div>
 
-            <details>
-                <summary>
-                  Lösungshinweise    
-                  <svg viewBox="0 0 24 24" id="close" class="control-icon control-icon-expand" width="24" height="24" role="presentation">
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" />
-                      <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path><path d="M0 0h24v24H0z" fill="none"></path>
-                    </svg>
-                  <svg viewBox="0 0 24 24" id="expand-more" class="control-icon control-icon-close" width="24" height="24" role="presentation">
-                      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path><path d="M0 0h24v24H0z" fill="none"></path>
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close" />
-                  </svg>
-                </summary>
-                <p>
-                    Ist das kontrollierende Qubit in einer Superposition, hängt das Messergebnis des kontrollierten Qubits
-                    davon ab, welchen Wert das kontrollierende Qubit nun annimmt. 
-                    Die Zustände der beiden Qubits werden so <b>verschränkt</b>. 
-                    Wir können den Zustand eines einzelnen Qubits dann nicht mehr beschreiben ohne nicht die anderen Qubits auch 
-                    zu berücksichtigen. Wirlich erstaulich ist dabei: Dieser Zusammenhang bleibt selbst dann erhalten, 
-                    wenn man die Qubits Lichtjahre voneinander entfernt.
-                </p>
-            </details>
+      <details>
+        <summary>
+          Lösungshinweise
+          <svg
+            viewBox="0 0 24 24"
+            id="close"
+            class="control-icon control-icon-expand"
+            width="24"
+            height="24"
+            role="presentation"
+          >
+            <use
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xlink:href="#expand-more"
+            />
+            <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+            <path d="M0 0h24v24H0z" fill="none"></path>
+          </svg>
+          <svg
+            viewBox="0 0 24 24"
+            id="expand-more"
+            class="control-icon control-icon-close"
+            width="24"
+            height="24"
+            role="presentation"
+          >
+            <path
+              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+            ></path>
+            <path d="M0 0h24v24H0z" fill="none"></path>
+            <use
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xlink:href="#close"
+            />
+          </svg>
+        </summary>
+        <p>
+          Ist das kontrollierende Qubit in einer Superposition, hängt das
+          Messergebnis des kontrollierten Qubits davon ab, welchen Wert das
+          kontrollierende Qubit nun annimmt. Die Zustände der beiden Qubits
+          werden so <b>verschränkt</b>. Wir können den Zustand eines einzelnen
+          Qubits dann nicht mehr beschreiben ohne nicht die anderen Qubits auch
+          zu berücksichtigen. Wirlich erstaulich ist dabei: Dieser Zusammenhang
+          bleibt selbst dann erhalten, wenn man die Qubits Lichtjahre
+          voneinander entfernt.
+        </p>
+      </details>
 
-            <!-- curriculum navigation -->
-            <footer class="curriculum-footer">
-                <a class="Q-button" 
-                    type="button" 
-                    href="curriculum04.html">
-                    Zurück
-                </a>
-                <a class="Q-button" 
-                    type="button" 
-                    href="curriculum06.html">
-                    Weiter
-            </a>
-            </footer>
-        </main>
-    </body>
-    
-    <script>
-        let circuit = Q`
+      <!-- curriculum navigation -->
+      <footer class="curriculum-footer">
+        <a class="Q-button" type="button" href="curriculum04.html"> Zurück </a>
+        <a class="Q-button" type="button" href="curriculum06.html"> Weiter </a>
+      </footer>
+    </main>
+  </body>
+
+  <script>
+    let circuit = Q`
         I-I-X#0-I-I
         I-I-X#1-I-I
          `
-        document.getElementById("circuit").appendChild( circuit.toDom() )
+    document.getElementById('circuit').appendChild(circuit.toDom())
 
-        let evaluationHistory = []
+    let evaluationHistory = []
 
-        function resetHistory(){
-            evaluationHistory = []
-            let historyEls = document.getElementsByClassName('measurement-history-container-element')
-            Array.from(historyEls).map(el => el.parentNode.removeChild(el))
+    function resetHistory() {
+      evaluationHistory = []
+      let historyEls = document.getElementsByClassName(
+        'measurement-history-container-element'
+      )
+      Array.from(historyEls).map((el) => el.parentNode.removeChild(el))
+    }
+
+    function auswerten() {
+      // try evaluates the circuit onces and returns the index of the result
+      let result = circuit.try$().toString(2).padStart(circuit.bandwidth, '0')
+
+      // add result to evaluation history
+      evaluationHistory.push(result)
+      let historyEl = document.createElement('div')
+      historyEl.classList.add('measurement-history-container-element')
+      historyEl.innerText = result
+      document.getElementById('measurement-history').prepend(historyEl)
+
+      for (let idx = 0; idx < '0' + result.length; idx++) {
+        // if there is already a measurement taken, remove it
+        if (document.getElementById('measurement-' + idx)) {
+          let oldMeasureEl = document.getElementById('measurement-' + idx)
+          oldMeasureEl.parentNode.removeChild(oldMeasureEl)
         }
 
-        function auswerten(){
-            // try evaluates the circuit onces and returns the index of the result
-            let result = circuit.try$().toString(2).padStart(circuit.bandwidth, "0")
-            
-            // add result to evaluation history
-            evaluationHistory.push(result)
-            let historyEl = document.createElement('div')
-            historyEl.classList.add('measurement-history-container-element')
-            historyEl.innerText = result
-            document.getElementById('measurement-history').prepend(historyEl)
+        let measureEl = document.createElement('div')
+        document
+          .getElementsByClassName('Q-circuit-board-foreground')[0]
+          .appendChild(measureEl)
+        measureEl.classList.add('circuit-measurement')
+        measureEl.id = 'measurement-' + idx
+        measureEl.style.setProperty('grid-column-start', circuit.timewidth + 3)
+        measureEl.style.setProperty('grid-row-start', idx + 2)
+        measureEl.innerHTML = `<div class="circuit-measurement-tile">${result[idx]}</div>`
+      }
+    }
 
-            for (let idx = 0; idx < '0' + result.length; idx++){
-                // if there is already a measurement taken, remove it
-                if (document.getElementById('measurement-' + idx)){
-                    let oldMeasureEl = document.getElementById('measurement-' + idx)
-                    oldMeasureEl.parentNode.removeChild(oldMeasureEl)
-                }
+    //  Let’s place circuit palettes
+    //  inside anything with the class 'Q-circuit-palette'.
+    Array.from(document.querySelectorAll('.Q-circuit-palette')).forEach(
+      function (el) {
+        Q.Circuit.Editor.createPalette(el, (gates = 'HX*'))
+      }
+    )
 
-                let measureEl = document.createElement('div')
-                document.getElementsByClassName("Q-circuit-board-foreground")[0].appendChild(measureEl)
-                measureEl.classList.add('circuit-measurement')
-                measureEl.id = "measurement-" + idx
-                measureEl.style.setProperty('grid-column-start', circuit.timewidth + 3)
-                measureEl.style.setProperty('grid-row-start', idx+2)
-                measureEl.innerHTML = 
-                    `<div class="circuit-measurement-tile">${result[idx]}</div>`
-            }
+    //  Update evaluation result, when circuit is altered via GUI
+    window.addEventListener('Q gui altered circuit', function (event) {
+      for (let idx = 0; idx < '0' + event.detail.circuit.bandwidth; idx++) {
+        // if there is already a measurement taken, remove it
+        if (document.getElementById('measurement-' + idx)) {
+          let oldMeasureEl = document.getElementById('measurement-' + idx)
+          oldMeasureEl.parentNode.removeChild(oldMeasureEl)
         }
-
-
-        //  Let’s place circuit palettes
-        //  inside anything with the class 'Q-circuit-palette'.
-        Array
-        .from( document.querySelectorAll( '.Q-circuit-palette' ))
-        .forEach( function( el ){
-
-            Q.Circuit.Editor.createPalette( el, gates='HX*' )
-        })
-
-
-
-        //  Update evaluation result, when circuit is altered via GUI
-        window.addEventListener( 'Q gui altered circuit', function( event ){
-            for (let idx = 0; idx < '0' + event.detail.circuit.bandwidth; idx++){
-                // if there is already a measurement taken, remove it
-                if (document.getElementById('measurement-' + idx)){
-                    let oldMeasureEl = document.getElementById('measurement-' + idx)
-                    oldMeasureEl.parentNode.removeChild(oldMeasureEl)
-                }
-            }
-            event.detail.circuit.evaluate$()
-        })
-
-    </script>
+      }
+      event.detail.circuit.evaluate$()
+    })
+  </script>
 </html>
