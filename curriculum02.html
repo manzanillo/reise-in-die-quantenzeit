@@ -288,8 +288,8 @@
 
         let measureEl = document.createElement('div')
         document
-          .getElementsByClassName('Q-circuit-board-foreground')[0]
-          .appendChild(measureEl)
+          .getElementsByClassName('Q-circuit-board-foreground')
+          [circuitPostfix == 'X' ? 0 : 1].appendChild(measureEl)
         measureEl.classList.add('circuit-measurement')
         measureEl.id = 'measurement-' + idx
         measureEl.style.setProperty('grid-column-start', circuit.timewidth + 3)
