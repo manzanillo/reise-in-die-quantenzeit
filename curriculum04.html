@@ -171,7 +171,8 @@
           Messergebnisse zu erzielen, ist es, ein
           <span class="curriculum-gate-description">H</span>-Gatter auf das
           erste und zweite Qubit anzuwenden und mehrere Messungen durchzuführen.
-          Eine andere Möglichkeit ist, das
+          Eine andere Möglichkeit besteht darin, die Startwerte der Qubits
+          anzupassen.
         </p>
       </details>
 
@@ -190,7 +191,22 @@
           Eingabewerte ausprobierst und mehrere Messungen durchführst.
         </div>
       </div>
-
+      <h6>Hinweise</h6>
+      <ul>
+        <!-- <li>
+                    Verändere die Eingabewerte, indem Du auf die Zahlen am Anfang einer Zeile klickst.
+                </li>
+                <li>
+                    Führe eine Messung durch, indem Du auf <i>Auswerten</i> klickst.
+                </li>-->
+        <li>
+          Wir haben bereits ein CNOT-Gatter angelegt. Du kannst ein CNOT-Gatter
+          auch selbst erstellen, indem Du ein
+          <span class="curriculum-gate-description">X</span>-Gatter und ein
+          <span class="curriculum-identity-description"></span>-Gatter in einer
+          Spalte anordnest, beide markierst und auf <b>C</b> klickst.
+        </li>
+      </ul>
       <!-- <h6>Hinweise</h6>
       <ul>
           <li>
@@ -211,7 +227,7 @@
       <div class="curriculum-spacer"></div>
 
       <div class="">
-        <div class="Q-circuit-palette" data-gates="*XH"></div>
+        <div class="Q-circuit-palette" data-gates="XH*"></div>
         <div id="circuit-H"></div>
         <button
           class="Q-button"
@@ -269,12 +285,15 @@
           </svg>
         </summary>
         <p>
-          Das Gatter dreht das untere Qubit (Ziel-Qubit) um, sofern das obere
-          Qubit (Kontroll-Qubit)
-          <span class="curriculum-input-description">1</span> ist. Ist das obere
-          Qubit (Kontroll-Qubit)
-          <span class="curriculum-input-description">0</span>, ändert sich
-          nichts am unteren Qubit.
+          Ist das kontrollierende Qubit (im Beispiel oben) in einer
+          Superposition, erhalten wir lediglich die Messergebnisse
+          <span class="curriculum-input-description">00</span> und
+          <span class="curriculum-input-description">11</span>. Der Wert des
+          kontrollierten Qubits stimmt in diesem Fall also immer mit dem Wert
+          des kontrollierenden Qubits überein. Der Zustand der beiden Qubits
+          heißt nun <b>verschränkt</b>. Kennen wir den Zustand eines der Qubits
+          wissen wir also auch automatisch, dass das andere Qubit in diesem
+          Zustand ist.
         </p>
       </details>
 
