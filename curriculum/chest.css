@@ -23,6 +23,7 @@
   cursor: not-allowed !important;
 }
 
-#dritter-knopf path:hover {
+#dritter-knopf path:hover,
+#dritter-knopf-4 path:hover {
   cursor: pointer;
 }
