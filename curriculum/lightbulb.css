@@ -152,6 +152,10 @@ body {
   display: none;
 }
 
+.power path:hover {
+  cursor: pointer;
+}
+
 @-webkit-keyframes move-left {
   0% {
     transform: none;
