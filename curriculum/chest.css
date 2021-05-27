@@ -1,0 +1,28 @@
+#knopf-vorne path:hover,
+#knopf-hinten path:hover,
+#knopf-vorne-2 path:hover,
+#knopf-hinten-2 path:hover {
+  cursor: pointer;
+}
+/*
+#knopf-vorne path:active,
+#knopf-hinten path:active,
+#knopf-vorne-2 path:active,
+#knopf-hinten-2 path:active {
+  color: #000;
+}
+
+#knopf-vorne path:after,
+#knopf-hinten path:after,
+#knopf-vorne-2 path:after,
+#knopf-hinten-2 path:after {
+  background: transparent;
+}*/
+
+.non-clickable path:hover {
+  cursor: not-allowed !important;
+}
+
+#dritter-knopf path:hover {
+  cursor: pointer;
+}
