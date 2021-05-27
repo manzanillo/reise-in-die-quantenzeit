@@ -8,7 +8,7 @@ function onHashChange(freshLoad) {
   //  then it already has a 'hash-target' class on it
   //  which we should remove.
 
-  if (hashTarget) hashTarget.classList.remove("hash-target")
+  if (hashTarget) hashTarget.classList.remove('hash-target')
 
   //  If this is a transition TO a hashTarget
   //  as opposed to a transition to the bare page
@@ -17,7 +17,7 @@ function onHashChange(freshLoad) {
 
   if (location.hash) {
     hashTarget = document.getElementById(location.hash.substr(1))
-    tilte = title + " ⟩ " + hashTarget.innerText.replace(/\n|\r|#/g, "")
+    tilte = title + ' ⟩ ' + hashTarget.innerText.replace(/\n|\r|#/g, '')
   } else hashTarget = null
 
   //  If we have a hash target
@@ -27,10 +27,10 @@ function onHashChange(freshLoad) {
   if (
     (hashTarget || freshLoad !== true) &&
     window.ga !== undefined &&
-    typeof window.ga === "function"
+    typeof window.ga === 'function'
   ) {
-    ga("send", {
-      hitType: "pageview",
+    ga('send', {
+      hitType: 'pageview',
       page: location.pathname + location.search + location.hash,
       title: title,
     })
@@ -40,7 +40,7 @@ function onHashChange(freshLoad) {
   //  then we should smoothly scroll to it.
 
   if (hashTarget) {
-    hashTarget.classList.add("hash-target")
+    hashTarget.classList.add('hash-target')
 
     const rootEm = parseFloat(window.getComputedStyle(document.body).fontSize),
       compact = document.body.offsetWidth < 600,
@@ -48,19 +48,20 @@ function onHashChange(freshLoad) {
       bounds = hashTarget.getBoundingClientRect(),
       yTarget = bounds.top - yBuffer + window.scrollY
 
-    window.scrollTo({ left: 0, top: yTarget, behavior: "smooth" })
+    window.scrollTo({ left: 0, top: yTarget, behavior: 'smooth' })
   }
   return false
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  const nav = document.createElement("nav"),
-    home = window.location.protocol === "file:" ? "index.html" : "/"
+document.addEventListener('DOMContentLoaded', function () {
+  const nav = document.createElement('nav'),
+    home = window.location.protocol === 'file:' ? 'index.html' : '/'
 
   nav.innerHTML = `
 		<h1 style="padding:0.6rem;">
 			Reise in die Quantenzeit
 		</h1>
+    <p>Grundlagen</p>
 		<ul>
 			<li><h2><a href="curriculum01.html">Curriculum 01</a></h2></li>
 			<li><h2><a href="curriculum02.html">Curriculum 02</a></h2></li>
@@ -70,6 +71,10 @@ document.addEventListener("DOMContentLoaded", function () {
 			<li><h2><a href="curriculum06.html">Curriculum 06</a></h2></li>
 			<li><h2><a href="curriculum07.html">Curriculum 07</a></h2></li>
 		</ul>
+    <p>Ausgewählte Themen</p>
+		<ul>
+			<li><h2><a href="quantumsupremacy01.html">Quantenüberlegenheit</a></h2></li>
+		</ul>
 		<div id="veggie-burger">
 			<div id="vb-top-dexter"></div>
 			<div id="vb-middle"></div>
@@ -78,25 +83,25 @@ document.addEventListener("DOMContentLoaded", function () {
 	`
   document.body.appendChild(nav)
   // document.body.prepend( nav )
-  Array.from(nav.getElementsByTagName("a")).forEach(function (link) {
+  Array.from(nav.getElementsByTagName('a')).forEach(function (link) {
     if (
       link.pathname === document.location.pathname ||
-      link.pathname === document.location.pathname + "index.html"
+      link.pathname === document.location.pathname + 'index.html'
     ) {
-      link.classList.add("selected")
+      link.classList.add('selected')
     }
   })
-  if (nav.querySelectorAll("h1 a.selected").length) {
-    nav.classList.add("home")
+  if (nav.querySelectorAll('h1 a.selected').length) {
+    nav.classList.add('home')
   }
 
-  const vb = document.getElementById("veggie-burger"),
+  const vb = document.getElementById('veggie-burger'),
     vbOpen = function () {
-      nav.classList.add("expand")
+      nav.classList.add('expand')
       vb.isOpen = true
     },
     vbClose = function () {
-      nav.classList.remove("expand")
+      nav.classList.remove('expand')
       vb.isOpen = false
     },
     vbToggle = function (event) {
@@ -109,39 +114,39 @@ document.addEventListener("DOMContentLoaded", function () {
   vb.isOpen = false
   //vb.addEventListener( 'mousedown', vbToggle )
   // vb.addEventListener( 'touchstart', vbToggle )
-  vb.addEventListener("click", vbToggle)
-  document.querySelector("main").addEventListener("click", vbClose)
+  vb.addEventListener('click', vbToggle)
+  document.querySelector('main').addEventListener('click', vbClose)
 
   Array.from(
-    document.querySelectorAll("main h2, main h3, main h4, main h5")
+    document.querySelectorAll('main h2, main h3, main h4, main h5')
   ).forEach(function (el) {
-    if (el.getAttribute("id") === null) {
-      el.setAttribute("id", el.innerText.trim().replace(/\s+/g, "_"))
+    if (el.getAttribute('id') === null) {
+      el.setAttribute('id', el.innerText.trim().replace(/\s+/g, '_'))
     }
 
-    const container = document.createElement("span"),
-      link = document.createElement("a")
+    const container = document.createElement('span'),
+      link = document.createElement('a')
 
-    container.classList.add("section-anchor")
+    container.classList.add('section-anchor')
     container.appendChild(link)
-    link.setAttribute("href", "#" + el.getAttribute("id"))
-    link.innerText = "#"
-    el.insertAdjacentElement("afterbegin", container)
+    link.setAttribute('href', '#' + el.getAttribute('id'))
+    link.innerText = '#'
+    el.insertAdjacentElement('afterbegin', container)
   })
 
-  Array.from(document.querySelectorAll("dt[id]")).forEach(function (el) {
-    const container = document.createElement("div"),
-      link = document.createElement("a")
+  Array.from(document.querySelectorAll('dt[id]')).forEach(function (el) {
+    const container = document.createElement('div'),
+      link = document.createElement('a')
 
-    container.classList.add("section-anchor")
+    container.classList.add('section-anchor')
     container.appendChild(link)
-    link.setAttribute("href", "#" + el.getAttribute("id"))
-    link.innerHTML = "&nbsp;"
+    link.setAttribute('href', '#' + el.getAttribute('id'))
+    link.innerHTML = '&nbsp;'
     el.parentNode.appendChild(container)
   })
 
   onHashChange(true)
-  window.addEventListener("hashchange", onHashChange, false)
+  window.addEventListener('hashchange', onHashChange, false)
 
   //  Let’s redirect folks from the old GitHub page
   //  to our shiny new domain name.
