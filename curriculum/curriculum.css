@@ -261,3 +261,10 @@ p + p {
 p {
   margin-top: 1rem;
 }
+
+.author-info {
+  padding-top: 1em;
+  font-style: italic;
+  color: #555;
+  font-size: smaller;
+}
