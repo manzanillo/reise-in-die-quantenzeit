@@ -299,7 +299,11 @@
       evaluationHistory.push(result)
       let historyEl = document.createElement('div')
       historyEl.classList.add('measurement-history-container-element')
-      historyEl.innerText = result
+      let inputString = circuit.qubits
+        .map((qubit) => (qubit.name === 'Horizontal' ? 0 : 1))
+        .join('')
+        .replace(/\s/g, '')
+      historyEl.innerText = 'Eingabe: ' + inputString + '; Ausgabe: ' + result
       document
         .getElementById('measurement-history-' + circuitPostfix)
         .prepend(historyEl)

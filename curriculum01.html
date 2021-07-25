@@ -1259,11 +1259,15 @@
       <!-- Curriculum navigation -->
       <footer class="curriculum-footer">
         <p>
-        <a class="Q-button" type="button" disabled> Zurück </a>
-        <a class="Q-button" type="button" href="curriculum02.html"> Weiter </a>
-       </p>
-       <p class="author-info">Entwickelt von Stefan Seegerer und Andreas Woitzik</p>
-    </footer>
+          <a class="Q-button" type="button" disabled> Zurück </a>
+          <a class="Q-button" type="button" href="curriculum02.html">
+            Weiter
+          </a>
+        </p>
+        <p class="author-info">
+          Entwickelt von Stefan Seegerer und Andreas Woitzik
+        </p>
+      </footer>
     </main>
   </body>
 
@@ -1370,7 +1374,8 @@
       evaluationHistory.push(result)
       let historyEl = document.createElement('div')
       historyEl.classList.add('measurement-history-container-element')
-      historyEl.innerText = result
+      historyEl.innerText =
+        'Eingabe: ' + andInput1 + ', ' + andInput2 + '; Ausgabe: ' + result
       document.getElementById('measurement-history-and').prepend(historyEl)
 
       if (result === 1) {
@@ -1390,7 +1395,8 @@
       evaluationHistory.push(result)
       let historyEl = document.createElement('div')
       historyEl.classList.add('measurement-history-container-element')
-      historyEl.innerText = result
+      historyEl.innerText =
+        'Eingabe: ' + orInput1 + ', ' + orInput2 + '; Ausgabe: ' + result
       document.getElementById('measurement-history-or').prepend(historyEl)
 
       if (result === 1) {
