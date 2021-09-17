@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Reise in die Quantenzeit 03</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <meta name="description" content="Quantum computing in your browser." />
-    <meta name="copyright" content="Stefan Seegerer, Stewart Smith 2019–2021" />
-    <meta
-      name="keywords"
-      content="
+
+<head>
+  <title>Reise in die Quantenzeit 03</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <meta name="description" content="Quantum computing in your browser." />
+  <meta name="copyright" content="Stefan Seegerer, Stewart Smith 2019–2021" />
+  <meta name="keywords" content="
             Q, Q.js, Q-js, Qjs, quantum JavaScript,
             quantum, quantum physics, quantum mechanics, superposition,
             quantum computer, quantum computer programming, quantum computing, QC, 
@@ -23,155 +22,119 @@
                 ProjectQ, Qiskit, 
                 Quantum Development Kit, Cirq, Strawberry Fields, t|ket>,
                 QCL, Quantum pseudocode, Q#, Q|SI>, Q language, qGCL, QFC, QML, LIQUi|>, Quipper,
-            Stanford CS 269 Q: Quantum Computer Programming"
-    />
+            Stanford CS 269 Q: Quantum Computer Programming" />
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@stew_rtsmith" />
-    <meta name="twitter:creator" content="@stew_rtsmith" />
-    <meta name="twitter:title" content="Q ⟩ Curriculum 02" />
-    <meta
-      name="twitter:description"
-      content="Quantum computing in your browser."
-    />
-    <meta
-      name="twitter:image"
-      content="https://quantumjavascript.app/assets/Q-website-preview.jpg"
-    />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@stew_rtsmith" />
+  <meta name="twitter:creator" content="@stew_rtsmith" />
+  <meta name="twitter:title" content="Q ⟩ Curriculum 02" />
+  <meta name="twitter:description" content="Quantum computing in your browser." />
+  <meta name="twitter:image" content="https://quantumjavascript.app/assets/Q-website-preview.jpg" />
 
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Q ⟩ Curriculum 02" />
-    <meta
-      property="og:description"
-      content="Quantum computing in your browser."
-    />
-    <meta
-      property="og:image"
-      content="https://quantumjavascript.app/assets/Q-website-preview.jpg"
-    />
-    <meta
-      property="og:url"
-      content="https://quantumjavascript.app/Circuit.html"
-    />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Q ⟩ Curriculum 02" />
+  <meta property="og:description" content="Quantum computing in your browser." />
+  <meta property="og:image" content="https://quantumjavascript.app/assets/Q-website-preview.jpg" />
+  <meta property="og:url" content="https://quantumjavascript.app/Circuit.html" />
 
-    <link rel="canonical" href="https://quantumjavascript.app/Circuit.html" />
-    <link href="assets/Q-favicon-064.png" rel="icon" type="image/png" />
-    <link href="assets/Q-favicon-144.png" rel="apple-touch-icon" />
+  <link rel="canonical" href="https://quantumjavascript.app/Circuit.html" />
+  <link href="assets/Q-favicon-064.png" rel="icon" type="image/png" />
+  <link href="assets/Q-favicon-144.png" rel="apple-touch-icon" />
 
-    <link rel="stylesheet" href="Q/Q.css" />
-    <link rel="stylesheet" href="Q/Q-Circuit-Editor.css" />
-    <link rel="stylesheet" href="assets/documentation.css" />
-    <link rel="stylesheet" href="curriculum/curriculum.css" />
-    <link
-      href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css"
-      rel="stylesheet"
-    />
+  <link rel="stylesheet" href="Q/Q.css" />
+  <link rel="stylesheet" href="Q/Q-Circuit-Editor.css" />
+  <link rel="stylesheet" href="assets/documentation.css" />
+  <link rel="stylesheet" href="curriculum/curriculum.css" />
+  <link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet" />
 
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script
-      id="MathJax-script"
-      async
-      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
-    ></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-    <script src="Q/Q.js"></script>
-    <script src="Q/Q-ComplexNumber.js"></script>
-    <script src="Q/Q-Matrix.js"></script>
-    <script src="Q/Q-Qubit.js"></script>
-    <script src="Q/Q-Gate.js"></script>
-    <script src="Q/Q-History.js"></script>
-    <script src="Q/Q-Circuit.js"></script>
-    <script src="Q/Q-Circuit-Editor.js"></script>
-    <script src="curriculum/navigation.js"></script>
-  </head>
-  <body>
-    <main class="home">
-      <h3>Quantencomputer – Superposition</h3>
+  <script src="Q/Q.js"></script>
+  <script src="Q/Q-ComplexNumber.js"></script>
+  <script src="Q/Q-Matrix.js"></script>
+  <script src="Q/Q-Qubit.js"></script>
+  <script src="Q/Q-Gate.js"></script>
+  <script src="Q/Q-History.js"></script>
+  <script src="Q/Q-Circuit.js"></script>
+  <script src="Q/Q-Circuit-Editor.js"></script>
+  <script src="curriculum/navigation.js"></script>
+</head>
 
-      <p>
-        Während sich das
-        <span class="curriculum-gate-description">X</span>-Gatter ein bisschen
-        so verhält, wie du es auch vom NICHT-Gatter eines herkömmlichen
-        Computers kennst, wirst du festgestellt haben, dass das sogenannte
-        Hadamard-Gatter <span class="curriculum-gate-description">H</span> dafür
-        sorgt, dass wir in ungefähr 50% der Fällen
-        <span class="curriculum-input-description">0</span> und in den anderen
-        50% <span class="curriculum-input-description">1</span> messen.
-      </p>
+<body>
+  <main class="home">
+    <h3>Quantencomputer – Superposition</h3>
 
-      <p>
-        Die Anwendung des Hadamard-Gatters bringt das Qubit also in einen
-        Zustand, bei dem die Wahrscheinlichkeit
-        <span class="curriculum-input-description">0</span> bzw.
-        <span class="curriculum-input-description">1</span> zu messen, jeweils
-        50% beträgt.
-        <!--Die beiden Basiszustände 
+    <p>
+      Während sich das
+      <span class="curriculum-gate-description">X</span>-Gatter vergleichbar wie das NICHT-Gatter eines herkömmlichen
+      verhält, wirst du festgestellt haben, dass das sogenannte
+      Hadamard-Gatter <span class="curriculum-gate-description">H</span> dafür
+      sorgt, dass wir in ungefähr 50% der Fälle
+      <span class="curriculum-input-description">0</span> und in den anderen
+      50% <span class="curriculum-input-description">1</span> messen.
+    </p>
+
+    <p>
+      Die Anwendung des Hadamard-Gatters bringt das Qubit also in einen
+      Zustand, bei dem die Wahrscheinlichkeit
+      <span class="curriculum-input-description">0</span> bzw.
+      <span class="curriculum-input-description">1</span> zu messen, jeweils
+      50% beträgt.
+      <!--Die beiden Basiszustände 
                 <span class="curriculum-input-description">0</span> und 
                 <span class="curriculum-input-description">1</span> notieren wir dabei oft 
                 in der sogenannten ket-Notation als <span class="curriculum-input-description">|0⟩</span> und 
                 <span class="curriculum-input-description">|1⟩</span>.-->
-      </p>
-      <p>
-        Damit hast du eine der Besonderheiten aus der Welt der Quantencomputer
-        kennengelernt:
-      </p>
-      <p class="curriculum-merkkasten">
-        Ein Qubit kann den Wert
-        <span class="curriculum-input-description">0</span> und den Wert
-        <span class="curriculum-input-description">1</span> annehmen oder in
-        einer <b>Superposition</b> aus
-        <span class="curriculum-input-description">0</span> und
-        <span class="curriculum-input-description">1</span> sein. Dann hat es
-        eine bestimmte Wahrscheinlichkeit als
-        <span class="curriculum-input-description">0</span> bzw.
-        <span class="curriculum-input-description">1</span> gemessen zu werden.
-        Eine Messung zerstört allerdings die Superposition – die Messung kann
-        also nicht wiederholt werden.
-      </p>
-      <p>
-        Denken wir noch einmal an das Kugelmodell, das wir bei Bits bereits
-        kennengelernt haben und bei dem wir Pfeil runter als
-        <span class="curriculum-input-description">0</span> und Pfeil hoch als
-        <span class="curriculum-input-description">1</span> interpretiert haben.
-        Betrachten wir nun Qubits, kann diese Kugel auch anders gedreht sein,
-        sodass der Pfeil in eine andere Richtung als oben oder unten zeigt. Nach
-        Anwendung des Hadamard-Gatters auf ein Qubit im Zustand
-        <span class="curriculum-input-description">1</span> zeigt der Pfeil nach
-        vorne. Messen wir, fällt die Kugel mit einer gewissen Wahrscheinlichkeit
-        in den Basiszustand oben oder in den Basiszustand unten zurück.
-      </p>
-      <div style="margin-top: 2rem; padding: 1rem">
-        <img src="curriculum/curriculum03-superposition.svg" />
-      </div>
+    </p>
+    <p>
+      Damit hast du eine der Besonderheiten aus der Welt der Quantencomputer
+      kennengelernt:
+    </p>
+    <p class="curriculum-merkkasten">
+      Ein Qubit kann den Wert
+      <span class="curriculum-input-description">0</span> und den Wert
+      <span class="curriculum-input-description">1</span> annehmen oder in
+      einer <b>Superposition</b> aus
+      <span class="curriculum-input-description">0</span> und
+      <span class="curriculum-input-description">1</span> sein. Dann hat es
+      eine bestimmte Wahrscheinlichkeit als
+      <span class="curriculum-input-description">0</span> bzw.
+      <span class="curriculum-input-description">1</span> gemessen zu werden.
+      Eine Messung zerstört allerdings die Superposition – die Messung kann
+      also nicht wiederholt werden.
+    </p>
+    <p>
+      Denken wir noch einmal an das Kugelmodell, das wir bei Bits bereits
+      kennengelernt haben und bei dem wir Pfeil runter als
+      <span class="curriculum-input-description">0</span> und Pfeil hoch als
+      <span class="curriculum-input-description">1</span> interpretiert haben.
+      Betrachten wir nun Qubits, kann der Pfeil in eine andere Richtung als oben oder unten zeigen. Nach
+      Anwendung des Hadamard-Gatters auf ein Qubit im Zustand
+      <span class="curriculum-input-description">1</span> zeigt der Pfeil nach
+      vorne. Messen wir, fällt die Kugel mit einer gewissen Wahrscheinlichkeit
+      in den Basiszustand oben oder in den Basiszustand unten zurück.
+    </p>
+    <div style="margin-top: 2rem; padding: 1rem">
+      <img src="curriculum/curriculum03-superposition.svg" />
+    </div>
 
-      <p>
-        Wie sich eine Messung auf den Zustand des Qubits auswirkt, kannst du
-        ausprobieren, indem du auf <i>Auswerten</i> klickst.
-      </p>
-      <div style="display: flex; flex-direction: row; margin-top: 1em">
-        <div style="flex-grow: 3; text-align: center">
-          <svg viewBox="0 0 820 820" height="100px">
-            <ellipse
-              cx="404.288"
-              cy="404.288"
-              rx="363.844"
-              ry="363.844"
-              style="fill: url(#_Radial1)"
-            />
-            <ellipse
-              cx="404.288"
-              cy="404.288"
-              rx="363.844"
-              ry="363.844"
-              style="
+    <p>
+      Wie sich eine Messung auf den Zustand des Qubits auswirkt, kannst du
+      ausprobieren, indem du auf <i>Auswerten</i> klickst.
+    </p>
+    <div style="display: flex; flex-direction: row; margin-top: 1em">
+      <div style="flex-grow: 3; text-align: center">
+        <svg viewBox="0 0 820 820" height="100px">
+          <ellipse cx="404.288" cy="404.288" rx="363.844" ry="363.844" style="fill: url(#_Radial1)" />
+          <ellipse cx="404.288" cy="404.288" rx="363.844" ry="363.844" style="
                 fill: none;
                 stroke: rgb(165, 165, 165);
                 stroke-width: 17.52px;
-              "
-            />
-            <path
-              d="M55.31,383.119C71.482,368.944 96.262,357.633 125.623,348.637C213.25,321.795 341.727,315.586 404.288,315.586C438.112,315.586 470.858,316.783 501.93,319.021C534.453,321.363 565.143,324.849 593.319,329.297C623.411,334.05 768.132,359.171 768.132,409.885"
-              style="
+              " />
+          <path
+            d="M55.31,383.119C71.482,368.944 96.262,357.633 125.623,348.637C213.25,321.795 341.727,315.586 404.288,315.586C438.112,315.586 470.858,316.783 501.93,319.021C534.453,321.363 565.143,324.849 593.319,329.297C623.411,334.05 768.132,359.171 768.132,409.885"
+            style="
                 fill: none;
                 fill-rule: nonzero;
                 stroke: rgb(165, 165, 165);
@@ -179,11 +142,10 @@
                 stroke-linecap: round;
                 stroke-linejoin: round;
                 stroke-dasharray: 35.04, 52.53;
-              "
-            />
-            <path
-              d="M404.288,768.132C484.774,768.132 550.018,605.232 550.018,404.288C550.018,203.343 484.774,40.444 404.288,40.444"
-              style="
+              " />
+          <path
+            d="M404.288,768.132C484.774,768.132 550.018,605.232 550.018,404.288C550.018,203.343 484.774,40.444 404.288,40.444"
+            style="
                 fill: none;
                 fill-rule: nonzero;
                 stroke: rgb(165, 165, 165);
@@ -191,68 +153,51 @@
                 stroke-linecap: round;
                 stroke-linejoin: round;
                 stroke-dasharray: 35.04, 52.53;
-              "
-            />
-            <path
-              d="M453.144,61.394C437.872,47.831 421.424,40.444 404.288,40.444C323.802,40.444 258.558,203.343 258.558,404.288C258.558,605.232 323.802,768.132 404.288,768.132C442.724,768.132 472.084,731.505 490.566,697.545M549.61,376.837C548.543,341.146 545.412,306.885 540.52,274.804"
-              style="
+              " />
+          <path
+            d="M453.144,61.394C437.872,47.831 421.424,40.444 404.288,40.444C323.802,40.444 258.558,203.343 258.558,404.288C258.558,605.232 323.802,768.132 404.288,768.132C442.724,768.132 472.084,731.505 490.566,697.545M549.61,376.837C548.543,341.146 545.412,306.885 540.52,274.804"
+            style="
                 fill: none;
                 fill-rule: nonzero;
                 stroke: rgb(165, 165, 165);
                 stroke-width: 17.52px;
                 stroke-linecap: round;
                 stroke-linejoin: round;
-              "
-            />
-            <path
-              d="M84.896,364.238C58.003,377.701 40.444,394.786 40.444,409.885C40.444,460.056 203.344,500.73 404.288,500.73C605.233,500.73 768.132,460.056 768.132,409.885C768.132,397.001 758.161,384.717 740.113,373.532M589.292,328.668C562.032,324.49 532.481,321.204 501.252,318.972"
-              style="
+              " />
+          <path
+            d="M84.896,364.238C58.003,377.701 40.444,394.786 40.444,409.885C40.444,460.056 203.344,500.73 404.288,500.73C605.233,500.73 768.132,460.056 768.132,409.885C768.132,397.001 758.161,384.717 740.113,373.532M589.292,328.668C562.032,324.49 532.481,321.204 501.252,318.972"
+            style="
                 fill: none;
                 fill-rule: nonzero;
                 stroke: rgb(165, 165, 165);
                 stroke-width: 17.52px;
                 stroke-linecap: round;
                 stroke-linejoin: round;
-              "
-            />
-            <g id="pfeil-oben" style="display: none">
-              <path
-                d="M403.91,396.91L403.91,112.278"
-                style="
+              " />
+          <g id="pfeil-oben" style="display: none">
+            <path d="M403.91,396.91L403.91,112.278" style="
                   fill: none;
                   fill-rule: nonzero;
                   stroke: rgb(12, 123, 136);
                   stroke-width: 23.82px;
                   stroke-linecap: round;
                   stroke-linejoin: round;
-                "
-              />
-              <path
-                d="M371.057,122.072L436.763,122.072L403.91,47.775L371.057,122.072Z"
-                style="fill: rgb(12, 123, 136)"
-              />
-            </g>
-            <g id="pfeil-unten" style="display: none">
-              <path
-                d="M403.91,416.253L403.91,700.884"
-                style="
+                " />
+            <path d="M371.057,122.072L436.763,122.072L403.91,47.775L371.057,122.072Z" style="fill: rgb(12, 123, 136)" />
+          </g>
+          <g id="pfeil-unten" style="display: none">
+            <path d="M403.91,416.253L403.91,700.884" style="
                   fill: none;
                   fill-rule: nonzero;
                   stroke: rgb(12, 123, 136);
                   stroke-width: 23.82px;
                   stroke-linecap: round;
                   stroke-linejoin: round;
-                "
-              />
-              <path
-                d="M436.763,691.09L371.057,691.09L403.91,765.387L436.763,691.09Z"
-                style="fill: rgb(12, 123, 136)"
-              />
-            </g>
-            <g id="pfeil-vorne">
-              <path
-                d="M404.957,401.179L306.925,462.618"
-                style="
+                " />
+            <path d="M436.763,691.09L371.057,691.09L403.91,765.387L436.763,691.09Z" style="fill: rgb(12, 123, 136)" />
+          </g>
+          <g id="pfeil-vorne">
+            <path d="M404.957,401.179L306.925,462.618" style="
                   fill: none;
                   fill-rule: nonzero;
                   stroke: rgb(12, 123, 136);
@@ -260,96 +205,58 @@
                   stroke-linecap: round;
                   stroke-linejoin: round;
                   stroke-miterlimit: 22.9256;
-                "
-              />
-              <path
-                d="M335.181,487.466L296.878,426.35L246.932,500.217L335.181,487.466Z"
-                style="fill: rgb(12, 123, 136)"
-              />
-            </g>
-            <defs>
-              <radialGradient
-                id="_Radial1"
-                cx="0"
-                cy="0"
-                r="1"
-                gradientUnits="userSpaceOnUse"
-                gradientTransform="matrix(-153.767,-329.755,-329.755,153.767,222.366,222.366)"
-              >
-                <stop
-                  offset="0"
-                  style="stop-color: rgb(237, 237, 237); stop-opacity: 1"
-                />
-                <stop
-                  offset="1"
-                  style="stop-color: rgb(204, 204, 204); stop-opacity: 1"
-                />
-              </radialGradient>
-            </defs>
-          </svg>
-        </div>
-        <div style="flex-grow: 1; text-align: center; margin-top: 25px">
-          <button
-            class="Q-button"
-            type="button"
-            id="measurement-button"
-            onclick="animateMeasurement();this.blur();"
-          >
-            Auswerten
-          </button>
-        </div>
+                " />
+            <path d="M335.181,487.466L296.878,426.35L246.932,500.217L335.181,487.466Z"
+              style="fill: rgb(12, 123, 136)" />
+          </g>
+          <defs>
+            <radialGradient id="_Radial1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+              gradientTransform="matrix(-153.767,-329.755,-329.755,153.767,222.366,222.366)">
+              <stop offset="0" style="stop-color: rgb(237, 237, 237); stop-opacity: 1" />
+              <stop offset="1" style="stop-color: rgb(204, 204, 204); stop-opacity: 1" />
+            </radialGradient>
+          </defs>
+        </svg>
       </div>
+      <div style="flex-grow: 1; text-align: center; margin-top: 25px">
+        <button class="Q-button" type="button" id="measurement-button" onclick="animateMeasurement();this.blur();">
+          Auswerten
+        </button>
+      </div>
+    </div>
 
-      <details>
-        <summary>
-          Ganz schön kompliziert...
-          <svg
-            viewBox="0 0 24 24"
-            id="close"
-            class="control-icon control-icon-expand"
-            width="24"
-            height="24"
-            role="presentation"
-          >
-            <use
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              xlink:href="#expand-more"
-            />
-            <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
-            <path d="M0 0h24v24H0z" fill="none"></path>
-          </svg>
-          <svg
-            viewBox="0 0 24 24"
-            id="expand-more"
-            class="control-icon control-icon-close"
-            width="24"
-            height="24"
-            role="presentation"
-          >
-            <path
-              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
-            ></path>
-            <path d="M0 0h24v24H0z" fill="none"></path>
-            <use
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              xlink:href="#close"
-            />
-          </svg>
-        </summary>
-        <p>
-          Superposition ist deshalb so schwer vorstellbar, weil es nur bei sehr
-          kleinen Objekten wie Elektronen oder Photonen (Lichtteilchen)
-          auftritt. Bei größeren Objekten lässt sie sich nicht beobachten. Einen
-          Aspekt können wir uns aber auch mithilfe von Münzen demonstrieren:
-          Wenn wir eine Münze werfen, hat sie eine 50/50-Wahrscheinlichkeit auf
-          Kopf bzw. auf Zahl zu landen. Wir können sagen, dass sich die Münze in
-          einer Superposition aus Kopf und Zahl befindet. Wenn sie landet, hat
-          sie aber einen eindeutigen Zustand, entweder Kopf oder Zahl – die
-          Superposition wird also zerstört.
-        </p>
-      </details>
+    <details>
+      <summary>
+        Ganz schön kompliziert...
+        <svg viewBox="0 0 24 24" id="close" class="control-icon control-icon-expand" width="24" height="24"
+          role="presentation">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" />
+          <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+          <path d="M0 0h24v24H0z" fill="none"></path>
+        </svg>
+        <svg viewBox="0 0 24 24" id="expand-more" class="control-icon control-icon-close" width="24" height="24"
+          role="presentation">
+          <path
+            d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
+          </path>
+          <path d="M0 0h24v24H0z" fill="none"></path>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close" />
+        </svg>
+      </summary>
+      <p>
+        Superposition ist deshalb so schwer vorstellbar, weil es nur bei sehr
+        kleinen Objekten wie Elektronen oder Photonen (Lichtteilchen)
+        auftritt. Bei größeren Objekten lässt sie sich nicht beobachten. Einen
+        Aspekt können wir uns aber auch mithilfe von Münzen demonstrieren:
+        Wenn wir eine Münze werfen, hat sie eine 50/50-Wahrscheinlichkeit auf
+        Kopf bzw. auf Zahl zu landen. Wir können sagen, dass sich die Münze in
+        einer Superposition aus Kopf und Zahl befindet. Wenn sie landet, hat
+        sie aber einen eindeutigen Zustand, entweder Kopf oder Zahl – die
+        Superposition wird also zerstört.
+      </p>
+    </details>
 
-      <!--
+    <!--
             <details>
                 <summary>
                   Für Interessierte: Mehr zur ket-Notation    
@@ -378,277 +285,236 @@
                 </p>
             </details>-->
 
-      <div class="curriculum-spacer"></div>
-      <h4>Hadamard-Gatter zweimal anwenden</h4>
+    <div class="curriculum-spacer"></div>
+    <h4>Hadamard-Gatter zweimal anwenden</h4>
+    <p>
+      Es wirkt zunächst so, als würde das Hadamard-Gatter jede im Qubit
+      gespeicherte Information löschen, denn wenn egal ob Startwert 1 oder 0,
+      die Wahrscheinlichkeit das eine bzw. das andere zu messen, beträgt in
+      beiden Fällen jeweils 50%. Nach unserer Messung wirken die beiden
+      Zustände also nicht unterscheidbar. Aber ist das wirklich so?
+    </p>
+
+    <div class="curriculum-exercise">
+      <div class="curriculum-exercise-icon">!</div>
+      <div>
+        Wende das Hadamard-Gatter
+        <span class="curriculum-gate-description">H</span> zweimal
+        hintereinander an, wobei du einmal
+        <span class="curriculum-input-description">0</span> und einmal
+        <span class="curriculum-input-description">1</span> als Eingabewert
+        wählst. Beschreibe deine Beobachtung! Was bedeutet das für die im
+        Qubit gespeicherte Information?
+      </div>
+    </div>
+
+    <h6>Hinweise</h6>
+    <ul>
+      <li>
+        Diesmal musste du Messungen nicht mehr selbst durchführen. Sobald du
+        etwas am Schaltkreis änderst, wird dieser ausgewertet und die
+        Statistik entsprechend aktualisiert.
+      </li>
+    </ul>
+
+    <div class="">
+      <div class="Q-circuit-palette" data-gates="HX"></div>
+      <div id="circuit-1"></div>
+    </div>
+
+    <h2>Auswertung</h2>
+    <p>Nach 1000 Messungen zeigt sich folgende Ergebnisverteilung:</p>
+    <pre><samp id="circuit-1-report" for="circuit2"></samp></pre>
+
+    <details>
+      <summary>
+        Lösung
+        <svg viewBox="0 0 24 24" id="close" class="control-icon control-icon-expand" width="24" height="24"
+          role="presentation">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" />
+          <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+          <path d="M0 0h24v24H0z" fill="none"></path>
+        </svg>
+        <svg viewBox="0 0 24 24" id="expand-more" class="control-icon control-icon-close" width="24" height="24"
+          role="presentation">
+          <path
+            d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
+          </path>
+          <path d="M0 0h24v24H0z" fill="none"></path>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close" />
+        </svg>
+      </summary>
       <p>
-        Es wirkt zunächst so, als würde das Hadamard-Gatter jede im Qubit
-        gespeicherte Information löschen, denn wenn egal ob Startwert 1 oder 0,
-        die Wahrscheinlichkeit das eine bzw. das andere zu messen, beträgt in
-        beiden Fällen jeweils 50%. Nach unserer Messung wirken die beiden
-        Zustände also nicht unterscheidbar. Aber ist das wirklich so?
+        Zweimaliges Anwenden bringt das Qubit wieder in den Ausgangszustand
+        zurück. Daraus können wir schließen, dass die im Qubit gespeicherte
+        Information nicht verloren gegangen ist. Das heißt, auch wenn die
+        Messergebnisse rein zufällig wirken, ist das Qubit dennoch in einem
+        genau definierten Zustand.
       </p>
-
-      <div class="curriculum-exercise">
-        <div class="curriculum-exercise-icon">!</div>
-        <div>
-          Wende das Hadamard-Gatter
-          <span class="curriculum-gate-description">H</span> zweimal
-          hintereinander an, wobei du einmal
-          <span class="curriculum-input-description">0</span> und einmal
-          <span class="curriculum-input-description">1</span> als Eingabewert
-          wählst. Beschreibe deine Beobachtung! Was bedeutet das für die im
-          Qubit gespeicherte Information?
-        </div>
-      </div>
-
-      <h6>Hinweise</h6>
-      <ul>
-        <li>
-          Diesmal musste du Messungen nicht mehr selbst durchführen. Sobald du
-          etwas am Schaltkreis änderst, wird dieser ausgewertet und die
-          Statistik entsprechend aktualisiert.
-        </li>
-      </ul>
-
-      <div class="">
-        <div class="Q-circuit-palette" data-gates="HX"></div>
-        <div id="circuit-1"></div>
-      </div>
-
-      <h2>Auswertung</h2>
-      <p>Nach 1000 Messungen zeigt sich folgende Ergebnisverteilung:</p>
-      <pre><samp id="circuit-1-report" for="circuit2"></samp></pre>
-
-      <details>
-        <summary>
-          Lösung
-          <svg
-            viewBox="0 0 24 24"
-            id="close"
-            class="control-icon control-icon-expand"
-            width="24"
-            height="24"
-            role="presentation"
-          >
-            <use
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              xlink:href="#expand-more"
-            />
-            <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
-            <path d="M0 0h24v24H0z" fill="none"></path>
-          </svg>
-          <svg
-            viewBox="0 0 24 24"
-            id="expand-more"
-            class="control-icon control-icon-close"
-            width="24"
-            height="24"
-            role="presentation"
-          >
-            <path
-              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
-            ></path>
-            <path d="M0 0h24v24H0z" fill="none"></path>
-            <use
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              xlink:href="#close"
-            />
-          </svg>
-        </summary>
-        <p>
-          Zweimaliges Anwenden bringt das Qubit wieder in den Ausgangszustand
-          zurück. Daraus können wir schließen, dass die im Qubit gespeicherte
-          Information nicht verloren gegangen ist. Das heißt, auch wenn die
-          Messergebnisse rein zufällig wirken, ist das Qubit dennoch in einem
-          genau definierten Zustand.
-        </p>
-        <img
-          src="curriculum/H-gatter-doppelt.png"
-          style="
+      <img src="curriculum/H-gatter-doppelt.png" style="
             width: 80%;
             margin-left: auto;
             display: block;
             margin-right: auto;
             margin-top: 10px;
-          "
-        />
-      </details>
+          " />
+    </details>
 
-      <h4>Kombination verschiedener Gatter</h4>
-      <p>
-        Neben dem <span class="curriculum-gate-description">H</span>-Gatter
-        verfügen Quantencomputer noch über weitere Gatter. Eines davon ist das
-        <span class="curriculum-gate-description">T</span>-Gatter, das man sich
-        als Drehung um 22,5° entlang des Äquators unserer Kugel vorstellen kann.
-      </p>
-      <img
-        src="curriculum/T-gatter.svg"
-        style="
+    <h4>Kombination verschiedener Gatter</h4>
+    <p>
+      Neben dem <span class="curriculum-gate-description">H</span>-Gatter
+      verfügen Quantencomputer noch über weitere Gatter. Eines davon ist das
+      <span class="curriculum-gate-description">T</span>-Gatter, das man sich
+      als Drehung um 22,5° entlang des Äquators unserer Kugel vorstellen kann.
+    </p>
+    <img src="curriculum/T-gatter.svg" style="
           display: block;
           margin-left: auto;
           margin-right: auto;
           width: 50%;
-        "
-      />
-      <!-- TODO: Die Erklärung in Lösungshinweise umlagern, damit das mit dem definierten Zustand nicht schon vorweggenommen wird?-->
-      <div class="curriculum-exercise">
-        <div class="curriculum-exercise-icon">!</div>
-        <div>
-          Das bisher unbekannte
-          <span class="curriculum-gate-description">T</span>-Gatter scheint
-          zunächst keinen Effekt zu haben. Füge <b>vor und nach</b> dem
-          <span class="curriculum-gate-description">T</span>-Gatter je ein
-          Hadamard-Gatter
-          <span class="curriculum-gate-description">H</span> ein. Wie wirkt sich
-          das auf das Messergebnis aus? Notiere deine Beobachtung!
-        </div>
+        " />
+    <!-- TODO: Die Erklärung in Lösungshinweise umlagern, damit das mit dem definierten Zustand nicht schon vorweggenommen wird?-->
+    <div class="curriculum-exercise">
+      <div class="curriculum-exercise-icon">!</div>
+      <div>
+        Das bisher unbekannte
+        <span class="curriculum-gate-description">T</span>-Gatter scheint
+        zunächst keinen Effekt zu haben. Füge <b>vor und nach</b> dem
+        <span class="curriculum-gate-description">T</span>-Gatter je ein
+        Hadamard-Gatter
+        <span class="curriculum-gate-description">H</span> ein. Wie wirkt sich
+        das auf das Messergebnis aus? Notiere deine Beobachtung!
       </div>
+    </div>
 
-      <div class="curriculum-spacer"></div>
+    <div class="curriculum-spacer"></div>
 
-      <div class="">
-        <div class="Q-circuit-palette" data-gates="HXT"></div>
-        <div id="circuit-2"></div>
-      </div>
-      <div class="curriculum-spacer"></div>
+    <div class="">
+      <div class="Q-circuit-palette" data-gates="HXT"></div>
+      <div id="circuit-2"></div>
+    </div>
+    <div class="curriculum-spacer"></div>
 
-      <h2>Auswertung</h2>
-      <p>Nach 1000 Messungen zeigt sich folgende Ergebnisverteilung:</p>
-      <pre><samp id="circuit-2-report" for="circuit-2"></samp></pre>
+    <h2>Auswertung</h2>
+    <p>Nach 1000 Messungen zeigt sich folgende Ergebnisverteilung:</p>
+    <pre><samp id="circuit-2-report" for="circuit-2"></samp></pre>
 
-      <details>
-        <summary>
-          Lösung
-          <svg
-            viewBox="0 0 24 24"
-            id="close-2"
-            class="control-icon control-icon-expand"
-            width="24"
-            height="24"
-            role="presentation"
-          >
-            <use
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              xlink:href="#expand-more-2"
-            />
-            <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
-            <path d="M0 0h24v24H0z" fill="none"></path>
-          </svg>
-          <svg
-            viewBox="0 0 24 24"
-            id="expand-more-2"
-            class="control-icon control-icon-close"
-            width="24"
-            height="24"
-            role="presentation"
-          >
-            <path
-              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
-            ></path>
-            <path d="M0 0h24v24H0z" fill="none"></path>
-            <use
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              xlink:href="#close-2"
-            />
-          </svg>
-        </summary>
-        <p>
-          Wenden wir vor und nach dem
-          <span class="curriculum-gate-description">T</span>-Gatter ein
-          <span class="curriculum-gate-description">H</span>-Gatter an, erhalten
-          wir bei Startwert
-          <span class="curriculum-input-description">0</span> mit 85%
-          Wahrscheinlichkeit als Messergebnis
-          <span class="curriculum-input-description">0</span> und nur mit 15%
-          <span class="curriculum-input-description">1</span>.
-          <br />
-          <br />
-          Das bedeutet, dass jede noch so kleine Änderung des Zustands zwischen
-          den beiden Hadamard-Gattern (bspw. durch ein anderes Gatter wie das
-          <span class="curriculum-gate-description">T</span>-Gatter) durch die
-          Auswertung des Schaltkreises aufgedeckt werden kann.
-        </p>
-      </details>
+    <details>
+      <summary>
+        Lösung
+        <svg viewBox="0 0 24 24" id="close-2" class="control-icon control-icon-expand" width="24" height="24"
+          role="presentation">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more-2" />
+          <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+          <path d="M0 0h24v24H0z" fill="none"></path>
+        </svg>
+        <svg viewBox="0 0 24 24" id="expand-more-2" class="control-icon control-icon-close" width="24" height="24"
+          role="presentation">
+          <path
+            d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
+          </path>
+          <path d="M0 0h24v24H0z" fill="none"></path>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close-2" />
+        </svg>
+      </summary>
+      <p>
+        Wenden wir vor und nach dem
+        <span class="curriculum-gate-description">T</span>-Gatter ein
+        <span class="curriculum-gate-description">H</span>-Gatter an, erhalten
+        wir bei Startwert
+        <span class="curriculum-input-description">0</span> mit 85%
+        Wahrscheinlichkeit als Messergebnis
+        <span class="curriculum-input-description">0</span> und nur mit 15%
+        <span class="curriculum-input-description">1</span>.
+        <br />
+        <br />
+        Das bedeutet, dass jede noch so kleine Änderung des Zustands zwischen
+        den beiden Hadamard-Gattern (bspw. durch ein anderes Gatter wie das
+        <span class="curriculum-gate-description">T</span>-Gatter) durch die
+        Auswertung des Schaltkreises aufgedeckt werden kann.
+      </p>
+    </details>
 
-      <!-- curriculum navigation -->
-      <footer class="curriculum-footer">
-        <p>
-          <a class="Q-button" type="button" href="curriculum02.html">
-            Zurück
-          </a>
-          <a class="Q-button" type="button" href="curriculum04.html">
-            Weiter
-          </a>
-        </p>
-        <p class="author-info">
-          Entwickelt von Stefan Seegerer und Andreas Woitzik
-        </p>
-      </footer>
-    </main>
-  </body>
+    <!-- curriculum navigation -->
+    <footer class="curriculum-footer">
+      <p>
+        <a class="Q-button" type="button" href="curriculum02.html">
+          Zurück
+        </a>
+        <a class="Q-button" type="button" href="curriculum04.html">
+          Weiter
+        </a>
+      </p>
+      <p class="author-info">
+        Entwickelt von Stefan Seegerer und Andreas Woitzik
+      </p>
+    </footer>
+  </main>
+</body>
 
-  <script>
-    //  Let’s place circuit palettes
-    //  inside anything with the class 'Q-circuit-palette'.
-    Array.from(document.querySelectorAll('.Q-circuit-palette')).forEach(
-      function (el) {
-        Q.Circuit.Editor.createPalette(
-          el,
-          (gates = el.getAttribute('data-gates') || 'HXT')
-        )
-      }
-    )
-
-    window.addEventListener('Q.Circuit.evaluate completed', function (event) {
-      const circuit = event.detail.circuit
-      console.log(
-        '\nEvaluation completed for “' +
-          circuit.name +
-          '”' +
-          '\nwith these results:\n' +
-          circuit.report$() +
-          '\n\n\n'
+<script>
+  //  Let’s place circuit palettes
+  //  inside anything with the class 'Q-circuit-palette'.
+  Array.from(document.querySelectorAll('.Q-circuit-palette')).forEach(
+    function (el) {
+      Q.Circuit.Editor.createPalette(
+        el,
+        (gates = el.getAttribute('data-gates') || 'HXT')
       )
-      if (circuit.name !== undefined) {
-        const el = document.getElementById(circuit.name + '-report')
-        if (el) el.innerText = circuit.report$()
-      }
-    })
-    window.addEventListener('Q gui altered circuit', function (event) {
-      event.detail.circuit.evaluate$()
-    })
+    }
+  )
 
-    var circuit1 = Q`
+  window.addEventListener('Q.Circuit.evaluate completed', function (event) {
+    const circuit = event.detail.circuit
+    console.log(
+      '\nEvaluation completed for “' +
+      circuit.name +
+      '”' +
+      '\nwith these results:\n' +
+      circuit.report$() +
+      '\n\n\n'
+    )
+    if (circuit.name !== undefined) {
+      const el = document.getElementById(circuit.name + '-report')
+      if (el) el.innerText = circuit.report$()
+    }
+  })
+  window.addEventListener('Q gui altered circuit', function (event) {
+    event.detail.circuit.evaluate$()
+  })
+
+  var circuit1 = Q`
         I-H-I-I-I
         `
 
-    var circuit2 = Q`
+  var circuit2 = Q`
         I-I-T-I-I
         `
 
-    circuit1.setName$('circuit-1')
-    circuit2.setName$('circuit-2')
-    document.getElementById('circuit-1').appendChild(circuit1.toDom())
-    document.getElementById('circuit-2').appendChild(circuit2.toDom())
-    circuit1.evaluate$()
-    circuit2.evaluate$()
+  circuit1.setName$('circuit-1')
+  circuit2.setName$('circuit-2')
+  document.getElementById('circuit-1').appendChild(circuit1.toDom())
+  document.getElementById('circuit-2').appendChild(circuit2.toDom())
+  circuit1.evaluate$()
+  circuit2.evaluate$()
 
-    const animateMeasurement = () => {
-      const animationToPerform =
-        Math.random() < 0.5
-          ? document.getElementById('pfeil-unten')
-          : document.getElementById('pfeil-oben')
+  const animateMeasurement = () => {
+    const animationToPerform =
+      Math.random() < 0.5
+        ? document.getElementById('pfeil-unten')
+        : document.getElementById('pfeil-oben')
 
-      //animationToPerform.beginElement()
-      document.getElementById('pfeil-vorne').style.display = 'none'
-      animationToPerform.style.display = 'block'
-      document.getElementById('measurement-button').disabled = true
-      window.setTimeout(() => {
-        //document.getElementById('animation-to-superposition').beginElement()
-        animationToPerform.style.display = 'none'
-        document.getElementById('pfeil-vorne').style.display = 'block'
-        document.getElementById('measurement-button').disabled = false
-      }, 1000)
-    }
-  </script>
+    //animationToPerform.beginElement()
+    document.getElementById('pfeil-vorne').style.display = 'none'
+    animationToPerform.style.display = 'block'
+    document.getElementById('measurement-button').disabled = true
+    window.setTimeout(() => {
+      //document.getElementById('animation-to-superposition').beginElement()
+      animationToPerform.style.display = 'none'
+      document.getElementById('pfeil-vorne').style.display = 'block'
+      document.getElementById('measurement-button').disabled = false
+    }, 1000)
+  }
+</script>
+
 </html>

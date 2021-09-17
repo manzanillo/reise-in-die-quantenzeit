@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
-	<head>
-        <title>Reise in die Quantenzeit 07</title>
-        <meta charset="utf-8">
-        <meta name="viewport"             content="width=device-width,initial-scale=1.0">
-        <meta name="description"          content="Quantum computing in your browser.">
-        <meta name="copyright"            content="Stefan Seegerer, Stewart Smith 2019–2021" />
-        <meta name="keywords"             content="
+
+<head>
+    <title>Reise in die Quantenzeit 07</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="Quantum computing in your browser.">
+    <meta name="copyright" content="Stefan Seegerer, Stewart Smith 2019–2021" />
+    <meta name="keywords" content="
             Q, Q.js, Q-js, Qjs, quantum JavaScript,
             quantum, quantum physics, quantum mechanics, superposition,
             quantum computer, quantum computer programming, quantum computing, QC, 
@@ -22,165 +23,169 @@
                 Quantum Development Kit, Cirq, Strawberry Fields, t|ket>,
                 QCL, Quantum pseudocode, Q#, Q|SI>, Q language, qGCL, QFC, QML, LIQUi|>, Quipper,
             Stanford CS 269 Q: Quantum Computer Programming">
-        
-        <meta name="twitter:card"         content="summary_large_image">
-        <meta name="twitter:site"         content="@stew_rtsmith">
-        <meta name="twitter:creator"      content="@stew_rtsmith">
-        <meta name="twitter:title"        content="Q ⟩ Curriculum 03">
-        <meta name="twitter:description"  content="Quantum computing in your browser.">
-        <meta name="twitter:image"        content="https://quantumjavascript.app/assets/Q-website-preview.jpg">
-        
-        <meta property="og:type"          content="website">
-        <meta property="og:title"         content="Q ⟩ Curriculum 03">
-        <meta property="og:description"   content="Quantum computing in your browser.">
-        <meta property="og:image"         content="https://quantumjavascript.app/assets/Q-website-preview.jpg">
-        <meta property="og:url"           content="https://quantumjavascript.app/Circuit.html">
-        
-        <link rel="canonical" href="https://quantumjavascript.app/Circuit.html">
-        <link href="assets/Q-favicon-064.png" rel="icon" type="image/png">
-        <link href="assets/Q-favicon-144.png" rel="apple-touch-icon">
-        
-        <link rel="stylesheet" href="Q/Q.css">
-        <link rel="stylesheet" href="Q/Q-Circuit-Editor.css">
-        <link rel="stylesheet" href="assets/documentation.css">
-        <link rel="stylesheet" href="curriculum/curriculum.css">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@stew_rtsmith">
+    <meta name="twitter:creator" content="@stew_rtsmith">
+    <meta name="twitter:title" content="Q ⟩ Curriculum 03">
+    <meta name="twitter:description" content="Quantum computing in your browser.">
+    <meta name="twitter:image" content="https://quantumjavascript.app/assets/Q-website-preview.jpg">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Q ⟩ Curriculum 03">
+    <meta property="og:description" content="Quantum computing in your browser.">
+    <meta property="og:image" content="https://quantumjavascript.app/assets/Q-website-preview.jpg">
+    <meta property="og:url" content="https://quantumjavascript.app/Circuit.html">
+
+    <link rel="canonical" href="https://quantumjavascript.app/Circuit.html">
+    <link href="assets/Q-favicon-064.png" rel="icon" type="image/png">
+    <link href="assets/Q-favicon-144.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" href="Q/Q.css">
+    <link rel="stylesheet" href="Q/Q-Circuit-Editor.css">
+    <link rel="stylesheet" href="assets/documentation.css">
+    <link rel="stylesheet" href="curriculum/curriculum.css">
 
 
-        <script src="Q/Q.js"></script>
-        <script src="Q/Q-ComplexNumber.js"></script>
-        <script src="Q/Q-Matrix.js"></script>
-        <script src="Q/Q-Qubit.js"></script>
-        <script src="Q/Q-Gate.js"></script>
-        <script src="Q/Q-History.js"></script>
-        <script src="Q/Q-Circuit.js"></script>
-        <script src="Q/Q-Circuit-Editor.js"></script>
-        <script src="curriculum/navigation.js"></script>
-        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="Q/Q.js"></script>
+    <script src="Q/Q-ComplexNumber.js"></script>
+    <script src="Q/Q-Matrix.js"></script>
+    <script src="Q/Q-Qubit.js"></script>
+    <script src="Q/Q-Gate.js"></script>
+    <script src="Q/Q-History.js"></script>
+    <script src="Q/Q-Circuit.js"></script>
+    <script src="Q/Q-Circuit-Editor.js"></script>
+    <script src="curriculum/navigation.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-    </head>
-    <body>
-		<main class="home">
-            <h3>Quantencomputer – Anzahl darstellbarer Zustände</h3>
-            <p>
-                Auf den letzten Seiten haben wir gesehen: 
-                <ul>
-                    <li>Qubits können nicht nur in den beiden Zuständen 0 und 1 sein, sondern auch in einer Superposition aus 
-                        0 und 1. Dann haben sie eine gewisse Wahrscheinlichkeit als 0 bzw. 1 gemessen zu werden. Eine Messung zerstört
-                         allerdings die Superposition.
-                    </li>
-                    <li>Auch wenn die Messergebnisse eines Qubits zufällig sind, ist das Qubit dennoch stets 
-                        in einem genau definierten Zustand.    
-                    </li>
-                    <li>Zwei Qubits können miteinander <b>verschränkt werden</b>. Misst man dann
-                        den Zustand eines der Qubits, kennt man auch automatisch den Zustand des
-                        anderen Qubits.
-                    </li>
-                    <li>
-                        Quantencomputer nutzen spezielle Quantengatter, um den Zustand von Qubits zu manipulieren.
-                    </li>
-                </ul>
-            </p>
-            <p>
-                Der Vorteil von Quantencomputern für bestimmte Probleme zeigt sich, wenn wir uns ansehen, wie viele 
-                Informationen wir mit \(n\) Qubits potenziell speichern und verarbeiten können:
-            </p>
-            <p class="curriculum-merkkasten">
-                Während ein klassischer Computer mit \(n\) Bits nur einen Zustand darstellen kann, kann ein Quantencomputer 
-                mit \(n\) Qubits \(2^n\) Zustände <b>gleichzeitig</b> repräsentieren, wobei jedem Zustand 
-                eine bestimmte Wahrscheinlichkeit zugeordnet ist.
-            </p>
-            <p>
-                Mit 2 Qubits lassen sich  so zunächst schon  
-                4 Zustände gleichzeitig darstellen, bei 3 Qubits erhöht sich diese Zahl auf 8 und bei 4 Qubits sind es sogar 16 
-                (Schau dir dazu den Schaltkreis unten an!).
-                Schon mit 300 Qubits kann man mehr Zustände gleichzeitig darstellen als es Teilchen im Universum gibt.
-            </p>
-            <img src="curriculum/anzahl-darstellbarer-zustände.png" 
-                 style="display: block; width: 50%; margin-left: auto; margin-right: auto;" />
-            <p>
-                Wahnsinn oder? \(n\) Qubits können also in einer Superposition aus \(2^n\) 
-                Zuständen sein.
-            </p>
-            <p> Messen können wir aber trotzdem nur einen dieser Zustände. Daher brauchen wir clevere Algorithmen, die die Besonderheiten 
-                von Qubits nutzen und dafür sorgen, dass das richtige Messergebnis aus diesen \(2^n\) Zuständen sehr wahrscheinlich wird. 
-                Mit den richtigen Algorithmen könnten Quantencomputer dann u.a. in der 
-                Erforschung neuer Medikamente und Impfstoffe, 
-                bei der Verkehrsoptimierung oder bei der Entwicklung von KI-Lösungen helfen. 
-                Aber: Nicht alle Probleme können durch Quantencomputer effizienter gelöst werden.
-            </p>
-            <p>
-                Moderne Quantencomputer verfügen aktuell über gut 50 bis 70 Qubits. 
-                50 bis 70 Qubits klingt schonmal nicht schlecht!
-                Aber in der Praxis reicht es nicht nur, eine große Anzahl von Qubits zu haben, 
-                sondern ihr Zustand muss auch über einen möglichst langen Zeitraum gehalten werden können.
-                Daran scheitern moderne Quantencomputer (noch) und sind so bisher kaum praxistauglich.
-            </p>
-            <div class=curriculum-exercise>
-                <div class="curriculum-exercise-icon">!</div>
-                <div> Für die Schnellen: Schaffst du es, eine gleichmäßige Superposition aller 16 Zustände erzeugen? 
-                    Wie viele Gatter benötigst du dafür mindestens?
-                    <!--H auf jedes Qubit-->
-                </div>
+</head>
+
+<body>
+    <main class="home">
+        <h3>Quantencomputer – Anzahl darstellbarer Zustände</h3>
+        <p>
+            Auf den letzten Seiten haben wir gesehen:
+        <ul>
+            <li>Qubits können nicht nur in den beiden Zuständen 0 und 1 sein, sondern auch in einer Superposition aus
+                0 und 1. Dann haben sie eine gewisse Wahrscheinlichkeit als 0 bzw. 1 gemessen zu werden. Eine Messung
+                zerstört
+                allerdings die Superposition.
+            </li>
+            <li>Auch wenn die Messergebnisse eines Qubits zufällig sind, ist das Qubit dennoch stets
+                in einem genau definierten Zustand.
+            </li>
+            <li>Zwei Qubits können miteinander <b>verschränkt werden</b>. Misst man dann
+                den Zustand eines der Qubits, kennt man auch automatisch den Zustand des
+                anderen Qubits.
+            </li>
+            <li>
+                Quantencomputer nutzen spezielle Quantengatter, um den Zustand von Qubits zu manipulieren.
+            </li>
+        </ul>
+        </p>
+        <p>
+            Der Vorteil von Quantencomputern für bestimmte Probleme zeigt sich, wenn wir uns ansehen, wie viele
+            Informationen wir mit \(n\) Qubits potenziell speichern und verarbeiten können:
+        </p>
+        <p class="curriculum-merkkasten">
+            Während ein klassischer Computer mit \(n\) Bits nur einen Zustand darstellen kann, kann ein Quantencomputer
+            mit \(n\) Qubits \(2^n\) Zustände <b>gleichzeitig</b> repräsentieren, wobei jedem Zustand
+            eine bestimmte Wahrscheinlichkeit zugeordnet ist.
+        </p>
+        <p> Ein Computer mit 2 Bits kann beispielsweise im Zustand 10 sein, also die Zahl 2 repräsentieren. Ein
+            Quantencomputer mit 2 Qubits in einer Superposition kann als 00, 01, 10 und 11 gemessen werden, also mit
+            bestimmten Wahrscheinlichkeiten die Zahlen 0,1,2 und 3 gleichzeitig repräsentieren. </p>
+        <p>
+            Mit 2 Qubits lassen sich so zunächst schon
+            4 Zustände gleichzeitig darstellen, bei 3 Qubits erhöht sich diese Zahl auf 8 und bei 4 Qubits sind es sogar
+            16
+            (Schau dir dazu den Schaltkreis unten an!).
+            Schon mit 300 Qubits kann man mehr Zustände gleichzeitig darstellen als es Teilchen im Universum gibt.
+        </p>
+        <img src="curriculum/anzahl-darstellbarer-zustände.png"
+            style="display: block; width: 50%; margin-left: auto; margin-right: auto;" />
+        <p>
+            Wahnsinn oder? \(n\) Qubits können also in einer Superposition aus \(2^n\)
+            Zuständen sein.
+        </p>
+        <p> Messen können wir aber trotzdem nur einen dieser Zustände. Daher brauchen wir clevere Algorithmen, die die
+            Besonderheiten
+            von Qubits nutzen und dafür sorgen, dass das richtige Messergebnis aus diesen \(2^n\) Zuständen sehr
+            wahrscheinlich wird.
+            Mit den richtigen Algorithmen könnten Quantencomputer dann u.a. in der
+            Erforschung neuer Medikamente und Impfstoffe,
+            bei der Verkehrsoptimierung oder bei der Entwicklung von KI-Lösungen helfen.
+            Aber: Nicht alle Probleme können durch Quantencomputer effizienter gelöst werden.
+        </p>
+        <p>
+            Moderne Quantencomputer verfügen aktuell über gut 50 bis 70 Qubits.
+            50 bis 70 Qubits klingt schonmal nicht schlecht!
+            Aber in der Praxis reicht es nicht nur, eine große Anzahl von Qubits zu haben,
+            sondern ihr Zustand muss auch über einen möglichst langen Zeitraum gehalten werden können.
+            Daran scheitern moderne Quantencomputer (noch) und sind so bisher kaum praxistauglich.
+        </p>
+        <div class=curriculum-exercise>
+            <div class="curriculum-exercise-icon">!</div>
+            <div> Für die Schnellen: Schaffst du es, eine gleichmäßige Superposition aller 16 Zustände erzeugen?
+                Wie viele Gatter benötigst du dafür mindestens?
+                <!--H auf jedes Qubit-->
             </div>
-            <div class="curriculum-spacer"></div>
+        </div>
+        <div class="curriculum-spacer"></div>
 
-            
-            <div class='Q-circuit-palette' data-gates="HXT*"></div>
-            <div id=circuit></div>
 
-            <h2>Auswertung</h2>
-			<pre><samp id="circuit-report" for="circuit"></samp></pre>
+        <div class='Q-circuit-palette' data-gates="HXT*"></div>
+        <div id=circuit></div>
 
-            <!-- curriculum navigation -->
-            <footer class="curriculum-footer">
-                <p>
-                <a class="Q-button" 
-                    type="button" 
-                    href="curriculum06.html">
+        <h2>Auswertung</h2>
+        <pre><samp id="circuit-report" for="circuit"></samp></pre>
+
+        <!-- curriculum navigation -->
+        <footer class="curriculum-footer">
+            <p>
+                <a class="Q-button" type="button" href="curriculum06.html">
                     Zurück
                 </a>
-                <a class="Q-button" 
-                    type="button" 
-                    disabled>
+                <a class="Q-button" type="button" disabled>
                     Weiter
                 </a>
-                </p>
-                <p class="author-info">
-                    Entwickelt von Stefan Seegerer und Andreas Woitzik
-                </p>
-            </footer>
-        </main>
-    </body>
-    
-    <script>
-        //  Let’s place circuit palettes
-        //  inside anything with the class 'Q-circuit-palette'.
-        Array
-        .from( document.querySelectorAll( '.Q-circuit-palette' ))
-        .forEach( function( el ){
+            </p>
+            <p class="author-info">
+                Entwickelt von Stefan Seegerer und Andreas Woitzik
+            </p>
+        </footer>
+    </main>
+</body>
 
-            Q.Circuit.Editor.createPalette( el, gates = el.getAttribute('data-gates') || 'HXYZPT*' )
+<script>
+    //  Let’s place circuit palettes
+    //  inside anything with the class 'Q-circuit-palette'.
+    Array
+        .from(document.querySelectorAll('.Q-circuit-palette'))
+        .forEach(function (el) {
+
+            Q.Circuit.Editor.createPalette(el, gates = el.getAttribute('data-gates') || 'HXYZPT*')
         })
 
-        window.addEventListener( 'Q.Circuit.evaluate completed', function( event ){
+    window.addEventListener('Q.Circuit.evaluate completed', function (event) {
 
-            const circuit = event.detail.circuit
-            console.log( 
+        const circuit = event.detail.circuit
+        console.log(
 
-                '\nEvaluation completed for “'+ circuit.name +'”'+
-                '\nwith these results:\n'+ circuit.report$() +'\n\n\n'
-            )
-            if( circuit.name !== undefined ){
+            '\nEvaluation completed for “' + circuit.name + '”' +
+            '\nwith these results:\n' + circuit.report$() + '\n\n\n'
+        )
+        if (circuit.name !== undefined) {
 
-                const el = document.getElementById( circuit.name +'-report' )
-                if( el ) el.innerText = circuit.report$()
-            }
-        })
-        window.addEventListener( 'Q gui altered circuit', function( event ){
-            event.detail.circuit.evaluate$()
-        })
+            const el = document.getElementById(circuit.name + '-report')
+            if (el) el.innerText = circuit.report$()
+        }
+    })
+    window.addEventListener('Q gui altered circuit', function (event) {
+        event.detail.circuit.evaluate$()
+    })
 
-        var circuit01 = Q`
+    var circuit01 = Q`
         
         I-I-I-I-I
         I-I-I-I-I
@@ -188,8 +193,9 @@
         I-I-I-I-I
         `
 
-        circuit01.setName$( 'circuit' )
-        document.getElementById("circuit").appendChild( circuit01.toDom() )
-        circuit01.evaluate$()
-    </script>
+    circuit01.setName$('circuit')
+    document.getElementById("circuit").appendChild(circuit01.toDom())
+    circuit01.evaluate$()
+</script>
+
 </html>
